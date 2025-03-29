@@ -1,0 +1,13 @@
+{
+    "navbar": {
+        "masterhub": "MasterHub",
+        "home": "Home",
+        "about": "About",
+        "categories": "Categories",
+        "profile": "Profile",
+        "orders": "Orders",
+        "messages": "Messages",
+        "logout": "Logout"
+    }
+}
+  
