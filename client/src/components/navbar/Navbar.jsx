@@ -20,7 +20,7 @@ function Navbar() {
     return () => {
       window.removeEventListener("scroll", isActive);
     };
-  }, []);
+  }, [])
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
