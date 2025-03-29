@@ -1,0 +1,95 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: #800000 !important;
+  color: white;
+  margin: 0;
+  max-height: 480px;
+  padding: 30px;
+  font-family: "Comfortaa", sans-serif;
+
+  .container {
+    width: 1400px;
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+
+      .left {
+        .link {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        .span {
+          font-family: "Comfortaa", sans-serif;
+          font-size: 19px;
+          display: flex;
+          justify-content: center;
+          align-content: center;
+        }
+      }
+      .right {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 21px;
+
+        span {
+          white-space: nowrap;
+          font-size: 19px;
+          font-family: "Comfortaa", sans-serif;
+        }
+      }      
+    }
+
+    hr {
+      margin: 20px 0px;
+      height: 0;
+      border: 1px solid #ebe9e9;
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .left {
+        width: max-content;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .item {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        span {
+          font-size: 19px;
+          white-space: nowrap;
+          padding-bottom: 3px;
+          font-family: "Comfortaa", sans-serif;
+        }
+      }
+      .right {
+        width: max-content;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        .item {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+        }
+        span {
+          font-size: 19px;
+          padding-bottom: 3px;
+          font-family: "Comfortaa", sans-serif;
+        }
+      }
+    }
+  }
+}
