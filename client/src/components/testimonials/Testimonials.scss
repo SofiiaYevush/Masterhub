@@ -1,0 +1,121 @@
+.testimonials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 65px;
+    max-height: 1170px;
+    margin-bottom: 200px;
+}
+
+.testimonials__left-container {
+    max-width: 650px;
+    padding-left: 150px;
+}
+
+.testimonials .testimonials__container {
+    padding: 5px;
+    margin: 5px;    
+}
+
+.testimonials__photo-text {
+    display: flex;
+    flex-direction: row;
+}
+
+.testimonials__decorive-title-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.testimonials__mini-devider-left{
+    margin-right: 8px;
+    margin-top: 10px;
+    background-color: #f76f6b;
+    width: 25px;
+    height: 2px;
+}
+
+.testimonials__decorive-title {
+    color: #f76f6b;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.testimonials__mini-devider-right {
+    margin-left: 8px;
+    margin-top: 10px;
+    background-color: #f76f6b;
+    width: 25px;
+    height: 2px;
+}
+
+.testimonials__main-title-container {
+    padding: 25px 0;
+}
+
+.testimonials__main-title-container h2 {
+    font-size: 40px;
+}
+
+.testimonials__title-description {
+    max-width: 650px;
+    padding-bottom: 30px;
+}
+
+.testimonials__title-description p{
+    font-size: 16px;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.testimonials__photo{
+    vertical-align: middle;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.testimonials__name-text {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 5px 28px 50px 40px;
+    max-width: 900px;
+}
+
+.testimonials__name-container {
+    padding-bottom: 7px;
+}
+
+.testimonials__name {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #800000;
+}
+
+.testimonials__text-container {
+    padding: 5px 0;
+}
+
+.testimonials__text {
+    font-size: 16px;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    line-height: 1.5;
+    color: #747474;
+}
+
+.testimonials__right-container {
+    padding-right: 60px;
+}
+
+.testimonials__image-right-container {
+    max-width: 900px;
+    height: 1000px; 
+    object-fit: cover;
+    display: flex;
+    justify-items: end;
+}
