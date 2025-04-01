@@ -1,0 +1,46 @@
+{
+    "woodworking": {
+        "title": "Woodworking",
+        "desc": "Create with Wood"
+    },
+    "cleaning": {
+        "title": "Cleaning",
+        "desc": "Make It Shine"
+    },
+    "moving": {
+        "title": "Moving",
+        "desc": "Pack & Go"
+    },
+    "houseRepair": {
+        "title": "House repair",
+        "desc": "Repair with Care"
+    },
+    "gardening": {
+        "title": "Gardening",
+        "desc": "Grow with Love"
+    },
+    "petCare": {
+        "title": "Pet Care",
+        "desc": "Happy Tails"
+    },
+    "homeDesign": {
+        "title": "Home Design",
+        "desc": "Aesthetic Living"
+    },
+    "childCare": {
+        "title": "Child Care",
+        "desc": "Trusted Hands for Your Child"
+    },
+    "technicalServices": {
+        "title": "Technical Services",
+        "desc": "Expert Setup for Your Devices"
+    },
+    "cooking": {
+        "title": "Cooking",
+        "desc": "Delicious Made Easy"
+    },
+    "makeup": {
+        "title": "Makeup",
+        "desc": "Glow and shine"
+    }
+}

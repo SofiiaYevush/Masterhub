@@ -1,0 +1,13 @@
+{
+    "introUnregistred": {
+        "titleTop": "Text",
+        "titleBottom": "Text",
+        "placeholder": "Type a text",
+        "aboutFirstLine": "Text Text Text Text Text Text Text Text.",
+        "aboutSecondLine": "Text Text Text Text Text Text Text Text.",
+        "aboutThirdLine": "Text Text Text Text Text Text Text Text.",
+        "buttonTryNow": "Try Now",
+        "buttonLearnMore": "Learn More",
+        "search": "Serch"
+    }
+}
