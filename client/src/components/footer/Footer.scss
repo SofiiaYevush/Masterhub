@@ -16,18 +16,33 @@
       justify-content: space-between;
 
       .left {
-        .link {
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
-        }
-        .span {
-          font-family: "Comfortaa", sans-serif;
-          font-size: 19px;
-          display: flex;
-          justify-content: center;
-          align-content: center;
-        }
+
+          .link {
+            display: flex;
+            align-items: center;
+            width: 155px;
+          }
+
+          .span {
+            font-size: 19px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+          }
+
+          .logo-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .logo-img img {
+            width: 30px;
+            height: 30px;
+            padding-left: 0;
+          }
       }
       .right {
           display: flex;
@@ -35,11 +50,17 @@
           justify-content: space-between;
           gap: 21px;
 
-        span {
-          white-space: nowrap;
-          font-size: 19px;
-          font-family: "Comfortaa", sans-serif;
-        }
+          .link {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+          }
+
+          span {
+            white-space: nowrap;
+            font-size: 19px;
+            font-family: "Comfortaa", sans-serif;
+          }
       }      
     }
 
