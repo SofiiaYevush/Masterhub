@@ -1,0 +1,127 @@
+.sign-in {
+  margin-top: 120px;
+  margin-bottom: 150px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sign-in__title {
+  font-size: 40px;
+  color: #000000;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.form-title-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-title {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 16px;
+  color: var(--text-color-black);
+  padding: 20px 0 5px 3px;
+}
+
+.form-field {
+  border-radius: 100px;
+  border: 2px solid #dddddd;
+  width: 680px;
+  height: 35px;
+  padding: 12px; 
+  background-color: #ffffff;
+}
+
+.form-field:hover {
+  border: 2px solid #747474;
+  transition: border 0.25s;
+}
+
+.sign-in__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-submit-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+
+.submit-white-button {
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 100px;
+  box-sizing: border-box;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #800000;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: normal;
+  justify-content: center;
+  color: #000000;
+  /*line-height: 20px;*/
+  width: 210px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+}
+.submit-white-button a{
+    color: #000000;
+    text-decoration: none;
+}
+.submit-white-button:hover,
+.submit-white-button:focus { 
+    background-color: #dddddd;
+    transition: background-color 0.5s;
+}
+
+.sign-in__devider {
+  margin: 110px auto;
+  margin-bottom: 40px;
+  background-color: #747474;
+  width: 900px;
+  height: 2px;
+  display: flex;
+  justify-content: center;
+}
+
+.sign-in__create-account {
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.sign-in__create-account p {
+  font-size: 16px;
+  color: #000000;
+}
+
+.sign-in__create-account .link {
+  font-size: 16px;
+  color: #000000;
+  text-decoration: none;
+}
+.sign-in__create-account .link:hover {
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+}
