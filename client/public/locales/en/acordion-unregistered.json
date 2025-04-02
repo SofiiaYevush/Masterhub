@@ -1,0 +1,15 @@
+{
+    "acordion-unregistered": {
+        "title": "Frequently asked questions",
+        "question1": "How do I register on the site and start using it?",
+        "answer1": "To register on our website, you need to click the 'Register' button on the main page and enter the required information. After that, you can create a profile and start using our services.",
+        "question2": "How do I create a task to complete?",
+        "answer2": "To create a task, you need to log in to your account, go to the 'Create Task' page, and fill in the required task information, including description, category, and budget.",
+        "question3": "How to find suitable specialists to perform tasks?",
+        "answer3": "On our site, you can use search filters and categories to find professionals who meet your needs. You can also view professional profiles and reviews.",
+        "question4": "How to check the reputation and experience of specialists?",
+        "answer4": "On our website, you can view ratings and reviews of professionals’ profiles, as well as their portfolios and past work. This will help you assess their reputation and experience.",
+        "question5": "How to ensure the safety and quality of task performance?",
+        "answer5": "We recommend that users establish detailed terms of agreement before starting work, including completion time, payment, and other details. It is also important to provide feedback during the task to ensure high quality work."
+    }
+}
