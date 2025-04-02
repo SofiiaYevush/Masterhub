@@ -1,0 +1,43 @@
+.find__container {
+    background-color: #dddddd;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    //max-width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.find__left-container {
+    display: flex;
+    flex-direction: column;
+    .icon {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.find__center-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .find__top-container {
+        display: flex;
+        justify-content: center;
+    }
+    .find__top-container p{
+        font-size: 48px;
+        font-weight: bold;
+    }
+}
+
+.find__right-container {
+    img {
+        max-width: 400px;
+        height: 500px;
+        object-fit: cover;
+        clip-path: ellipse(60% 50% at 90% 50%);
+        object-position: 20% center;
+    }
+}
