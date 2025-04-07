@@ -54,7 +54,7 @@ function Login() {
       </form>
       <div className="sign-in__devider"></div>
       <div className="sign-in__create-account container">
-        <p>Вперше з нами? <Link className="link" to="/"> <span>{t('login.createAccount')}</span></Link></p>
+        <p>{t('login.firstTime')} <Link className="link" to="/pre-register"> <span>{t('login.createAccount')}</span></Link></p>
       </div>
     </div>
   );
