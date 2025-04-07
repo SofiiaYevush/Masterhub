@@ -1,0 +1,121 @@
+.sign-up {
+    padding: 150px 0 300px 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sign-up__title {
+    font-size: 40px;
+}
+
+.sign-up__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 18px;
+}
+
+.sign-up__text p {
+    font-size: 14px;
+    padding-right: 6px;
+    color: #000000;
+}
+
+.sign-up__text a{
+    color: #000000;
+}
+
+.sign-up__text a:hover{
+    font-weight: bold;
+    transition: font-weight 0.3s;
+}
+
+.sign-up__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 70px;
+}
+
+.sign-up__become-client {
+    padding-left: 50px;
+}
+
+.white-button-pre-register {
+    width: 210px;
+}
+
+.red-button-pre-register {
+    align-items: center;
+    background-color: #800000;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: normal;
+    justify-content: center;
+    max-width: 460px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    color: #ffffff;
+    text-decoration: none;
+}
+.red-button-pre-register:hover,
+.red-button-pre-register:focus { 
+  background-color: #dddddd;
+  transition: background-color 0.5s;
+}
+
+.white-button-pre-register {
+    align-items: center;
+    background-color: #ffffff;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #800000;
+    border-radius: 100px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: normal;
+    justify-content: center;
+    max-width: 460px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    color: #000000;
+    text-decoration: none;
+}
+.white-button-pre-register:hover,
+.white-button-pre-register:focus { 
+    background-color: #dddddd;
+    border-color: #800000;
+    transition: background-color 0.5s;
+}
