@@ -1,0 +1,94 @@
+.myGigs {
+  display: flex;
+  justify-content: center;
+  color: #555;
+  height: 100%;
+
+  .myGigs-container {
+    width: 1400px;
+    padding: 50px 0px;
+    height: 100%;
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+
+      .white-button-myGigs {
+        align-items: center;
+        background-color: #ffffff;
+        border-width: 3px;
+        border-style: solid;
+        border-color: #800000;
+        border-radius: 100px;
+        box-sizing: border-box;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: normal;
+        justify-content: center;
+        max-width: 460px;
+        min-height: 40px;
+        min-width: 0px;
+        overflow: hidden;
+        padding: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        touch-action: manipulation;
+        transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: middle;
+        color: #000000;
+        text-decoration: none;
+    }
+    .white-button-myGigs:hover,
+    .white-button-myGigs:focus { 
+        background-color: #dddddd;
+        border-color: #800000;
+        transition: background-color 0.5s;
+    }
+    }
+
+    table {
+      width: 100%;
+      margin-top: 50px;
+
+      tr {
+        height: 50px;
+        th {
+          text-align: center;
+        }
+        td {
+          text-align: center;
+
+          sup{
+            font-size: 12px;
+          }
+          
+          .image {
+            width: 50px;
+            height: 35px;
+            object-fit: cover;
+          }
+
+          .delete {
+            width: 20px;
+            cursor: pointer;
+          }
+
+        }
+        &:nth-child(even) {
+          background-color: #FAF4F4;
+        }
+      }
+    }
+  }
+}
+
+.gig-title {
+  text-align: left !important;
+  align-items: flex-start;
+  padding-left: 10px;
+}
