@@ -1,0 +1,91 @@
+.reviews {
+  margin-top: 50px;
+
+  .add {
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h3 {
+      font-weight: 400;
+      padding-top: 70px;
+    }
+
+    .addForm {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      input {
+        padding: 20px;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+      }
+
+      .select-stars-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .select-title {
+          font-size: 18px;
+          padding-right: 15px;
+        }
+  
+        select {
+          width: 80px;
+          padding: 20px;
+          align-self: flex-start;
+          border: 1px solid lightgray;
+          border-radius: 5px;
+        }
+      }
+
+      .addForm__red-button {
+        margin-bottom: 70px;
+        align-self: flex-start;
+        align-items: center;
+        background-color: #800000;
+        border-radius: 100px;
+        box-sizing: border-box;
+        border-width: 3px;
+        border-style: solid;
+        border-color: #800000;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: normal;
+        justify-content: center;
+        color: #ffffff;
+        width: 180px;
+        min-height: 40px;
+        min-width: 0px;
+        overflow: hidden;
+        padding: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        touch-action: manipulation;
+        transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: middle;
+        text-decoration: none;
+      }
+      .addForm__red-button:hover,
+      .addForm__red-button:focus { 
+          background-color: #ffffff;
+          transition: background-color 0.5s;
+          color: #000000;
+      }
+    }
+  }
+
+  hr {
+    height: 0;
+    border: 0.5px solid lightgray;
+    margin: 50px 0px;
+  }
+}
