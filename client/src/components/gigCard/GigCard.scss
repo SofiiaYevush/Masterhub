@@ -1,0 +1,99 @@
+.card {
+  width: 324px;
+  height: 400px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  background-color: #f8f9f9;
+  margin-bottom: 50px;
+  border-radius: 15px;
+  overflow: hidden !important;
+
+  img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+    padding-bottom: 10px;
+
+    .card-info-top {
+      padding: 10px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+  
+        img {
+          width: 26px;
+          height: 26px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        span {
+          font-size: 13px;
+        }
+      }
+  
+      .card-text {
+        color: #111;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+  
+    .card-info-bottom {
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+  
+      .card-price {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+  
+        .price {
+          color: #555;
+          font-size: 18px;
+          font-weight: 400;
+          text-align: end;
+        }
+      }
+
+      .card-date {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        flex-direction: column;
+
+        .date {
+          color: #555;
+          font-size: 18px;
+          font-weight: 400;
+          text-align: end;
+        }
+      }
+  
+      .card-label {
+        color: #747474;
+        font-size: 13px;
+        font-family: "Comfortaa", sans-serif;
+        padding-bottom: 3px;
+      }
+    }
+  }
+}
