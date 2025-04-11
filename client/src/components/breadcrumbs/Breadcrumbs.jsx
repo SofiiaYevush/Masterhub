@@ -1,29 +1,16 @@
 import React from 'react';
-import { Link, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "./Breadcrumbs.scss";
 
 const Breadcrumbs = () => {
-  const location = useLocation();
-
-  // Розділити шлях за слешами
-  const pathnames = location.pathname.split("/").filter((x) => x);
+  const navigate = useNavigate();
 
   return (
-    <nav className="breadcrumbs">
-      <Link to="/">Home</Link>
-      {pathnames.map((name, index) => {
-        const routeTo = "/" + pathnames.slice(0, index + 1).join("/");
-        const isLast = index === pathnames.length - 1;
-        return isLast ? (
-          <span key={index}> / {decodeURIComponent(name)}</span>
-        ) : (
-          <span key={index}>
-            {" "}
-            / <Link to={routeTo}>{decodeURIComponent(name)}</Link>
-          </span>
-        );
-      })}
-    </nav>
+    <button className="back-button" onClick={() => navigate(-1)}>
+      ← Back
+    </button>
   );
 };
+
 
 export default Breadcrumbs;
