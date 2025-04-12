@@ -6,6 +6,7 @@
   .sort-button {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 6px;
     padding: 6px 10px;
     border: 1px solid #ccc;
@@ -13,12 +14,17 @@
     background: #ffffff;
     cursor: pointer;
     font-size: 16px;
-    width: 120px;
+    width: 170px;
     height: 40px;
 
     .sort-button-icon {
-        width: 25px;
-        height: auto;
+      width: 25px;
+      height: 25px;
+  }
+
+    .sort-button-icon-up-down {
+        width: 15px;
+        height: 15px;
     }
   }
   

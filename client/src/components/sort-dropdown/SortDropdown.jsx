@@ -21,6 +21,11 @@ const SortDropdown = ({ sort, onChange }) => {
       <button className="sort-button" onClick={() => setOpen(!open)}>
         <img className="sort-button-icon" src="../../icons/sort-by.png" alt="" />
         <span>{getLabel()}</span>
+        <img
+          className="sort-button-icon-up-down"
+          src={`../../icons/sort-${open ? "up" : "down"}.png`}
+          alt=""
+        />
       </button>
 
       {open && (
