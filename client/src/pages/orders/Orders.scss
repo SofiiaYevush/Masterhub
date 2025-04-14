@@ -1,0 +1,197 @@
+.orders {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+
+
+  .orders-title {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+  }
+
+  .orders-none {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .order-item {
+    border: 1px solid lightgray;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 100px;
+
+    .order-details {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      .order-date {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      .order-price {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .order-details-title {
+        color: #000000;
+        padding-bottom: 8px;
+      }
+
+      .order-details-text {
+        color: #747474;
+      }
+
+      .order-location {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .order-button {
+        display: flex;
+        justify-content: center;
+      }
+
+      .order-red-button {
+        align-items: center;
+        background-color: #800000;
+        border-radius: 100px;
+        box-sizing: border-box;
+        border-width: 3px;
+        border-style: solid;
+        border-color: #800000;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: normal;
+        justify-content: center;
+        color: #ffffff;
+        width: 210px;
+        min-height: 40px;
+        min-width: 0px;
+        overflow: hidden;
+        padding: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        touch-action: manipulation;
+        transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: middle;
+        text-decoration: none;
+      }
+      .order-red-button:hover,
+      .order-red-button:focus { 
+          background-color: #ffffff;
+          transition: background-color 0.5s;
+          color: #000000;
+      }
+    }
+
+    hr {
+      height: 0;
+      border: 0.5px solid #dddddd;
+      margin: 40px 0px;
+    }
+
+    .order-banner {
+      border: none;
+      border-radius: 15px;
+      padding: 15px 20px;
+      font-size: 16px;
+      margin-bottom: 40px;
+
+      &.completed {
+        background-color: #2ecc71;
+      }
+    
+      &.in-progress {
+        background-color: #f8c471;
+      }
+    }
+
+    .order-main-info {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      .order-photo img{
+        width: 250px;
+        height: 250px;
+        object-fit: contain;
+        border: none;
+        border-radius: 15px;
+        object-fit: cover;
+      }
+
+      .order-titles {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .order-main-title {
+          color: #000000;
+        }
+
+        .order-subtitle {
+          font-size: 18px;
+          color: #747474;
+          padding-top: 16px;
+        }
+      }
+
+      .order-user {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        .order-avatar-username {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          padding-top: 16px;
+
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+          }
+
+          .order-username {
+            padding-left: 5px;
+          }
+        }
+      }
+    }
+
+    .order-client-contacts {
+      display: flex;
+      flex-direction: row;
+      padding-top: 40px;
+          
+      img {
+        width: 20px;
+      }
+
+      .order-contacts-text {
+        padding-left: 16px;
+      }
+    }
+    
+  }
+}
