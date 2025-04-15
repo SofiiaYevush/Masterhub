@@ -3,7 +3,11 @@ import React from "react";
 import newRequest from "../../utils/newRequest";
 import Review from "../review/Review";
 import "./Reviews.scss";
+import { useTranslation } from 'react-i18next';
+
 const Reviews = ({ gigId }) => {
+  const { t } = useTranslation("reviews");
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   const queryClient = useQueryClient()
   const { isLoading, error, data } = useQuery({
@@ -32,29 +36,32 @@ const Reviews = ({ gigId }) => {
 
   return (
     <div className="reviews">
-      <h2>Customer Reviews</h2>
+      <h2 className="reviews-title">{t('reviews.reviewsTitle')}</h2>
       {isLoading
         ? "loading"
         : error
         ? "Something went wrong!"
-        : data.map((review) => <Review key={review._id} review={review} />)}
-      <div className="add">
-        <h3>Add a review</h3>
-        <form action="" className="addForm" onSubmit={handleSubmit}>
-          <input type="text" placeholder="write your opinion" />
-          <div className="select-stars-container">
-            <p className="select-title">How many stars will you give?</p>
-            <select name="" id="">
-              <option value={1}>1</option>
-              <option value={2}>2</option>
-              <option value={3}>3</option>
-              <option value={4}>4</option>
-              <option value={5}>5</option>
-            </select>
-          </div>
-          <button className="addForm__red-button">Send</button>
-        </form>
-      </div>
+        : data.map((review) => <Review key={review._id} review={review} />
+      )}
+      {!currentUser.isSeller && (
+        <div className="add">
+          <h3>{t('reviews.add')}</h3>
+          <form action="" className="addForm" onSubmit={handleSubmit}>
+            <input type="text" placeholder={t('reviews.placeholder')} />
+            <div className="select-stars-container">
+              <p className="select-title">{t('reviews.giveStars')}</p>
+              <select name="" id="">
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
+                <option value={5}>5</option>
+              </select>
+            </div>
+            <button className="addForm__red-button">{t('reviews.sendButton')}</button>
+          </form>
+        </div>
+      )}
     </div>
   );
 };
