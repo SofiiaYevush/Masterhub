@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./SortDropdown.scss";
+import { useTranslation } from 'react-i18next';
 
 const SortDropdown = ({ sort, onChange }) => {
   const [open, setOpen] = useState(false);
+  const { t } = useTranslation("sort-dropdown");
 
   const getLabel = () => {
     if (!sort || !sort.field) return "Sort by";
@@ -30,9 +32,9 @@ const SortDropdown = ({ sort, onChange }) => {
 
       {open && (
         <div className="sort-options">
-          <span onClick={() => onChange("price", "asc")}>Cheapest</span>
-          <span onClick={() => onChange("price", "desc")}>Most Expensive</span>
-          <span onClick={() => onChange("createdAt", "desc")}>Newest</span>
+          <span onClick={() => onChange("price", "asc")}>{t('sort-dropdown.cheapest')}</span>
+          <span onClick={() => onChange("price", "desc")}>{t('sort-dropdown.mostExpensive')}</span>
+          <span onClick={() => onChange("createdAt", "desc")}>{t('sort-dropdown.newest')}</span>
         </div>
       )}
     </div>
