@@ -1,0 +1,71 @@
+.about-us {
+    .about-us__heading {
+        padding: 60px 300px 0 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .about-us__heading-logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+    
+    .about-us__heading-logo img{
+        width: auto;
+        height: 80px; 
+        object-fit: cover;
+    }
+    
+    .about-us__heading-text-container {
+        padding: 0 110px;
+        text-align: center;
+    }
+    
+    .about-us__heading-text-container p{
+        font-family: "Comfortaa", sans-serif;
+        font-size: 20px;
+        color: var(--text-color-black);
+    }
+    
+    .about-us__main-containers {
+        padding: 0 150px 100px 150px;
+    }
+    
+    .about-us__main-one-container {
+        margin: 120px 0;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .about-us__main-one-container img{
+        margin: 0 80px;
+        width: 500px;
+        height: 500px; 
+        object-fit: cover;
+    }
+    
+    .about-us__main-one-container-title-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .about-us__main-one-container-title-text h2 {
+        font-size: 40px;
+        font-family: "Comfortaa", sans-serif;
+        color: var(--text-color-black);
+        margin-bottom: 50px;
+    }
+    
+    .about-us__main-one-container-title-text p {
+        font-size: 16px;
+        font-family: "Comfortaa", sans-serif;
+        color: var(--text-color-black);
+        text-align: center;
+        padding: 0 80px;
+    }
+}
