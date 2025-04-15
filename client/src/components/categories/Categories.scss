@@ -20,6 +20,10 @@
             flex-wrap: wrap;
             margin-bottom: 110px;
 
+            .item-link {
+                text-decoration: none;
+            }
+
             .item {
             width: 250px;
             height: 150px;
@@ -31,6 +35,11 @@
             text-align: center;
             cursor: pointer;
             margin: 25px 0;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: translateY(-4px);
+              }
 
             img {
                 width: 50px;
@@ -44,8 +53,10 @@
                 transition: all .3s ease;
             }
 
-            span {
+            .item-title {
                 font-weight: 300;
+                text-decoration: none;
+                color: #000000;
             }
 
             &:hover{

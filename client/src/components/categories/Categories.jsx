@@ -1,102 +1,33 @@
 import React from "react";
 import "./Categories.scss";
+import { Link } from "react-router-dom";
+import { categories as getCategories } from "../../data";
 import { useTranslation } from 'react-i18next';
 
 function Categories() {
     const { t } = useTranslation("categories", "data");
+    const cats = getCategories();
 
     return (
         <div className="categories">
-            <div className="explore">
-                <div className="categories-container">
-                    <h1>{t('categories.title')}</h1>
-                    <div className="items">
-                        <div className="item">
-                            <img
-                                src="../../icons/woodworking.png"
-                                alt="Category icon"
-                            />
-                            <div className="line"></div>
-                            <span>{t('woodworking.title', { ns: 'data' })}</span>
-                        </div>
-                        <div className="item">
-                            <img
-                                src="../../icons/cleaning.png"
-                                alt="Category icon"
-                            />
-                            <div className="line"></div>
-
-                            <span>{t('cleaning.title', { ns: 'data' })}</span>
-                        </div>
-                        <div className="item">
-                            <img
-                                src="../../icons/moving.png"
-                                alt="Category icon"
-                            />
-                            <div className="line"></div>
-                            <span>{t('moving.title', { ns: 'data' })}</span>
-                        </div>
-                            <div className="item">
-                            <img
-                                src="../../icons/houseRepair.png"
-                                alt="Category icon"
-                            />
-                            <div className="line"></div>
-                            <span>{t('houseRepair.title', { ns: 'data' })}</span>
-                        </div>
-                        <div className="item">
-                            <img
-                                src="../../icons/gardening.png"
-                                alt="Category icon"
-                            />
-                            <div className="line"></div>
-                            <span>{t('gardening.title', { ns: 'data' })}</span>
-                        </div>
-                        <div className="item">
-                            <img
-                                src="../../icons/makeup.png"
-                                alt="Category icon"
-                            />
-                            <div className="line"></div>
-                            <span>{t('makeup.title', { ns: 'data' })}</span>
-                        </div>
-                        <div className="item">
-                            <img
-                                src="../../icons/homeDesign.png"
-                                alt="Category icon"
-                            />
-                            <div className="line"></div>
-                            <span>{t('homeDesign.title', { ns: 'data' })}</span>
-                        </div>
-                        <div className="item">
-                            <img
-                                src="../../icons/childCare.png"
-                                alt="Category icon"
-                            />
-                            <div className="line"></div>
-                            <span>{t('childCare.title', { ns: 'data' })}</span>
-                        </div>
-                        <div className="item">
-                            <img
-                                src="../../icons/technicalServices.png"
-                                alt="Category icon"
-                            />
-                            <div className="line"></div>
-                            <span>{t('technicalServices.title', { ns: 'data' })}</span>
-                        </div>
-                        <div className="item">
-                            <img
-                                src="../../icons/cooking.png"
-                                alt="Category icon"
-                            />
-                            <div className="line"></div>
-                            <span>{t('cooking.title', { ns: 'data' })}</span>
-                        </div>
+          <div className="explore">
+            <div className="categories-container">
+              <h1>{t("categories.title")}</h1>
+              <div className="items">
+                {cats.map((cat) => (
+                  <Link to={`/gigs?cat=${cat.key}`} key={cat.key} className="item-link">
+                    <div className="item">
+                      <img src={cat.icon} alt="Category icon" />
+                      <div className="line"></div>
+                      <span className="item-title">{cat.title}</span>
                     </div>
-                </div>
+                  </Link>
+                ))}
+              </div>
             </div>
+          </div>
         </div>
-    );
-}
+      );
+    }
 
 export default Categories;
