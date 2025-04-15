@@ -1,13 +1,18 @@
 import React from "react";
 import "./Gig.scss";
 import { Slider } from "infinite-react-carousel/lib";
-import { Link, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import Reviews from "../../components/reviews/Reviews";
+import getCurrentUser from "../../utils/getCurrentUser";
+import { useTranslation } from 'react-i18next';
 
 function Gig() {
+  const { t } = useTranslation("gig");
   const { id } = useParams();
+
+  const currentUser = getCurrentUser();
 
   const { isLoading, error, data } = useQuery({
     queryKey: ["gig"],
@@ -31,6 +36,18 @@ function Gig() {
       }),
     enabled: !!userId,
   });
+
+  const navigate = useNavigate();
+
+  const handleHire = async (gigId) => {
+    try {
+      await newRequest.post("/orders", { gigId });
+      navigate("/orders");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  
 
   if (isLoading) return <p>Loading...</p>;
 
@@ -80,7 +97,7 @@ function Gig() {
                 ))}
               </Slider>
             )}
-            <h2>About This Gig</h2>
+            <h2>{t('gig.aboutService')}</h2>
             <p>{data.desc}</p>
             {isLoadingUser ? (
               "loading"
@@ -88,7 +105,7 @@ function Gig() {
               "Something went wrong!"
             ) : (
               <div className="seller">
-                <h2>About The Seller</h2>
+                <h2>{t('gig.aboutSeller')}</h2>
                 <div className="gig__user-box">
                   <div className="box-left-container">
                     <img src={dataUser.img || "../../img/noavatar.jpg"} alt="" />
@@ -140,7 +157,7 @@ function Gig() {
             <div className="details">
               <div className="item">
                 <img src="../../img/clock.png" alt="" />
-                <span>{data.deliveryTime} Days Delivery</span>
+                <span>{data.deliveryTime} {t('gig.daysDelivery')}</span>
               </div>
               <div className="item">
                 <img src="../../icons/location-service.png" alt="" />
@@ -155,9 +172,14 @@ function Gig() {
                 </div>
               ))}
             </div>
-            {/* <Link to={`/pay/${id}`}>
-            <button>Continue</button>
-            </Link> */}
+            {!currentUser.isSeller && (
+              <button
+              className="hire-red-button"
+              onClick={() => handleHire(data._id)}
+            >
+              {t('gig.hireButton')}
+            </button>
+            )}
           </div>
         </div>
       )}
