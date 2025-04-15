@@ -1,0 +1,78 @@
+.home-tasker__intro {
+    font-family: "Comfortaa", sans-serif;
+    justify-content: flex-end;
+    background-color: #ffffff;
+    width: 1400px;
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+}
+
+.home-tasker__intro-text-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding-left: 80px;
+}
+
+.home-tasker__intro-title {
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 15px;
+    width: 500px;
+}
+
+.home-tasker__intro-text {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.home-tasker__red-button {
+    margin-top: 20px;
+    align-self: flex-start;
+    align-items: center;
+    background-color: #800000;
+    border-radius: 100px;
+    box-sizing: border-box;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #800000;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: normal;
+    justify-content: center;
+    color: #ffffff;
+    width: 260px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 5px 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    text-decoration: none;
+  }
+  .home-tasker__red-button:hover,
+  .home-tasker__red-button:focus { 
+      background-color: #ffffff;
+      transition: background-color 0.5s;
+      color: #000000;
+  }
+
+.home-tasker__intro-image-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 35px 35px 35px 50px;
+}
+
+.home-tasker__intro-image-container img {
+    width: 500px;
+    height: 600px; 
+    object-fit: cover;
+}

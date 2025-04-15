@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./IntroUnregistred.scss";
 import { useTranslation } from 'react-i18next';
 
@@ -30,8 +31,12 @@ function IntroUnregistred() {
             {t('introUnregistred.aboutThirdLine')}
           </p>
           <div className="buttons">
-          <button className="red-button button-try-now">{t('introUnregistred.buttonTryNow')}</button>
-          <button className="white-button">{t('introUnregistred.buttonLearnMore')}</button>
+            <Link className="link" to="/pre-register">
+              <button className="red-button button-try-now">{t('introUnregistred.buttonTryNow')}</button>
+            </Link>
+            <Link className="link" to="/about-us">
+              <button className="white-button">{t('introUnregistred.buttonLearnMore')}</button>
+            </Link>
           </div>
         </div>
       </div>
