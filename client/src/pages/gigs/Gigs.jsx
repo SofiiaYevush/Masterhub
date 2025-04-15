@@ -6,8 +6,10 @@ import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import { useLocation } from "react-router-dom";
 import { categories as getCategories } from "../../data";
+import { useTranslation } from 'react-i18next';
 
 function Gigs() {
+  const { t } = useTranslation("gigs");
   const [sort, setSort] = useState("sales");
   const [setOpen] = useState(false);
   const [setFiltersVisible] = useState(false);
@@ -60,7 +62,7 @@ function Gigs() {
           <p className="services-description">{category ? category.desc : "Browse various gigs and services."}</p> 
           <div className="menu">
             <div className="left">
-              <span className="filter-price-title">Price: </span>
+              <span className="filter-price-title">{t('gigs.price')}</span>
               <div className="filter-price-inputs">
                 <input className="filter-price-input" ref={minRef} type="number" placeholder="min" />
                 <input className="filter-price-input" ref={maxRef} type="number" placeholder="max" />
