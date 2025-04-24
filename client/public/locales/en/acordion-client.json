@@ -1,0 +1,20 @@
+{
+    "acordion-client": {
+      "title": "Frequently Asked Questions",
+      "question1": "Where to find a tasker?",
+      "answer1": "You can find a tasker in the 'Categories' section. Select the appropriate category, and then browse the available taskers who offer relevant services.",
+      
+      "question2": "How to know the cost of a service?",
+      "answer2": "The cost of the service will be indicated in the advertisement. You can check the price before contacting the tasker.",
+      
+      "question3": "What if I need a budget-friendly tasker?",
+      "answer3": "You can use filters to sort the advertisements based on your budget. This way, you can find taskers that match your financial preferences.",
+      
+      "question4": "Where can I check the status of my order?",
+      "answer4": "You can check the status of your order in the 'My Orders' section. This will provide you with updates on the progress of your tasks.",
+      
+      "question5": "How to cancel an order?",
+      "answer5": "To cancel an order, go to the 'My Orders' section and click the 'Cancel' button next to the relevant order. Follow the prompts to confirm the cancellation."
+    }
+  }
+  

@@ -25,13 +25,16 @@
     color: #000000;
 }
 
-.sign-up__text a{
+.sign-up__text span{
     color: #000000;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-.sign-up__text a:hover{
+.sign-up__text span:hover{
     font-weight: bold;
     transition: font-weight 0.3s;
+    text-decoration: underline;
 }
 
 .sign-up__buttons {

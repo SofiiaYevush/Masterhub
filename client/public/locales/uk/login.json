@@ -1,0 +1,11 @@
+{
+    "login": {
+        "title": "Увійти",
+        "username": "Введи ім'я",
+        "password": "Введи пароль",
+        "placeholderUsername": "іванна13",
+        "submitBtn": "Увійти",
+        "firstTime": "Вперше з нами?",
+        "createAccount": "Створіть обліковий запис."
+    }
+}

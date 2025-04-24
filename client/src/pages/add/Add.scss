@@ -192,6 +192,12 @@
   flex-direction: row;
   min-width: 0px;
   gap: 3px;
+  
+  span {
+    padding-left: 10px;
+    color: #800000;
+    font-weight: 800;
+  }
 }
 
 .addedFeatures-button {

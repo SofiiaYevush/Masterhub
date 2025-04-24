@@ -1,0 +1,9 @@
+{
+    "pre-register": {
+        "createAccount": "Create an account",
+        "haveAccount": "Already have an account?",
+        "signIn": "Sign In",
+        "becomeATasker": "Become a Tasker",
+        "becomeAClient": "Become a Client"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "register": {
+        "submitBtn": "Create an account",
+        "titleTasker": "Register as Tasker",
+        "titleClient": "Register as Client",
+        "profilePicture": "Profile Picture",
+        "chooseFileHint": "choose file",
+        "userName": "UserName",
+        "userNamePlaceholder": "johnDoe13",
+        "email": "Email",
+        "password": "Password",
+        "passwordPlaceholder": "your password",
+        "country": "Country",
+        "countryPlaceholder": "Ukraine",
+        "phone": "Phone number",
+        "description": "Work experience",
+        "descriptionPlaceholder": "Add your work experience ..."
+    }
+}

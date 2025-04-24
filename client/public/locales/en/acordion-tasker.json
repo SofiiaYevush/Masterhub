@@ -1,0 +1,17 @@
+{
+    "acordion-tasker": {
+      "title": "Frequently Asked Questions",
+      "question1": "How to create an advertisement (service)?",
+      "answer1": "To create an advertisement, go to the 'Create Service' page and fill out the form, providing as much information as possible about your service: description, category, price, available services, etc. This will help clients better understand what you offer.",
+      
+      "question2": "How to contact a client?",
+      "answer2": "Once a client selects your advertisement, you will gain access to their contact details, such as email. This will allow you to get in touch to clarify the task details.",
+      
+      "question3": "Where can I check the status of my orders?",
+      "answer3": "You can check the status of your orders on the 'My Orders' page. It will display the latest updates on completed and ongoing tasks.",
+      
+      "question4": "How is payment for tasks processed?",
+      "answer4": "Payment is arranged by agreement with the client and can be made through a method convenient for you, such as payment systems or other methods agreed upon during the task execution."
+    }
+  }
+  

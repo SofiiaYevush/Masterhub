@@ -1,0 +1,12 @@
+{
+    "add": {
+        "addNewServiceTitle": "Create new service",
+        "coverImage": "Cover image",
+        "mainTitle": "Service title",
+        "mainTitlePlaceholder": "I will do something... I'm really good at...",
+        "category": "Category",
+        "selectCategory": "Select Category",
+        "serviceDescription": "Service description",
+        "serviceDescriptionPlaceholder": "Brief descriptions to introduce your service to customers..."
+    }
+}

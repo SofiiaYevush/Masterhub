@@ -5,9 +5,13 @@
         "about": "About",
         "categories": "Categories",
         "profile": "Profile",
+        "myServices": "My Services",
         "orders": "Orders",
+        "addNew": "Create Service",
         "messages": "Messages",
-        "logout": "Logout"
+        "logout": "Logout",
+        "register": "Sign up",
+        "signIn": "Sign in"
     }
 }
   

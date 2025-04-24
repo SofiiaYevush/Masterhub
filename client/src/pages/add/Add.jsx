@@ -6,8 +6,10 @@ import upload from "../../utils/upload";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 const Add = () => {
+  const { t } = useTranslation("add");
   const [singleFile, setSingleFile] = useState(undefined);
   const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
@@ -70,12 +72,11 @@ const Add = () => {
 
   return (
     <div className="add-service">
-      <h1 className="add__title">Add New Gig</h1>
+      <h1 className="add__title">{t('add.addNewServiceTitle')}</h1>
       <div className="add__container">
-        <h2 className="add__section-title">Add New Gig</h2>
         <div className="add__top-container">
           <div className="add__image-container">
-              <p className="image-title">Cover Image</p>
+              <p className="image-title">{t('add.coverImage')}</p>
               <label className="upload-box">
                 {singleFile && <img src={URL.createObjectURL(singleFile)} alt="cover" />}
                 <input
@@ -87,19 +88,19 @@ const Add = () => {
           </div>
           <div className="add__add-fields-section">
               <div className="form-title-field">
-              <label  className="form-title" htmlFor="">Title</label>
+              <label  className="form-title" htmlFor="">{t('add.mainTitle')}</label>
               <input
                 className="form-field"
                 type="text"
                 name="title"
-                placeholder="e.g. I will do something I'm really good at"
+                placeholder={t('add.mainTitlePlaceholder')}
                 onChange={handleChange}
               />
               </div>
               <div className="form-title-field">
-                <label className="form-title" htmlFor="">Category</label>
+                <label className="form-title" htmlFor="">{t('add.category')}</label>
                 <select className="form-field select-field" name="cat" id="cat" onChange={handleChange}>
-                  <option value="" disabled selected>Select category</option>
+                  <option value="" disabled selected>{t('add.selectCategory')}</option>
                   {categoriesList.map((cat) => (
                     <option key={cat.key} value={cat.key}>
                       {cat.title}
@@ -108,12 +109,12 @@ const Add = () => {
                 </select>
               </div>
               <div className="form-title-field">
-                <label className="form-title" htmlFor="">Description</label>
+                <label className="form-title" htmlFor="">{t('add.serviceDescription')}</label>
                 <textarea
                   className="form-field-description"
                   name="desc"
                   id=""
-                  placeholder="Brief descriptions to introduce your service to customers"
+                  placeholder={t('add.serviceDescriptionPlaceholder')}
                   cols="30"
                   rows="10"
                   onChange={handleChange}
@@ -177,11 +178,11 @@ const Add = () => {
               ></textarea>
             </div>
             <div className="form-title-field">
-              <label className="form-title" htmlFor="">Revision Number</label>
+              <label className="form-title" htmlFor="">My location</label>
               <input
                 className="form-field"
-                type="number"
-                name="revisionNumber"
+                type="text"
+                name="location"
                 onChange={handleChange}
               />
             </div>

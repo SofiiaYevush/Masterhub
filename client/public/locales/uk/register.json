@@ -1,0 +1,19 @@
+{
+    "register": {
+        "submitBtn": "Зареєструватись",
+        "titleTasker": "Стати виконавцем",
+        "titleClient": "Стати клієнтом",
+        "profilePicture": "Фото користувача",
+        "chooseFileHint": "завантаж фото",
+        "userName": "Ім'я користувача",
+        "userNamePlaceholder": "анна13",
+        "email": "Електронна пошта",
+        "password": "Пароль",
+        "passwordPlaceholder": "пароль",
+        "country": "Країна",
+        "countryPlaceholder": "Україна",
+        "phone": "Номер телефону",
+        "description": "Опис вашого досвіду",
+        "descriptionPlaceholder": "Я фахівець з ..."
+    }
+}

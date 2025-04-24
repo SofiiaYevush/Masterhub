@@ -1,0 +1,95 @@
+.ready-to-start {
+    margin-top: 220px;
+    background-color: #800000;
+    max-height: 800px;
+    display: flex;
+    flex-direction: row;
+}
+
+.ready-to-start__image-container {
+    display: flex;
+    justify-content: start;
+}
+
+.ready-to-start__image-container img {
+    max-width: 800px;
+    height: 600px; 
+    object-fit: cover;
+    object-position:left;
+}
+
+.ready-to-start__text-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:start;
+    padding-left: 40px;
+}
+
+.ready-to-start__title {
+    padding-bottom: 15px;
+}
+
+.ready-to-start__title h2 {
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.ready-to-start__text {
+    padding: 5px 15px 17px 0;
+    max-width: 600px;
+}
+
+.ready-to-start__text p {
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.7;
+    word-wrap: break-word;
+}
+
+.red-with-white-border-button {
+    align-items: center;
+    background-color: #800000;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #ffffff;
+    border-radius: 100px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: normal;
+    justify-content: center;
+    /*line-height: 20px;*/
+    max-width: 460px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+}
+
+.red-with-white-border-button a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.red-with-white-border-button:hover,
+.red-with-white-border-button:focus { 
+    background-color: #dddddd;
+    border-color: #ffffff;
+    transition: background-color 0.5s;
+}
+
+.red-with-white-border-button a:hover,
+.red-with-white-border-button a:focus { 
+    color: #000000;
+}

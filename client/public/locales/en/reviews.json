@@ -1,0 +1,9 @@
+{
+    "reviews": {
+        "reviewsTitle": "Cusromer Reviews",
+        "add": "Add your review",
+        "giveStars": "How many stars will you give?",
+        "placeholder": "Write your opinion...",
+        "sendButton": "Send"
+    }
+}

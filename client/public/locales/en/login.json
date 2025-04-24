@@ -1,0 +1,11 @@
+{
+    "login": {
+        "title": "Sign in",
+        "username": "Enter your username",
+        "password": "Enter your password",
+        "placeholderUsername": "john13",
+        "submitBtn": "Submit",
+        "firstTime": "First time with us?",
+        "createAccount": "Create your account."
+    }
+}

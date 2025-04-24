@@ -1,0 +1,9 @@
+{
+    "pre-register": {
+        "createAccount": "Створити акаунт",
+        "haveAccount": "Вже маєте акаунт? ",
+        "signIn": "Увійти",
+        "becomeATasker": "Стати виконавцем",
+        "becomeAClient": "Стати клієнтом"
+    }
+}

@@ -21,10 +21,10 @@ function Footer() {
             <Link className="link" to="/">
               <span>{t('footer.home')}</span>
             </Link>
-            <Link className="link" to="/">
+            <Link className="link" to="/about-us">
               <span>{t('footer.about')}</span>
             </Link>
-            <Link className="link" to="/">
+            <Link className="link" to="/categories">
               <span>{t('footer.categories')}</span>
             </Link>
           </div>
