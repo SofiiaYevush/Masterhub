@@ -31,8 +31,8 @@ export const getOrdersForUser = async (req, res, next) => {
       $or: [{ taskerId: req.userId }, { clientId: req.userId }],
     })
       .populate("gigId")
-      .populate("clientId", "username email phone")
-      .populate("taskerId", "username");
+      .populate("clientId", "username email phone img")
+      .populate("taskerId", "username img");
     
     res.status(200).json(orders);
   } catch (err) {
