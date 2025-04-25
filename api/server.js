@@ -6,6 +6,7 @@ import gigRoute from "./routes/gig.route.js";
 import orderRoute from "./routes/order.route.js";
 import reviewRoute from "./routes/review.route.js";
 import authRoute from "./routes/auth.route.js";
+import adminRoute from "./routes/admin.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
@@ -30,6 +31,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/gigs", gigRoute);
 app.use("/api/orders", orderRoute);
+app.use("/api/admin", adminRoute);
 //app.use("/api/profile", profileRoute);
 app.use("/api/reviews", reviewRoute);
 

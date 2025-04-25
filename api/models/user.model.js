@@ -22,7 +22,7 @@ const userSchema = new Schema({
   },
   country: {
     type: String,
-    required: true,
+    required: false,
   },
   phone: {
     type: String,
@@ -35,6 +35,14 @@ const userSchema = new Schema({
   isSeller: {
     type: Boolean,
     default:false
+  },
+  isBlocked: {
+    type: Boolean,
+    default: false
+  },
+  isAdmin: {
+    type: Boolean,
+    default: false
   },
 },{
   timestamps:true

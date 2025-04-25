@@ -22,6 +22,7 @@ export const login = async (req, res, next) => {
     const user = await User.findOne({ username: req.body.username });
 
     if (!user) return next(createError(404, "User not found!"));
+    if (user.isBlocked) return next(createError(403, "Account is blocked"));
 
     const isCorrect = bcrypt.compareSync(req.body.password, user.password);
     if (!isCorrect)
@@ -31,6 +32,7 @@ export const login = async (req, res, next) => {
       {
         id: user._id,
         isSeller: user.isSeller,
+        isAdmin: user.isAdmin,
       },
       process.env.JWT_KEY
     );
