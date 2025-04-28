@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./GigCard.scss";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
+import getCurrentUser from "../../utils/getCurrentUser";
+import AlertMessage from "../alert-message/AlertMessage";
 
 const GigCard = ({ item }) => {
+  const [showAlert, setShowAlert] = useState(false);
+  const navigate = useNavigate();
+  const currentUser = getCurrentUser();
+
   const { isLoading, error, data } = useQuery({
     queryKey: [item.userId],
     queryFn: () =>
@@ -12,9 +18,18 @@ const GigCard = ({ item }) => {
         return res.data;
       }),
   });
+
+  const handleClick = () => {
+    if (!currentUser) {
+      setShowAlert(true);
+    } else {
+      navigate(`/gig/${item._id}`);
+    }
+  };
+  
   return (
-    <Link to={`/gig/${item._id}`} className="link">
-      <div className="card">
+    <>
+      <div className="card" onClick={handleClick} style={{ cursor: "pointer" }}>
         <img src={item.cover} alt="" />
         <div className="card-info">
           <div className="card-info-top">
@@ -48,7 +63,14 @@ const GigCard = ({ item }) => {
           </div>
         </div>
       </div>
-    </Link>
+      {showAlert && (
+        <AlertMessage
+          message="Ви не зареєстровані для перегляду цього оголошення."
+          duration={4000}
+          onClose={() => setShowAlert(false)}
+        />
+      )}
+    </>
   );
 };
 
