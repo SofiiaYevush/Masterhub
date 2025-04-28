@@ -1,5 +1,7 @@
 import Gig from "../models/gig.model.js";
 import createError from "../utils/createError.js";
+import User from "../models/user.model.js";
+import Order from "../models/order.model.js";
 
 export const createGig = async (req, res, next) => {
   if (!req.isSeller)
@@ -51,12 +53,70 @@ export const getGigs = async (req, res, next) => {
     }),
     ...(q.search && { title: { $regex: q.search, $options: "i" } }),
   };
+
   try {
     const order = q.order === "asc" ? 1 : -1;
     const gigs = await Gig.find(filters).sort({ [q.sort]: order });
-    //const gigs = await Gig.find(filters).sort({ [q.sort]: -1 });
-    res.status(200).send(gigs);
+
+    const gigsWithDetails = await Promise.all(
+      gigs.map(async (gig) => {
+        const user = await User.findById(gig.userId).select("username location img");
+        const orders = await Order.find({ gigId: gig._id });
+    
+        const clients = await Promise.all(
+          orders.map(async (order) => {
+            const clientUser = await User.findById(order.clientId).select("username img");
+            return clientUser
+              ? { 
+                  username: clientUser.username, 
+                  img: clientUser.img,
+                  status: order.isCompleted ? "Completed" : "In progress"
+                }
+              : { 
+                  username: "Unknown", 
+                  img: null, 
+                  status: "Unknown" 
+                };
+          })
+        );
+    
+        return {
+          ...gig._doc,
+          username: user ? user.username : "Unknown",
+          userImg: user ? user.img : null,
+          location: user ? user.location : "Unknown",
+          clients: clients,
+        };
+      })
+    );    
+
+    res.status(200).json(gigsWithDetails);
   } catch (err) {
     next(err);
   }
 };
+
+
+
+// export const getGigs = async (req, res, next) => {
+//   const q = req.query;
+//   const filters = {
+//     ...(q.userId && { userId: q.userId }),
+//     ...(q.cat && { cat: q.cat }),
+//     ...((q.min || q.max) && {
+//       price: {
+//         ...(q.min && { $gt: q.min }),
+//         ...(q.max && { $lt: q.max }),
+//       },
+//     }),
+//     ...(q.search && { title: { $regex: q.search, $options: "i" } }),
+//   };
+//   try {
+//     const order = q.order === "asc" ? 1 : -1;
+//     const gigs = await Gig.find(filters).sort({ [q.sort]: order });
+//     //const gigs = await Gig.find(filters).sort({ [q.sort]: -1 });
+//     res.status(200).send(gigs);
+//   } catch (err) {
+//     next(err);
+//   }
+// };
