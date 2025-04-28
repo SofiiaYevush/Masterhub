@@ -7,6 +7,26 @@
         "category": "Category",
         "selectCategory": "Select Category",
         "serviceDescription": "Service description",
-        "serviceDescriptionPlaceholder": "Brief descriptions to introduce your service to customers..."
+        "serviceDescriptionPlaceholder": "Brief descriptions to introduce your service to customers...",
+        "images": "Images of your work",
+        "secondSectionTitle": "Hiring Application",
+        "secondSectionSubtitle": "(These details will be formatted into an application that allows the client to hire you.)",
+        "generalTitle": "General Title",
+        "generalTitlePlaceholder": "E.g. Kitchen Design",
+        "generalDesc": "General Description",
+        "generalDescPlaceholder": "Short description of your service...",
+        "location": "Location",
+        "locationPlaceholder": "E.g. Lviv",
+        "features": "Keywords",
+        "featuresPlaceholder": "E.g. design",
+        "addBtn": "Add",
+        "price": "Price (UAH)",
+        "pricePlaceholder": "E.g. 2500",
+        "deliveryTime": "Delivery Time (days)",
+        "deliveryTimePlaceholder": "E.g. 11",
+        "createBtn": "Create",
+        "uploadBtn": "Upload",
+        "uploading": "Uploading...",
+        "alertMessage": "All REQUIRED fields must be filled out."
     }
 }

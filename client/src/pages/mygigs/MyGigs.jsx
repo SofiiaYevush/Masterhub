@@ -63,8 +63,8 @@ function MyGigs() {
               <tr>
                 <th>{t('my-gigs.img')}</th>
                 <th>{t('my-gigs.title')}</th>
-                <th>{t('my-gigs.price')}</th>
-                <th>{t('my-gigs.sales')}</th>
+                <th>₴ {t('my-gigs.price')}</th>
+                <th>{t('my-gigs.date')}</th>
                 <th>{t('my-gigs.action')}</th>
               </tr>
               {data.map((gig) => (
@@ -74,7 +74,7 @@ function MyGigs() {
                   </td>
                   <td className="gig-title">{gig.title}</td>
                   <td>{gig.price}</td>
-                  <td>{gig.sales}</td>
+                  <td>{new Date(gig.createdAt).toLocaleDateString()}</td>
                   <td>
                     <img
                       className="delete"

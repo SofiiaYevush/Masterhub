@@ -6,6 +6,7 @@
         "placeholderUsername": "john13",
         "submitBtn": "Submit",
         "firstTime": "First time with us?",
-        "createAccount": "Create your account."
+        "createAccount": "Create your account.",
+        "alertMessage": "All fields must be filled out."
     }
 }

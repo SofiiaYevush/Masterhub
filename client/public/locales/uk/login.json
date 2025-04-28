@@ -6,6 +6,7 @@
         "placeholderUsername": "іванна13",
         "submitBtn": "Увійти",
         "firstTime": "Вперше з нами?",
-        "createAccount": "Створіть обліковий запис."
+        "createAccount": "Створіть обліковий запис.",
+        "alertMessage": "Усі поля мають бути заповненими."
     }
 }

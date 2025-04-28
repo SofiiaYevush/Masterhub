@@ -47,7 +47,7 @@ function AllGigs({ gigs, handleDeleteGig }) {
                                 </div>
                                 <div className="left-fields-text">
                                     <p className="service-text">{gig.cat}</p>
-                                    <p className="service-text">${gig.price}</p>
+                                    <p className="service-text">₴ {gig.price}</p>
                                     <p className="service-text">{gig.location ? gig.location : "—"}</p>
                                     <p className="service-text">{gig.deliveryTime} {t('admin.service-days')}</p>
                                     <p className="service-text">{gig.totalStars}</p>

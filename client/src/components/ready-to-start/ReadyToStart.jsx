@@ -13,7 +13,7 @@ function ReadyToStart() {
                 <div className="ready-to-start__title"><h2>{t('ready-to-start.readyToStart')}</h2></div>
                 <div className="ready-to-start__text"><p>{t('ready-to-start.description')}</p></div>
                 <div className="ready-to-start__button">
-                    <button className="red-with-white-border-button"><a href="/" target="_blank">{t('ready-to-start.signUpBtn')}</a></button>
+                    <button className="red-with-white-border-button"><a href="/pre-register">{t('ready-to-start.signUpBtn')}</a></button>
                 </div>
             </div>
         </div>

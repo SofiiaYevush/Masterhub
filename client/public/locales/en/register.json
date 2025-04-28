@@ -14,6 +14,7 @@
         "countryPlaceholder": "Ukraine",
         "phone": "Phone number",
         "description": "Work experience",
-        "descriptionPlaceholder": "Add your work experience ..."
+        "descriptionPlaceholder": "Add your work experience ...",
+        "alertMessage": "All REQUIRED fields must be filled out."
     }
 }

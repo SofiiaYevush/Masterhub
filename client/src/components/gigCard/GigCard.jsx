@@ -5,8 +5,10 @@ import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import getCurrentUser from "../../utils/getCurrentUser";
 import AlertMessage from "../alert-message/AlertMessage";
+import { useTranslation } from 'react-i18next';
 
 const GigCard = ({ item }) => {
+  const { t } = useTranslation("gig-card");
   const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate();
   const currentUser = getCurrentUser();
@@ -47,11 +49,11 @@ const GigCard = ({ item }) => {
           </div>
           <div className="card-info-bottom">
             <div className="card-price">
-              <span className="card-label">Price:</span>
-              <h2 className="price">$ {item.price}</h2>
+              <span className="card-label">{t("gig-card.price")}:</span>
+              <h2 className="price">₴ {item.price}</h2>
             </div>
             <div className="card-date">
-              <span className="card-label">Created:</span>
+              <span className="card-label">{t("gig-card.created")}:</span>
               <span className="date">
                 {new Date(item.createdAt).toLocaleString("en-GB", {
                   day: "2-digit",

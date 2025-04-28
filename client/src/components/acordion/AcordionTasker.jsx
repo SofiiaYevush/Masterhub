@@ -15,7 +15,7 @@ function AcordionTasker() {
       <div className="accordion-title">
         <h1>{t(`acordion-tasker.title`)}</h1>
       </div>
-      {[1, 2, 3, 4].map((num) => (
+      {[1, 2, 3, 4, 5].map((num) => (
         <Accordion key={num} className="accordion-item">
           <AccordionSummary
             expandIcon={<ExpandMoreIcon className="accordion-icon" />}

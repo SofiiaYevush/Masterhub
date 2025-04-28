@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import "./Login.scss";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
+import AlertMessage from "../../components/alert-message/AlertMessage";
 import { useTranslation } from 'react-i18next';
 
 function Login() {
   const { t } = useTranslation("login");
+  const [showAlert, setShowAlert] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -26,7 +28,8 @@ function Login() {
         navigate("/");
       }    
     } catch (err) {
-      setError(err.response.data);
+      console.error("Failed to login:", err);
+      setShowAlert(true);
     }
   };
 
@@ -62,6 +65,13 @@ function Login() {
       <div className="sign-in__create-account container">
         <p>{t('login.firstTime')} <Link className="link" to="/pre-register"> <span>{t('login.createAccount')}</span></Link></p>
       </div>
+      {showAlert && (
+        <AlertMessage
+          message={t('login.alertMessage')}
+          duration={4000}
+          onClose={() => setShowAlert(false)}
+        />
+      )}
     </div>
   );
 }

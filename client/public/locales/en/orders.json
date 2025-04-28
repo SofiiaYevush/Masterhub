@@ -1,0 +1,21 @@
+{
+    "orders": {
+        "confirmCancel": "Are you sure you want to cancel this order?",
+        "confirmComplete": "Mark this order as complete?",
+        "loading": "Loading...",
+        "errorLoading": "Error loading orders.",
+        "myOrders": "My Orders",
+        "myServices": "Applications for My Services",
+        "noOrders": "No applications yet.",
+        "orderDate": "Order Date",
+        "price": "Price",
+        "location": "Location",
+        "cancelOrder": "Cancel",
+        "completeOrder": "Complete",
+        "completed": "✅ Completed",
+        "inProgress": "🕒 In progress...",
+        "status": "Status",
+        "client": "Client",
+        "tasker": "Tasker"
+    }
+}

@@ -3,10 +3,12 @@ import upload from "../../utils/upload";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
 import "./RegisterTasker.scss";
+import AlertMessage from "../../components/alert-message/AlertMessage";
 import { useTranslation } from 'react-i18next';
 
 function RegisterTasker() {
     const { t } = useTranslation("register");
+    const [showAlert, setShowAlert] = useState(false);
     const [file, setFile] = useState(null);
     const [user, setUser] = useState({
         username: "",
@@ -35,7 +37,8 @@ function RegisterTasker() {
         });
         navigate("/");
         } catch (err) {
-        console.log(err);
+            console.error("Failed to register:", err);
+            setShowAlert(true);
         }
     };
 
@@ -73,7 +76,7 @@ function RegisterTasker() {
                     </div>
 
                 <div className="form-title-field">
-                    <label className="form-title" htmlFor="">{t("register.userName")}</label>
+                    <label className="form-title" htmlFor="">{t("register.userName")} <span className="required-star">*</span></label>
                     <input
                         className="form-field"
                         name="username"
@@ -83,7 +86,7 @@ function RegisterTasker() {
                     />
                 </div>
                 <div className="form-title-field">
-                    <label className="form-title" htmlFor="">{t("register.email")}</label>
+                    <label className="form-title" htmlFor="">{t("register.email")} <span className="required-star">*</span></label>
                     <input
                         className="form-field"
                         name="email"
@@ -93,7 +96,7 @@ function RegisterTasker() {
                     />
                 </div>
                 <div className="form-title-field">
-                    <label className="form-title" htmlFor="">{t("register.password")}</label>
+                    <label className="form-title" htmlFor="">{t("register.password")} <span className="required-star">*</span></label>
                     <input className="form-field" name="password" type="password" placeholder={t("register.passwordPlaceholder")} onChange={handleChange} />
                 </div>
                 <div className="form-title-field">
@@ -107,7 +110,7 @@ function RegisterTasker() {
                     />
                 </div>
                 <div className="form-title-field">
-                    <label className="form-title" htmlFor="">{t("register.phone")}</label>
+                    <label className="form-title" htmlFor="">{t("register.phone")} <span className="required-star">*</span></label>
                     <input
                         className="form-field"
                         name="phone"
@@ -117,7 +120,7 @@ function RegisterTasker() {
                     />
                 </div>
                 <div className="form-title-field">
-                    <label className="form-title" htmlFor="">{t("register.description")}</label>
+                    <label className="form-title" htmlFor="">{t("register.description")} <span className="required-star">*</span></label>
                     <textarea
                         className="form-field-description"
                         placeholder={t("register.descriptionPlaceholder")}
@@ -132,6 +135,13 @@ function RegisterTasker() {
                     <button className="submit-white-button" type="submit">{t('register.submitBtn')}</button>
                 </div>
             </form>
+            {showAlert && (
+                <AlertMessage
+                    message={t('register.alertMessage')}
+                    duration={4000}
+                    onClose={() => setShowAlert(false)}
+                />
+            )}
         </div>
     );
 }

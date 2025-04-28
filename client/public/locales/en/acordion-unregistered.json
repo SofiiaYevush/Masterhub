@@ -1,15 +1,15 @@
 {
     "acordion-unregistered": {
-        "title": "Frequently asked questions",
-        "question1": "How do I register on the site and start using it?",
-        "answer1": "To register on our website, you need to click the 'Register' button on the main page and enter the required information. After that, you can create a profile and start using our services.",
-        "question2": "How do I create a task to complete?",
-        "answer2": "To create a task, you need to log in to your account, go to the 'Create Task' page, and fill in the required task information, including description, category, and budget.",
-        "question3": "How to find suitable specialists to perform tasks?",
-        "answer3": "On our site, you can use search filters and categories to find professionals who meet your needs. You can also view professional profiles and reviews.",
-        "question4": "How to check the reputation and experience of specialists?",
-        "answer4": "On our website, you can view ratings and reviews of professionals’ profiles, as well as their portfolios and past work. This will help you assess their reputation and experience.",
-        "question5": "How to ensure the safety and quality of task performance?",
-        "answer5": "We recommend that users establish detailed terms of agreement before starting work, including completion time, payment, and other details. It is also important to provide feedback during the task to ensure high quality work."
+        "title": "Frequently Asked Questions",
+        "question1": "How to register on the site and start using it?",
+        "answer1": "To register on our site, you need to click the 'Try Now' button on the homepage and enter the required information. After that, you will be able to create a profile and start using our services.",
+        "question2": "How to create an advertisement?",
+        "answer2": "To create an advertisement, you need to log into your account as a service provider, go to the 'Create Service' page, and fill out the required information, including description, category, cost, etc.",
+        "question3": "How to find suitable professionals to complete tasks?",
+        "answer3": "On our site, you can use the 'Categories' section, where relevant ads will be listed. There you will find all the necessary information about the professional and reviews about their work.",
+        "question4": "How to apply for a desired advertisement?",
+        "answer4": "In the 'Categories' section, go to the selected advertisement. To the right of it, an application form with the 'Hire this worker' button will be automatically generated. By clicking it, you will be automatically redirected to the 'My Orders' section, where the status of your application will be 'In Progress'. Then, wait for the service provider to contact you.",
+        "question5": "How to ensure security and quality of task execution?",
+        "answer5": "We recommend that users set clear terms of the agreement before starting the work, including deadlines, payment, and other details. It is also important to maintain feedback during task execution to ensure high-quality work."
     }
 }

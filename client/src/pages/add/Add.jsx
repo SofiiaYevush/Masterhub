@@ -6,10 +6,12 @@ import upload from "../../utils/upload";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
+import AlertMessage from "../../components/alert-message/AlertMessage";
 import { useTranslation } from 'react-i18next';
 
 const Add = () => {
   const { t } = useTranslation("add");
+  const [showAlert, setShowAlert] = useState(false);
   const [singleFile, setSingleFile] = useState(undefined);
   const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
@@ -66,6 +68,7 @@ const Add = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     mutation.mutate(state);
+    setShowAlert(true);
   };
 
   const categoriesList = categories();
@@ -76,19 +79,35 @@ const Add = () => {
       <div className="add__container">
         <div className="add__top-container">
           <div className="add__image-container">
-              <p className="image-title">{t('add.coverImage')}</p>
-              <label className="upload-box">
-                {singleFile && <img src={URL.createObjectURL(singleFile)} alt="cover" />}
-                <input
-                  type="file"
-                  onChange={(e) => setSingleFile(e.target.files[0])}
-                />
-                {!singleFile && <div className="empty empty-top">+</div>}
-              </label>
+          <div className="top-image-container">
+            <p className="image-title">{t('add.images')}</p>
+              {files.map((file, idx) => (
+                <label className="upload-box" key={idx}>
+                  <img src={URL.createObjectURL(file)} alt={`img-${idx}`} />
+                  <input
+                    type="file"
+                    onChange={(e) => {
+                      const updatedFiles = [...files];
+                      updatedFiles[idx] = e.target.files[0];
+                      setFiles(updatedFiles);
+                    }}
+                  />
+                </label>
+              ))}
+            </div>
+            <label className="upload-box empty">
+              <input
+                type="file"
+                multiple
+                onChange={(e) => {
+                  setFiles((prev) => [...prev, ...Array.from(e.target.files)]);
+                }}
+              />
+            </label>
           </div>
           <div className="add__add-fields-section">
               <div className="form-title-field">
-              <label  className="form-title" htmlFor="">{t('add.mainTitle')}</label>
+              <label  className="form-title" htmlFor="">{t('add.mainTitle')} <span className="required-star">*</span></label>
               <input
                 className="form-field"
                 type="text"
@@ -98,7 +117,7 @@ const Add = () => {
               />
               </div>
               <div className="form-title-field">
-                <label className="form-title" htmlFor="">{t('add.category')}</label>
+                <label className="form-title" htmlFor="">{t('add.category')} <span className="required-star">*</span></label>
                 <select className="form-field select-field" name="cat" id="cat" onChange={handleChange}>
                   <option value="" disabled selected>{t('add.selectCategory')}</option>
                   {categoriesList.map((cat) => (
@@ -109,7 +128,7 @@ const Add = () => {
                 </select>
               </div>
               <div className="form-title-field">
-                <label className="form-title" htmlFor="">{t('add.serviceDescription')}</label>
+                <label className="form-title" htmlFor="">{t('add.serviceDescription')} <span className="required-star">*</span></label>
                 <textarea
                   className="form-field-description"
                   name="desc"
@@ -122,80 +141,66 @@ const Add = () => {
               </div>
           </div>
         </div>
-        <h2 className="add__section-title">Add New Gig</h2>
+        <h2 className="add__section-title">{t('add.secondSectionTitle')}</h2>
+        <h3 className="add__section-subtitle">{t('add.secondSectionSubtitle')}</h3>
         <div className="add__bottom-container">
           <div className="add__image-container">
-            <div className="image-container">
-                <p className="image-title">Images of your work</p>
-                {files.map((file, idx) => (
-                  <label className="upload-box" key={idx}>
-                    <img src={URL.createObjectURL(file)} alt={`img-${idx}`} />
-                    <input
-                      type="file"
-                      onChange={(e) => {
-                        const updatedFiles = [...files];
-                        updatedFiles[idx] = e.target.files[0];
-                        setFiles(updatedFiles);
-                      }}
-                    />
-                  </label>
-                ))}
-            </div>
-            <label className="upload-box empty">
+          <p className="image-title">{t('add.coverImage')} <span className="required-star">*</span></p>
+              <label className="upload-box">
+                {singleFile && <img src={URL.createObjectURL(singleFile)} alt="cover" />}
                 <input
                   type="file"
-                  multiple
-                  onChange={(e) => {
-                    setFiles((prev) => [...prev, ...Array.from(e.target.files)]);
-                  }}
+                  onChange={(e) => setSingleFile(e.target.files[0])}
                 />
-            </label>
+                {!singleFile && <div className="empty empty-top">+</div>}
+              </label>
             <button className="add__white-button" onClick={handleUpload}>
-              {uploading ? "uploading" : "Upload"}
+              {uploading ? t('add.uploading') : t('add.uploadBtn')}
             </button>
           </div>
           <div className="add__add-fields-section">
             <div className="form-title-field">
-              <label className="form-title" htmlFor="">Service Title</label>
+              <label className="form-title" htmlFor="">{t('add.generalTitle')} <span className="required-star">*</span></label>
               <input
                 className="form-field"
                 type="text"
                 name="shortTitle"
-                placeholder="e.g. One-page web design"
+                placeholder={t('add.generalTitlePlaceholder')}
                 onChange={handleChange}
               />
             </div>
             <div className="form-title-field">
-              <label className="form-title" htmlFor="">Short Description</label>
+              <label className="form-title" htmlFor="">{t('add.generalDesc')} <span className="required-star">*</span></label>
               <textarea
                 className="form-field-description"
                 name="shortDesc"
                 onChange={handleChange}
                 id=""
-                placeholder="Short description of your service"
+                placeholder={t('add.generalDescPlaceholder')}
                 cols="30"
                 rows="10"
               ></textarea>
             </div>
             <div className="form-title-field">
-              <label className="form-title" htmlFor="">My location</label>
+              <label className="form-title" htmlFor="">{t('add.location')} <span className="required-star">*</span></label>
               <input
                 className="form-field"
                 type="text"
                 name="location"
+                placeholder={t('add.locationPlaceholder')}
                 onChange={handleChange}
               />
             </div>
             <div className="form-title-field">
-              <label className="form-title" htmlFor="">Add Features</label>
+              <label className="form-title" htmlFor="">{t('add.features')}</label>
               <form action="" className="add" onSubmit={handleFeature}>
                 <div className="form-feature-field-button">
                   <input
                     className="form-field form-field-feature"
                     type="text"
-                    placeholder="e.g. page design"
+                    placeholder={t('add.featuresPlaceholder')}
                   />
-                  <button className="form-feature-button" type="submit">add</button>
+                  <button className="form-feature-button" type="submit">{t('add.addBtn')}</button>
                 </div>
               </form>
               <div className="addedFeatures">
@@ -216,28 +221,37 @@ const Add = () => {
             </div>
             <div className="form-short-section">
               <div className="form-title-field">
-                <label className="form-title"  htmlFor="">Price</label>
+                <label className="form-title"  htmlFor="">{t('add.price')} <span className="required-star">*</span></label>
                 <input
                   className="form-field form-field-short"
                   type="number"
                   onChange={handleChange}
                   name="price"
+                  placeholder={t('add.pricePlaceholder')}
                 />
               </div>
               <div className="form-title-field">
-                <label className="form-title" htmlFor="">Delivery Time (e.g. 3 days)</label>
+                <label className="form-title" htmlFor="">{t('add.deliveryTime')} <span className="required-star">*</span></label>
                 <input
                   className="form-field form-field-short"
                   type="number"
                   name="deliveryTime"
                   onChange={handleChange}
+                  placeholder={t('add.deliveryTimePlaceholder')}
                 />
               </div>
             </div>
           </div>
         </div>
-        <button className="add__red-button" onClick={handleSubmit}>Create</button>
+        <button className="add__red-button" onClick={handleSubmit}>{t('add.createBtn')}</button>
       </div>
+      {showAlert && (
+        <AlertMessage
+          message={t('add.alertMessage')}
+          duration={4000}
+           onClose={() => setShowAlert(false)}
+        />
+      )}
     </div>
   )
 }

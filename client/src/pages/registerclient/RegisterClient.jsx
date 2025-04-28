@@ -3,10 +3,12 @@ import upload from "../../utils/upload";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
 import "./RegisterClient.scss";
+import AlertMessage from "../../components/alert-message/AlertMessage";
 import { useTranslation } from 'react-i18next';
 
 function RegisterClient() {
     const { t } = useTranslation("register");
+    const [showAlert, setShowAlert] = useState(false);
     const [file, setFile] = useState(null);
     const [user, setUser] = useState({
         username: "",
@@ -33,7 +35,8 @@ function RegisterClient() {
         });
         navigate("/");
         } catch (err) {
-        console.log(err);
+            console.error("Failed to register:", err);
+            setShowAlert(true);
         }
     };
 
@@ -71,7 +74,7 @@ function RegisterClient() {
             </div>
 
             <div className="form-title-field">
-                <label className="form-title" htmlFor="">{t("register.userName")}</label>
+                <label className="form-title" htmlFor="">{t("register.userName")} <span className="required-star">*</span></label>
                 <input
                     className="form-field"
                     name="username"
@@ -81,7 +84,7 @@ function RegisterClient() {
                 />
             </div>
             <div className="form-title-field">
-                <label className="form-title" htmlFor="">{t("register.email")}</label>
+                <label className="form-title" htmlFor="">{t("register.email")} <span className="required-star">*</span></label>
                 <input
                     className="form-field"
                     name="email"
@@ -91,7 +94,7 @@ function RegisterClient() {
                 />
             </div>
             <div className="form-title-field">
-                <label className="form-title" htmlFor="">{t("register.password")}</label>
+                <label className="form-title" htmlFor="">{t("register.password")} <span className="required-star">*</span></label>
                 <input className="form-field" name="password" type="password" placeholder={t("register.passwordPlaceholder")} onChange={handleChange} />
             </div>
             <div className="form-title-field">
@@ -108,6 +111,13 @@ function RegisterClient() {
                 <button className="submit-white-button" type="submit">{t('register.submitBtn')}</button>
             </div>
         </form>
+        {showAlert && (
+            <AlertMessage
+                message={t('register.alertMessage')}
+                duration={4000}
+                onClose={() => setShowAlert(false)}
+            />
+        )}
         </div>
     );
 }
