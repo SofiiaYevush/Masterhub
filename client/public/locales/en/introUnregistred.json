@@ -1,11 +1,11 @@
 {
     "introUnregistred": {
-        "titleTop": "Text",
-        "titleBottom": "Text",
+        "titleTop": "Share, Connect &",
+        "titleBottom": "Enjoy",
         "placeholder": "Type a text",
-        "aboutFirstLine": "Text Text Text Text Text Text Text Text.",
-        "aboutSecondLine": "Text Text Text Text Text Text Text Text.",
-        "aboutThirdLine": "Text Text Text Text Text Text Text Text.",
+        "aboutFirstLine": "Share your expertise to those who need it.",
+        "aboutSecondLine": "Connect with experts to accomplish goals together.",
+        "aboutThirdLine": "Enjoy the results of collaboration as you build connections and achieve more.",
         "buttonTryNow": "Try Now",
         "buttonLearnMore": "Learn More",
         "search": "Serch"
