@@ -26,11 +26,11 @@ const userSchema = new Schema({
   },
   phone: {
     type: String,
-    required: false,
+    required: true,
   },
   desc: {
     type: String,
-    required: false,
+    required: true,
   },
   isSeller: {
     type: Boolean,

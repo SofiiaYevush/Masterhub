@@ -32,7 +32,7 @@ export const getOrdersForUser = async (req, res, next) => {
     })
       .populate("gigId")
       .populate("clientId", "username email phone img")
-      .populate("taskerId", "username img");
+      .populate("taskerId", "username img phone");
     
     res.status(200).json(orders);
   } catch (err) {
