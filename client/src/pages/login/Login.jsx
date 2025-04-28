@@ -17,8 +17,14 @@ function Login() {
     e.preventDefault();
     try {
       const res = await newRequest.post("/auth/login", { username, password });
-      localStorage.setItem("currentUser", JSON.stringify(res.data));
-      navigate("/")
+      if (res.data.isAdmin) {
+        localStorage.setItem("currentUser", JSON.stringify(res.data));
+        navigate("/admin-dashboard");
+        window.location.reload();
+      } else {
+        localStorage.setItem("currentUser", JSON.stringify(res.data));
+        navigate("/");
+      }    
     } catch (err) {
       setError(err.response.data);
     }

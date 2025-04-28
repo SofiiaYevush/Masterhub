@@ -17,21 +17,29 @@ import Orders from "./pages/orders/Orders";
 import Profile from "./pages/profile/Profile";
 import MyGigs from "./pages/myGigs/MyGigs";
 import Categories from "./pages/categories/Categories";
+import AdminDashboard from "./pages/admin/AdminDashboard";
 import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
 
+import getCurrentUser from "./utils/getCurrentUser";
+
 function App() {
   const queryClient = new QueryClient();
 
   const Layout = () => {
+    const currentUser = getCurrentUser();
     return (
       <div className="app">
         <QueryClientProvider client={queryClient}>
-          <Navbar />
+          {!currentUser?.isAdmin && (
+            <Navbar />
+          )}
           <Outlet />
-          <Footer />
+          {!currentUser?.isAdmin && (
+            <Footer />
+          )}
         </QueryClientProvider>
       </div>
     );
@@ -85,6 +93,10 @@ function App() {
         {
           path: "/login",
           element: <Login />,
+        },
+        {
+          path: "/admin-dashboard",
+          element: <AdminDashboard />,
         },
         {
           path: "/profile",

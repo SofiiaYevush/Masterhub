@@ -1,0 +1,108 @@
+.all-users {
+    &__table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 20px 0;
+      background-color: #fff;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border: 0;
+      border-radius: 17px;
+
+      thead {
+        background-color: #222;
+        border-radius: 17px;
+  
+        tr {
+          th {
+            padding: 12px 20px;
+            text-align: left;
+            color: #fff;
+            background-color: #e6dedd;
+            color: #000000;
+  
+            &:first-child {
+              border-top-left-radius: 17px;
+            }
+  
+            &:last-child {
+              border-top-right-radius: 17px;
+            }
+          }
+        }
+      }
+  
+      th, td {
+        padding: 12px 20px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        color: #000000;
+        font-size: 17px;
+
+        .blocked-field {
+            display: flex;
+            justify-content: center;
+            padding: 6px 12px;
+            border: none;
+            cursor: pointer;
+            color: #000000;
+            background-color: #ffd3b6;
+            border-radius: 100px;
+            width: 142px;
+        }
+
+        .active-field {
+            display: flex;
+            justify-content: center;
+            padding: 6px 12px;
+            border: none;
+            cursor: pointer;
+            color: #000000;
+            background-color: #cef0b9;
+            border-radius: 100px;
+            width: 142px;
+        }
+      }
+  
+      tr:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+    }
+  
+    &__avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  
+    &__block-btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #fff;
+      transition: background 0.3s;
+  
+      &.block {
+        background-color: #761a1a;
+        border-radius: 100px;
+        width: 162px;
+  
+        &:hover {
+          background-color: #c82333;
+        }
+      }
+  
+      &.unblock {
+        background-color: #761a1a;
+        border-radius: 100px;
+        width: 162px;
+  
+        &:hover {
+          background-color: #218838;
+        }
+      }
+    }
+  }
+  
