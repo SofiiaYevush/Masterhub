@@ -8,7 +8,7 @@ export const categories = () => {
     id: 1,
     title: t('woodworking.title'),
     desc: t('woodworking.desc'),
-    img: "https://images.pexels.com/photos/7532110/pexels-photo-7532110.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    img: "../../img/woodworking.jpg",
     key: "woodworking",
     icon: "../../icons/woodworking.png"
   },
@@ -16,7 +16,7 @@ export const categories = () => {
     id: 2,
     title: t('cleaning.title'),
     desc: t('cleaning.desc'),
-    img: "https://images.pexels.com/photos/11295165/pexels-photo-11295165.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    img: "../../img/cleaning.jpg",
     key: "cleaning",
     icon: "../../icons/cleaning.png"
   },
@@ -24,7 +24,7 @@ export const categories = () => {
     id: 3,
     title: t('moving.title'),
     desc: t('moving.desc'),
-    img: "https://images.pexels.com/photos/4371669/pexels-photo-4371669.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    img: "../../img/moving.jpg",
     key: "moving",
     icon: "../../icons/moving.png"
   },
@@ -32,7 +32,7 @@ export const categories = () => {
     id: 4,
     title: t('houseRepair.title'),
     desc: t('houseRepair.desc'),
-    img: "https://images.pexels.com/photos/7608079/pexels-photo-7608079.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    img: "../../img/house-repair.jpg",
     key: "houseRepair",
     icon: "../../icons/houseRepair.png"
   },
@@ -40,7 +40,7 @@ export const categories = () => {
     id: 5,
     title: t('gardening.title'),
     desc: t('gardening.desc'),
-    img: "https://images.pexels.com/photos/13388047/pexels-photo-13388047.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    img: "../../img/gardening.jpg",
     key: "gardening",
     icon: "../../icons/gardening.png"
   },
@@ -48,7 +48,7 @@ export const categories = () => {
     id: 6,
     title: t('homeDesign.title'),
     desc: t('homeDesign.desc'),
-    img: "https://images.pexels.com/photos/4820241/pexels-photo-4820241.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    img: "../../img/home-design.jpg",
     key: "homeDesign",
     icon: "../../icons/homeDesign.png"
   },
@@ -56,7 +56,7 @@ export const categories = () => {
     id: 7,
     title: t('childCare.title'),
     desc: t('childCare.desc'),
-    img: "https://images.pexels.com/photos/15032623/pexels-photo-15032623.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    img: "../../img/child-care.jpeg",
     key: "childCare",
     icon: "../../icons/childCare.png"
   },
@@ -64,7 +64,7 @@ export const categories = () => {
     id: 8,
     title: t('cooking.title'),
     desc: t('cooking.desc'),
-    img: "https://images.pexels.com/photos/15032623/pexels-photo-15032623.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    img: "../../img/cooking.jpg",
     key: "cooking",
     icon: "../../icons/cooking.png"
   },
@@ -72,7 +72,7 @@ export const categories = () => {
     id: 9,
     title: t('technicalServices.title'),
     desc: t('technicalServices.desc'),
-    img: "https://images.pexels.com/photos/15032623/pexels-photo-15032623.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    img: "../../img/technical-services.jpg",
     key: "technicalServices",
     icon: "../../icons/technicalServices.png"
   },
@@ -80,7 +80,7 @@ export const categories = () => {
     id: 10,
     title: t('makeup.title'),
     desc: t('makeup.desc'),
-    img: "https://images.pexels.com/photos/15032623/pexels-photo-15032623.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    img: "../../img/makeup.jpg",
     key: "makeup",
     icon: "../../icons/makeup.png"
   },
