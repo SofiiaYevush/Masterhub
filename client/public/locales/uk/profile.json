@@ -1,0 +1,28 @@
+{
+    "profile": {
+        "selectPhotoBtn": "Змінити",
+        "profileTitle": "Мій профіль",
+        "username": "Ім'я користувача",
+        "profileUsernamePlaceholder": "джонДое13",
+        "email": "Електронна пошта",
+        "profileEmailPlaceholder": "john.doe@gmail.com",
+        "country": "Країна",
+        "phone": "Телефон",
+        "desc": "Опис",
+        "skills": "Навички",
+        "enterSkills": "Введіть навички",
+        "noCountry": "Країна не вказана",
+        "noDescription": "Опис відсутній",
+        "save": "Зберегти",
+        "oldPassword": "Старий пароль",
+        "newPassword": "Новий пароль",
+        "confirmPassword": "Підтвердження нового пароля",
+        "enterOldPassword": "Введіть старий пароль",
+        "enterNewPassword": "Введіть новий пароль",
+        "confirmNewPassword": "Підтвердіть новий пароль",
+        "passwordMismatch": "Паролі не збігаються!",
+        "passwordUpdated": "Пароль оновлено!",
+        "profileUpdated": "Профіль оновлено!",
+        "errorUpdatingProfile": "Помилка при оновленні профілю"
+    }
+}

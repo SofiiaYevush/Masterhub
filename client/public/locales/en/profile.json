@@ -1,0 +1,27 @@
+{
+    "profile": {
+        "selectPhotoBtn": "Change",
+        "profileTitle": "My Profile",
+        "username": "UserName",
+        "profileUsernamePlaceholder": "E.g. johnDoe13",
+        "email": "Email",
+        "profileEmailPlaceholder": "john.doe@gmail.com",
+        "country": "Country",
+        "phone": "Phone number",
+        "desc": "Work experience",
+        "enterDesc": "Enter work experience",
+        "noCountry": "E.g. Ukraine",
+        "noDescription": "Description missing",
+        "save": "Save",
+        "oldPassword": "Old Password",
+        "newPassword": "New Password",
+        "confirmPassword": "Confirm Password",
+        "enterOldPassword": "Enter old password",
+        "enterNewPassword": "Enter new password",
+        "confirmNewPassword": "Confirm your new password",
+        "passwordMismatch": "Passwords do not match!",
+        "passwordUpdated": "Password updated!",
+        "profileUpdated": "Profile updated!",
+        "errorUpdatingProfile": "Error updating profile"
+    }
+}

@@ -1,0 +1,152 @@
+.profile {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    .profile__form {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 1300px;
+        margin: 100px 0;
+
+        .profile__left {
+            display: flex;
+            justify-content: flex-start;
+
+            .profile-photo-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .profile-photo-section img {
+                width: 270px;
+                height: 270px;
+                border-radius: 50%;
+            }
+
+            .profile__white-button {
+                align-items: center;
+                background-color: #ffffff;
+                border-radius: 100px;
+                box-sizing: border-box;
+                border-width: 3px;
+                border-style: solid;
+                border-color: #800000;
+                cursor: pointer;
+                display: inline-flex;
+                font-family: inherit;
+                font-size: 16px;
+                font-weight: normal;
+                justify-content: center;
+                color: #000000;
+                width: 130px;
+                min-height: 40px;
+                min-width: 0px;
+                overflow: hidden;
+                padding: 0px;
+                padding-left: 20px;
+                padding-right: 20px;
+                text-align: center;
+                touch-action: manipulation;
+                transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+                user-select: none;
+                -webkit-user-select: none;
+                vertical-align: middle;
+                text-decoration: none;
+            }
+            .profile__white-button:hover,
+            .profile__white-button:focus { 
+                background-color: #dddddd;
+                transition: background-color 0.5s;
+            }
+        }
+
+        .profile__right {
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            margin-right: 150px;
+
+            h1 {
+                padding-bottom: 35px;
+            }
+
+            .profile__right-labels-text {
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+
+                label {
+                    color: #747474;
+                }
+
+                .password-field{
+                    display: flex;
+                    justify-content: flex-start;
+                    flex-direction: row;
+                    position: relative;
+                    width: 680px;
+
+                    .password-input {
+                        padding-right: 40px;
+                    }
+
+                    .eye-button {
+                        border: none;
+                        background: transparent;
+                        padding-right: 0;
+                        position: absolute;
+                        right: 10px;
+                        align-self: center;
+
+                        img {
+                            width: 25px;
+                            height: 25px;
+                        }
+                    }
+                }
+            }
+
+            .profile__submit-red-button {
+                margin-top: 70px;
+                align-items: center;
+                background-color: #800000;
+                border-radius: 100px;
+                box-sizing: border-box;
+                border-width: 3px;
+                border-style: solid;
+                border-color: #800000;
+                cursor: pointer;
+                display: inline-flex;
+                font-family: inherit;
+                font-size: 16px;
+                font-weight: normal;
+                justify-content: center;
+                color: #ffffff;
+                width: 250px;
+                min-height: 40px;
+                min-width: 0px;
+                overflow: hidden;
+                padding: 0px;
+                padding-left: 20px;
+                padding-right: 20px;
+                text-align: center;
+                touch-action: manipulation;
+                transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+                user-select: none;
+                -webkit-user-select: none;
+                vertical-align: middle;
+                text-decoration: none;
+            }
+            .profile__submit-red-button:hover,
+            .profile__submit-red-button:focus { 
+                background-color: #ffffff;
+                transition: background-color 0.5s;
+                color: #000000;
+            }
+        }
+    }
+}
