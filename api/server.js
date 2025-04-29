@@ -32,7 +32,7 @@ app.use("/api/users", userRoute);
 app.use("/api/gigs", gigRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/admin", adminRoute);
-//app.use("/api/profile", profileRoute);
+app.use("/api/profile", userRoute);
 app.use("/api/reviews", reviewRoute);
 
 app.use((err, req, res, next) => {
