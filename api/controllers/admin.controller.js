@@ -63,6 +63,15 @@ export const blockUser = async (req, res, next) => {
   }
 };
 
+export const unblockUser = async (req, res, next) => {
+  try {
+    await User.findByIdAndUpdate(req.params.id, { isBlocked: false });
+    res.status(200).send("User has been unblocked");
+  } catch (err) {
+    next(err);
+  }
+};
+
 export const deleteAnyGig = async (req, res, next) => {
   try {
     await Gig.findByIdAndDelete(req.params.id);
