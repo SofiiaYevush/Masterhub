@@ -7,6 +7,6 @@
         "submitBtn": "Submit",
         "firstTime": "First time with us?",
         "createAccount": "Create your account.",
-        "alertMessage": "All fields must be filled out."
+        "alertMessage": "Something went wrong."
     }
 }

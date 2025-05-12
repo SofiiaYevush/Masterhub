@@ -68,6 +68,9 @@ function Navbar() {
                 <span>{currentUser?.username}</span>
                 {open && (
                   <div className="options">
+                    <Link className="dropdown-link" to="/profile">
+                      {t('navbar.profile')}
+                    </Link>
                     {currentUser.isSeller && (
                       <>
                         <Link className="dropdown-link" to="/mygigs">
@@ -78,9 +81,6 @@ function Navbar() {
                         </Link>
                       </>
                     )}
-                    <Link className="dropdown-link" to="/profile">
-                      {t('navbar.profile')}
-                    </Link>
                     <Link className="dropdown-link" to="/orders">
                       {t('navbar.orders')}
                     </Link>

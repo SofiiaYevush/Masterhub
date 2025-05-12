@@ -50,12 +50,12 @@ function AllUsers({ users, handleBlockUser }) {
                     }
                 </td>
                   <td>
-                    <button
-                      className={`all-users__block-btn ${user.isBlocked ? 'unblock' : 'block'}`}
-                      onClick={() => handleBlockUser(user._id)}
-                    >
-                      {user.isBlocked ? t('admin.unblock-btn') : t('admin.block-btn')}
-                    </button>
+                  <button
+                    className={`all-users__block-btn ${user.isBlocked ? 'unblock' : 'block'}`}
+                    onClick={() => handleBlockUser(user._id, user.isBlocked)}
+                  >
+                    {user.isBlocked ? t('admin.unblock-btn') : t('admin.block-btn')}
+                  </button>
                   </td>
                 </tr>
               ))}

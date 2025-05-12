@@ -38,18 +38,23 @@ const AdminDashboard = () => {
         fetchData();
     }, [currentUser, activeSection, navigate]);
 
-    const handleBlockUser = async (id) => {
+    const handleBlockUser = async (id, isCurrentlyBlocked) => {
         try {
-        await newRequest.patch(`/admin/users/${id}/block`);
-        setUsers((prev) =>
-            prev.map((u) =>
-            u._id === id ? { ...u, isBlocked: !u.isBlocked } : u
-            )
-        );
+            if (isCurrentlyBlocked) {
+                await newRequest.patch(`/admin/users/${id}/unblock`);
+            } else {
+                await newRequest.patch(`/admin/users/${id}/block`);
+            }
+    
+            setUsers((prev) =>
+                prev.map((u) =>
+                    u._id === id ? { ...u, isBlocked: !u.isBlocked } : u
+                )
+            );
         } catch (err) {
-        console.error("Failed to block user:", err);
+            console.error("Failed to update user block status:", err);
         }
-    };
+    };    
 
     // const handleDeleteGig = async (id) => {
     //     try {
