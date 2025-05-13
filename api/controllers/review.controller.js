@@ -51,3 +51,49 @@ export const deleteReview = async (req, res, next) => {
     next(err);
   }
 };
+export const reactToReview = async (req, res, next) => {
+  const { type } = req.body;
+  const reviewId = req.params.id;
+  const userId = req.userId;
+
+  if (!["like", "dislike"].includes(type)) {
+    return next(createError(400, "Invalid reaction type"));
+  }
+
+  try {
+    const review = await Review.findById(reviewId);
+    if (!review) {
+      return next(createError(404, "Review not found"));
+    }
+
+    const hasLiked = review.likes?.includes(userId);
+    const hasDisliked = review.dislikes?.includes(userId);
+
+    if (type === "like") {
+      if (hasLiked) {
+        review.likes.pull(userId);
+      } else {
+        review.likes.push(userId);
+        if (hasDisliked) {
+          review.dislikes.pull(userId);
+        }
+      }
+    }
+
+    if (type === "dislike") {
+      if (hasDisliked) {
+        review.dislikes.pull(userId);
+      } else {
+        review.dislikes.push(userId);
+        if (hasLiked) {
+          review.likes.pull(userId);
+        }
+      }
+    }
+
+    await review.save();
+    res.status(200).send(review);
+  } catch (err) {
+    next(err);
+  }
+};
