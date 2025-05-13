@@ -18,6 +18,10 @@ const OrderSchema = new Schema({
     required: true,
   },
   price: Number,
+  isPriceNegotiable: {
+    type: Boolean,
+    default: false,
+  },
   isCompleted: {
     type: Boolean,
     default: false,

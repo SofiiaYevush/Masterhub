@@ -29,8 +29,14 @@ const GigSchema = new Schema(
     },
     price: {
       type: Number,
-      required: true,
+      required: function () {
+        return !this.isPriceNegotiable;
+      },
     },
+    isPriceNegotiable: {
+      type: Boolean,
+      default: false,
+  },
     cover: {
       type: String,
       required: true,

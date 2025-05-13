@@ -7,6 +7,9 @@ export const createGig = async (req, res, next) => {
   if (!req.isSeller)
     return next(createError(403, "Only sellers can create a gig!"));
 
+  if (!req.body.isPriceNegotiable && !req.body.price) 
+    return next(createError(400, "Please provide a price or mark it as negotiable."));
+
   const newGig = new Gig({
     userId: req.userId,
     ...req.body,
@@ -95,28 +98,3 @@ export const getGigs = async (req, res, next) => {
     next(err);
   }
 };
-
-
-
-// export const getGigs = async (req, res, next) => {
-//   const q = req.query;
-//   const filters = {
-//     ...(q.userId && { userId: q.userId }),
-//     ...(q.cat && { cat: q.cat }),
-//     ...((q.min || q.max) && {
-//       price: {
-//         ...(q.min && { $gt: q.min }),
-//         ...(q.max && { $lt: q.max }),
-//       },
-//     }),
-//     ...(q.search && { title: { $regex: q.search, $options: "i" } }),
-//   };
-//   try {
-//     const order = q.order === "asc" ? 1 : -1;
-//     const gigs = await Gig.find(filters).sort({ [q.sort]: order });
-//     //const gigs = await Gig.find(filters).sort({ [q.sort]: -1 });
-//     res.status(200).send(gigs);
-//   } catch (err) {
-//     next(err);
-//   }
-// };

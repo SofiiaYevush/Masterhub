@@ -15,7 +15,8 @@ export const createOrder = async (req, res, next) => {
       gigId: gig._id,
       taskerId: gig.userId,
       clientId: req.userId,
-      price: gig.price,
+      price: gig.isPriceNegotiable ? undefined : gig.price,
+      isPriceNegotiable: gig.isPriceNegotiable,
     });
 
     const savedOrder = await newOrder.save();
