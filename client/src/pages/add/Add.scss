@@ -52,8 +52,8 @@
     font-size: 16px;
     color: #000000;
     align-items: center;
-    justify-content: center;
     padding: 20px 0 5px 3px;
+    width: 135px;
   }
 
   .top-image-container {
@@ -110,7 +110,7 @@
 .add__bottom-container {
   display: flex;
   flex-direction: row;
-  gap: 200px;
+  gap: 170px;
   align-items: flex-start;
   margin-top: 20px;
 }
@@ -333,4 +333,44 @@ select{
   font-size: 20px;
   color: #e70000;
   font-weight: 500;
+}
+
+.price-fields {
+  display: flex;
+  flex-direction: row;
+}
+
+.price-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-field-checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-bottom: 7px;
+}
+
+.price-field-checkbox {
+  align-items: end;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  //padding-bottom: 5px;
+  padding-left: 40px;
+
+  input {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #dddddd;
+  }
+
+  .form-title-checkbox {
+    font-size: 16px;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    padding-left: 8px;
+  }
 }

@@ -214,7 +214,7 @@ const Add = () => {
               <div className="form-title-field">
                 <label className="form-title" htmlFor="">{t('add.location')} <span className="required-star">*</span></label>
                 <input
-                  className="form-field"
+                  className="form-field form-field-short"
                   type="text"
                   name="location"
                   placeholder={t('add.locationPlaceholder')}
@@ -232,17 +232,20 @@ const Add = () => {
                 />
               </div>
             </div>
-            <div className="form-title-field">
+            <div className="form-title-field price-fields">
+              <div className="price-field">
                 <label className="form-title"  htmlFor="">{t('add.price')} <span className="required-star">*</span></label>
-                <input
-                  className="form-field"
-                  type="number"
-                  name="price"
-                  placeholder={t('add.pricePlaceholder')}
-                  onChange={handleChange}
-                  disabled={isNegotiable}
-                />
-                <label style={{ display: "flex", alignItems: "center", marginTop: "10px" }}>
+                  <input
+                    className="form-field form-field-short"
+                    type="number"
+                    name="price"
+                    placeholder={t('add.pricePlaceholder')}
+                    onChange={handleChange}
+                    disabled={isNegotiable}
+                  />
+              </div>
+              <div className="price-field-checkbox-container">
+                <label className="price-field-checkbox">
                   <input
                     type="checkbox"
                     checked={isNegotiable}
@@ -260,8 +263,9 @@ const Add = () => {
                       }
                     }}
                   />
-                  <span style={{ marginLeft: "8px" }}>{t('add.priceNegotiable')}</span>
+                  <span className="form-title-checkbox">{t('add.priceNegotiable')}</span>
                 </label>
+              </div>
               </div>
           </div>
         </div>

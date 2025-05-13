@@ -1,7 +1,7 @@
 {
     "add": {
         "addNewServiceTitle": "Створити послугу",
-        "coverImage": "Головне зображення (обкладинка)",
+        "coverImage": "Зображення (обкладинка)",
         "mainTitle": "Заголовок послуги",
         "mainTitlePlaceholder": "Я створю, виконаю...",
         "category": "Категорія",
