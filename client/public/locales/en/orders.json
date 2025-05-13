@@ -16,6 +16,7 @@
         "inProgress": "🕒 In progress...",
         "status": "Status",
         "client": "Client",
-        "tasker": "Tasker"
+        "tasker": "Tasker",
+        "priceNegotiable": "Negotiable"
     }
 }

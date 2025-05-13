@@ -3,6 +3,8 @@
         "aboutService": "About this service",
         "aboutSeller": "About tasker",
         "daysDelivery": "days delivery",
-        "hireButton": "Hire this tasker"
+        "hireButton": "Hire this tasker",
+        "negotiablePriceTop": "Price",
+        "negotiablePriceBottom": "negotiable"
     }
 }

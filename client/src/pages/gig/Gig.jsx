@@ -149,9 +149,25 @@ function Gig() {
             <Reviews gigId={id} />
           </div>
           <div className="right">
-            <div className="price">
+            <div className="titles">
               <h3>{data.shortTitle}</h3>
-              <h2>₴ {data.price}</h2>
+              <p>
+                {
+                data.isPriceNegotiable
+                ?
+                <div className="negotiable-price">
+                  <img src="../../icons/negotiating.png" alt="" />
+                  <div className="negotiable-price-text">
+                    <span>{t('gig.negotiablePriceTop')}</span>
+                    <span>{t('gig.negotiablePriceBottom')}</span>
+                  </div>
+                </div>
+                :
+                <p className="price">
+                  ₴ {data.price}
+                </p>
+                }
+              </p>
             </div>
             <p  className="description">{data.shortDesc}</p>
             <div className="details">

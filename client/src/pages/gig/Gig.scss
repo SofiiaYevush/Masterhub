@@ -237,17 +237,34 @@
       position: sticky;
       top: 150px;
 
-      .price {
+      .titles {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        h2{
-          font-weight: 300;
-        }
-
         h3{
           font-weight: 500;
+          width: 150px;
+        }
+
+        .negotiable-price {
+          display: flex;
+          align-items: flex-end;
+          flex-direction: row;
+          img {
+            width: 40px;
+            height: 40px;
+          }
+          .negotiable-price-text {
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column !important;
+            padding-left: 10px;
+          }
+        }
+        h4 .price {
+          align-items: flex-end;
+          width: 30px;
         }
       }
 

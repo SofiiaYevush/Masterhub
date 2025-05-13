@@ -27,6 +27,7 @@
         "createBtn": "Create",
         "uploadBtn": "Upload",
         "uploading": "Uploading...",
-        "alertMessage": "All REQUIRED fields must be filled out."
+        "alertMessage": "All REQUIRED fields must be filled out.",
+        "priceNegotiable": "Price negotiable"
     }
 }

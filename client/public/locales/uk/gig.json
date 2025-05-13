@@ -3,6 +3,8 @@
         "aboutService": "Про цю послугу",
         "aboutSeller": "Про виконавця",
         "daysDelivery": "днів виконаня",
-        "hireButton": "Найняти цього працівника"
+        "hireButton": "Найняти цього працівника",
+        "negotiablePriceTop": "Ціна ",
+        "negotiablePriceBottom": "договірна"
     }
 }

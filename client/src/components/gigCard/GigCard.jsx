@@ -50,7 +50,13 @@ const GigCard = ({ item }) => {
           <div className="card-info-bottom">
             <div className="card-price">
               <span className="card-label">{t("gig-card.price")}:</span>
-              <h2 className="price">₴ {item.price}</h2>
+              <h2 className="price">
+                {
+                  item.isPriceNegotiable
+                  ? t("gig-card.priceNegotiable")
+                  : `₴ ${item.price}`
+                }
+              </h2>
             </div>
             <div className="card-date">
               <span className="card-label">{t("gig-card.created")}:</span>

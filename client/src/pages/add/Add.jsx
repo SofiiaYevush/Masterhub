@@ -15,6 +15,7 @@ const Add = () => {
   const [singleFile, setSingleFile] = useState(undefined);
   const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
+  const [isNegotiable, setIsNegotiable] = useState(false);
 
   const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
 
@@ -182,16 +183,6 @@ const Add = () => {
               ></textarea>
             </div>
             <div className="form-title-field">
-              <label className="form-title" htmlFor="">{t('add.location')} <span className="required-star">*</span></label>
-              <input
-                className="form-field"
-                type="text"
-                name="location"
-                placeholder={t('add.locationPlaceholder')}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-title-field">
               <label className="form-title" htmlFor="">{t('add.features')}</label>
               <form action="" className="add" onSubmit={handleFeature}>
                 <div className="form-feature-field-button">
@@ -221,13 +212,13 @@ const Add = () => {
             </div>
             <div className="form-short-section">
               <div className="form-title-field">
-                <label className="form-title"  htmlFor="">{t('add.price')} <span className="required-star">*</span></label>
+                <label className="form-title" htmlFor="">{t('add.location')} <span className="required-star">*</span></label>
                 <input
-                  className="form-field form-field-short"
-                  type="number"
+                  className="form-field"
+                  type="text"
+                  name="location"
+                  placeholder={t('add.locationPlaceholder')}
                   onChange={handleChange}
-                  name="price"
-                  placeholder={t('add.pricePlaceholder')}
                 />
               </div>
               <div className="form-title-field">
@@ -241,6 +232,37 @@ const Add = () => {
                 />
               </div>
             </div>
+            <div className="form-title-field">
+                <label className="form-title"  htmlFor="">{t('add.price')} <span className="required-star">*</span></label>
+                <input
+                  className="form-field"
+                  type="number"
+                  name="price"
+                  placeholder={t('add.pricePlaceholder')}
+                  onChange={handleChange}
+                  disabled={isNegotiable}
+                />
+                <label style={{ display: "flex", alignItems: "center", marginTop: "10px" }}>
+                  <input
+                    type="checkbox"
+                    checked={isNegotiable}
+                    onChange={(e) => {
+                      setIsNegotiable(e.target.checked);
+                      dispatch({
+                        type: "CHANGE_INPUT",
+                        payload: { name: "isPriceNegotiable", value: e.target.checked },
+                      });
+                      if (e.target.checked) {
+                        dispatch({
+                          type: "CHANGE_INPUT",
+                          payload: { name: "price", value: null },
+                        });
+                      }
+                    }}
+                  />
+                  <span style={{ marginLeft: "8px" }}>{t('add.priceNegotiable')}</span>
+                </label>
+              </div>
           </div>
         </div>
         <button className="add__red-button" onClick={handleSubmit}>{t('add.createBtn')}</button>

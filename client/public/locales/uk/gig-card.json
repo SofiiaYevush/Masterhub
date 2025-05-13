@@ -1,6 +1,7 @@
 {
     "gig-card": {
         "price": "Вартість",
-        "created": "Створено"
+        "created": "Створено",
+        "priceNegotiable": "Договірна"
     }
 }

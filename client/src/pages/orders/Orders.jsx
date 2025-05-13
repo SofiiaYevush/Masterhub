@@ -62,7 +62,13 @@ const Orders = () => {
             </div>
             <div className="order-price">
               <p className="order-details-title"><strong>{t('orders.price')}:</strong></p>
-              <p className="order-details-text">₴{order.price}</p>
+              <p className="order-details-text">
+                {
+                  order.isPriceNegotiable
+                  ? t("orders.priceNegotiable")
+                  : `₴ ${order.price}`
+                }
+              </p>
             </div>
             <div className="order-location">
               <p className="order-details-title"><strong>{t('orders.location')}:</strong></p>
