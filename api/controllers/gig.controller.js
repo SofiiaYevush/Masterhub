@@ -10,6 +10,14 @@ export const createGig = async (req, res, next) => {
   if (!req.body.isPriceNegotiable && !req.body.price) 
     return next(createError(400, "Please provide a price or mark it as negotiable."));
 
+  const visibility = req.body.languageVisibility;
+  const visibleLanguages = Object.values(visibility).filter(Boolean);
+
+  if (visibleLanguages.length !== 1) {
+    return next(createError(400, "Please select exactly one language."));
+  }
+
+
   const newGig = new Gig({
     userId: req.userId,
     ...req.body,
@@ -45,6 +53,7 @@ export const getGig = async (req, res, next) => {
 };
 export const getGigs = async (req, res, next) => {
   const q = req.query;
+  const language = req.language || 'uk';
   const filters = {
     ...(q.userId && { userId: q.userId }),
     ...(q.cat && { cat: q.cat }),
@@ -55,6 +64,7 @@ export const getGigs = async (req, res, next) => {
       },
     }),
     ...(q.search && { title: { $regex: q.search, $options: "i" } }),
+    ...(q.language && { [`languageVisibility.${q.language}`]: true })
   };
 
   try {

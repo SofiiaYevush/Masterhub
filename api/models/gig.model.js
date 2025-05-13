@@ -69,6 +69,10 @@ const GigSchema = new Schema(
       type: Number,
       default: 0,
     },
+    languageVisibility: {
+      en: { type: Boolean, default: false },
+      uk: { type: Boolean, default: true },
+    }
   },
   {
     timestamps: true,
