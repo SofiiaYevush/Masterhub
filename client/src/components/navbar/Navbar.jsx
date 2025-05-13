@@ -71,6 +71,7 @@ function Navbar() {
                     <Link className="dropdown-link" to="/profile">
                       {t('navbar.profile')}
                     </Link>
+                    <hr />
                     {currentUser.isSeller && (
                       <>
                         <Link className="dropdown-link" to="/mygigs">
