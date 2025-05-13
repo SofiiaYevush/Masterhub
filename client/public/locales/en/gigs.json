@@ -1,5 +1,7 @@
 {
     "gigs": {
-        "price": "Price: "
+        "price": "Price: ",
+        "minPlaceholder": "min",
+        "maxPlaceholder": "max"
     }
 }

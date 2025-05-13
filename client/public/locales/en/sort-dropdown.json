@@ -2,6 +2,7 @@
     "sort-dropdown": {
         "cheapest": "Cheapest",
         "mostExpensive": "Most Expensive",
-        "newest": "Newest"
+        "newest": "Newest",
+        "sortBy": "Sort by"
     }
 }

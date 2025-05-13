@@ -11,6 +11,10 @@ export const INITIAL_STATE = {
   location: "",
   features: [],
   price: 0,
+  languageVisibility: {
+    en: false,
+    uk: true
+  },
 };
 
 export const gigReducer = (state, action) => {
@@ -38,6 +42,14 @@ export const gigReducer = (state, action) => {
           (feature) => feature !== action.payload
         ),
       };
+      case "TOGGLE_LANGUAGE_VISIBILITY":
+        return {
+          ...state,
+          languageVisibility: {
+            en: action.payload.language === "en",
+            uk: action.payload.language === "uk",
+          }
+        };
 
     default:
       return state;

@@ -374,3 +374,36 @@ select{
     padding-left: 8px;
   }
 }
+
+.language-checkbox-group {
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
+  gap: 10px;
+
+  .form-language-title {
+      font-size: 16px;
+      color: #000000;
+      font-weight: 800;
+      padding-bottom: 15px;
+  }
+
+  .form-language-radio {
+    align-content: center;
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+
+    input {
+      margin-right: 10px;
+      width: 20px;
+      height: 20px;
+    }
+
+    span {
+      font-size: 16px;
+      color: #000000;
+      align-self: center;
+    }
+  }
+}

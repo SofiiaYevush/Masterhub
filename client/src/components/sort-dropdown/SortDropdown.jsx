@@ -7,15 +7,15 @@ const SortDropdown = ({ sort, onChange }) => {
   const { t } = useTranslation("sort-dropdown");
 
   const getLabel = () => {
-    if (!sort || !sort.field) return "Sort by";
+    if (!sort || !sort.field) return t('sort-dropdown.sortBy');
 
     if (sort.field === "price") {
-      return sort.order === "asc" ? "Cheapest" : "Most Expensive";
+      return sort.order === "asc" ? t('sort-dropdown.cheapest') :t('sort-dropdown.mostExpensive');
     }
 
-    if (sort.field === "createdAt") return "Newest";
+    if (sort.field === "createdAt") return t('sort-dropdown.newest');
 
-    return "Sort by";
+    return t('sort-dropdown.sortBy');
   };
 
   return (

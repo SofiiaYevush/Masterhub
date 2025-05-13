@@ -266,6 +266,40 @@ const Add = () => {
                   <span className="form-title-checkbox">{t('add.priceNegotiable')}</span>
                 </label>
               </div>
+            </div>
+            <div className="form-title-field">
+              <div className="language-checkbox-group">
+                <label className="form-language-title">{t('add.chooseLang')} <span className="required-star">*</span></label>
+                <label className="form-language-radio">
+                  <input
+                    type="radio"
+                    name="language"
+                    required
+                    checked={state.languageVisibility.uk}
+                    onChange={() =>
+                      dispatch({
+                        type: "TOGGLE_LANGUAGE_VISIBILITY",
+                        payload: { language: "uk" }
+                      })
+                    }
+                  />
+                  <span>{t('add.ukrainian')}</span>
+                </label>
+                <label className="form-language-radio">
+                  <input
+                    type="radio"
+                    name="language"
+                    checked={state.languageVisibility.en}
+                    onChange={() =>
+                      dispatch({
+                        type: "TOGGLE_LANGUAGE_VISIBILITY",
+                        payload: { language: "en" }
+                      })
+                    }
+                  />
+                  <span>{t('add.english')}</span>
+                </label>
+                </div>
               </div>
           </div>
         </div>

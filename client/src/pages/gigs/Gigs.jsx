@@ -9,7 +9,7 @@ import { categories as getCategories } from "../../data";
 import { useTranslation } from 'react-i18next';
 
 function Gigs() {
-  const { t } = useTranslation("gigs");
+  const { t, i18n } = useTranslation("gigs");
   const [sort, setSort] = useState("sales");
   const [setOpen] = useState(false);
   const [setFiltersVisible] = useState(false);
@@ -27,7 +27,7 @@ function Gigs() {
     queryFn: () =>
       newRequest
         .get(
-          `/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort.field}&order=${sort.order}&category=${categoryKey}`
+          `/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort.field}&order=${sort.order}&category=${categoryKey}&language=${i18n.language}`
         )
         .then((res) => {
           return res.data;
@@ -64,8 +64,8 @@ function Gigs() {
             <div className="left">
               <span className="filter-price-title">{t('gigs.price')}</span>
               <div className="filter-price-inputs">
-                <input className="filter-price-input" ref={minRef} type="number" placeholder="min" />
-                <input className="filter-price-input" ref={maxRef} type="number" placeholder="max" />
+                <input className="filter-price-input" ref={minRef} type="number" placeholder={t('gigs.minPlaceholder')} />
+                <input className="filter-price-input" ref={maxRef} type="number" placeholder={t('gigs.maxPlaceholder')} />
               </div>
               <button className="filter-price-button" onClick={apply}>
                 <img src="../../icons/filter-search.png" alt="" className="filter-price-icon" />

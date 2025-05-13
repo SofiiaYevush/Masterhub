@@ -28,6 +28,9 @@
         "uploadBtn": "Upload",
         "uploading": "Uploading...",
         "alertMessage": "All REQUIRED fields must be filled out.",
-        "priceNegotiable": "Price negotiable"
+        "priceNegotiable": "Price negotiable",
+        "ukrainian": "Display only for Ukrainian-speaking users",
+        "english": "Show only for English-speaking users",
+        "chooseLang": "Select the type of users who will see this service"
     }
 }
