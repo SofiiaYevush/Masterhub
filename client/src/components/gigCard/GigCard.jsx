@@ -61,11 +61,7 @@ const GigCard = ({ item }) => {
             <div className="card-date">
               <span className="card-label">{t("gig-card.created")}:</span>
               <span className="date">
-                {new Date(item.createdAt).toLocaleString("en-GB", {
-                  day: "2-digit",
-                  month: "short",
-                  year: "numeric",
-                })}
+                {new Date(item.createdAt).toLocaleDateString("uk-UA")}
               </span>
             </div>
           </div>
