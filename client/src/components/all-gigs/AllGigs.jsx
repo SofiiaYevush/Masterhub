@@ -86,7 +86,12 @@ function AllGigs({ gigs, handleDeleteGig }) {
                                                 )}
                                                 <div className="client-username-status">
                                                     <p className="client-username">{client.username}</p>
-                                                    <p className="client-status">{client.status}</p>
+                                                    <p className="client-status">
+                                                        {client.status === "Completed"
+                                                            ? t("admin.service-completed")
+                                                            : t("admin.service-in-progress")
+                                                        }
+                                                    </p>
                                                 </div>
                                             </li>
                                             ))}

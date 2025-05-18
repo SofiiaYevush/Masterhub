@@ -159,16 +159,20 @@
                         .avatar-username-list {
                             display: flex;
                             flex-direction: column;
+                            gap: 5px;
     
                             .avatar-username {
                                 align-items: center;
                                 display: flex;
                                 justify-content: flex-start;
+                                padding-bottom: 5px;
 
                                 .client-username-status {
                                     display: flex;
                                     flex-direction: row;
-                                    gap: 80px;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    width: 100%;
                                 }
                             }
                         }

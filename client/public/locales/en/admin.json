@@ -35,6 +35,8 @@
         "service-clients": "Clients",
         "service-cooperation-status": "Status",
         "description": "Description",
-        "service-delete": "Delete"
+        "service-delete": "Delete",
+        "service-completed": "Completed",
+        "service-in-progress": "In progress"
     }
 }

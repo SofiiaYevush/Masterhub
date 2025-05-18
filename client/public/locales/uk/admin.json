@@ -35,6 +35,8 @@
         "service-clients": "Клієнти",
         "service-cooperation-status": "Статус",
         "description": "Опис",
-        "service-delete": "Видалити"
+        "service-delete": "Видалити",
+        "service-completed": "Завершено",
+        "service-in-progress": "У процесі"
     }
 }
