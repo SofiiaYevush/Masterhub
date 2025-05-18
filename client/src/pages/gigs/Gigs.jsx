@@ -58,8 +58,8 @@ function Gigs() {
     return (
       <div className="services">
         <div className="services-container">
-          <h1 className="services-title">{category ? category.title : "All Services"}</h1>
-          <p className="services-description">{category ? category.desc : "Browse various gigs and services."}</p> 
+          <h1 className="services-title">{category ? category.title : t('gigs.searchResult')}</h1>
+          <p className="services-description">{category ? category.desc : t('gigs.searchServices')}</p> 
           <div className="menu">
             <div className="left">
               <span className="filter-price-title">{t('gigs.price')}</span>

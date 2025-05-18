@@ -2,6 +2,8 @@
     "gigs": {
         "price": "Price: ",
         "minPlaceholder": "min",
-        "maxPlaceholder": "max"
+        "maxPlaceholder": "max",
+        "searchResult": "Search result",
+        "searchServices": "Explore the range of services available."
     }
 }

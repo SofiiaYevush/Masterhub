@@ -2,6 +2,8 @@
     "gigs": {
         "price": "Ціна: ",
         "minPlaceholder": "мін.",
-        "maxPlaceholder": "макс."
+        "maxPlaceholder": "макс.",
+        "searchResult": "Результат пошуку",
+        "searchServices": "Дослідіть наявний спектр послуг."
     }
 }
