@@ -1,0 +1,47 @@
+.contact-us {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    max-height: 700px;
+    margin: 100px auto 200px auto;
+    flex-direction: column;
+
+    .contact-us__main-title {
+        padding-bottom: 130px;
+    }
+
+    .contact-us__title-text-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        gap: 150px;
+    }
+
+    .v-divider {
+        width: 2px;
+        height: 190px;
+        background-color: #dddddd;
+        margin: 0 5px;
+    }
+
+    .contact-us__phone-section.contact-us__hours-section.contact-us__contact-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .contact-us__section-title {
+        padding: 25px 0 15px 0;
+    }
+
+    .contact-us__section-text-top {
+        padding-bottom: 5px;
+    }
+
+    .contact-us__img {
+        width: 60px;
+        height: 60px;
+    }
+}
