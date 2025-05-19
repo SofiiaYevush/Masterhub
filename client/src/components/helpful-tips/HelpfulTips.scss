@@ -1,7 +1,9 @@
 .helpful-tips {
-    margin: 180px 0;
+    margin: 180px auto;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-self: center;
 }
 
 .top-container {
@@ -50,7 +52,7 @@
 }
 
 .bottom-container {
-    margin: 0 900px;
+    margin: 0 0 0 900px;
     background-color: #dddddd;
     border-radius: 100px;
     border: 1px solid #dddddd;
@@ -79,12 +81,12 @@
     text-align: center;
 }
 
-.logo-img {
+.helpful-tips__logo-img {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-.logo-img img {
+.helpful-tips__logo-img img {
     padding-left: 80px;
 }

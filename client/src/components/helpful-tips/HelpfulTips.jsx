@@ -21,7 +21,7 @@ function HelpfulTips() {
             </div>
             <div className="bottom-container">
                 <div className="title"><h2>{t('helpful-tips.helpfulTips')}</h2></div>
-                <div className="logo-img">
+                <div className="helpful-tips__logo-img">
                 <img src="../../icons/logo-maroon.png" alt="Logo" />
                 </div>
             </div>

@@ -22,7 +22,7 @@
           .link {
             display: flex;
             align-items: center;
-            width: 125px;
+            width: 150px;
           }
 
           .span {
@@ -32,16 +32,15 @@
             align-content: center;
           }
 
-          .logo-img {
+          .footer__logo-img {
             display: flex;
             justify-content: center;
             align-items: center;
           }
 
-          .logo-img img {
+          .footer__logo-img img {
             width: 30px;
             height: 30px;
-            padding-left: 0;
           }
       }
       .right {

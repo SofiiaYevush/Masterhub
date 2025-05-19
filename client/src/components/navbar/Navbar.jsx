@@ -45,7 +45,7 @@ function Navbar() {
             <Link className="link" to="/">
               <span className="text">{t('navbar.masterhub')}</span>
             </Link>
-            <div className="logo-img">
+            <div className="navbar__logo-img">
               <img src="../../icons/logo-white-big.png" alt="Logo" />
             </div>
           </div>

@@ -13,7 +13,7 @@ function Footer() {
             <Link className="link" to="/">
               <span className="text">{t('footer.masterhub')}</span>
             </Link>
-            <div className="logo-img">
+            <div className="footer__logo-img">
               <img src="../../icons/logo-white-big.png" alt="Logo" />
             </div>
           </div>

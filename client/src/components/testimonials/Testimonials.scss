@@ -1,10 +1,11 @@
 .testimonials {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     padding-top: 65px;
     max-height: 1170px;
     margin-bottom: 200px;
+    gap: 60px;
 }
 
 .testimonials__left-container {
