@@ -19,7 +19,7 @@ function Categories() {
                     <img className="contact-us__img" src="../../icons/contact-us-hours.png" alt="Hours icon" />
                     <h3 className="contact-us__section-title">{t("contact-us.hours-title")}</h3>
                     <p className="contact-us__section-text-top">{t("contact-us.days")}</p>
-                    <p className="contact-us__section-text-bottom">{t("contact-us.hours")}</p>
+                    <p className="contact-us__section-text">{t("contact-us.hours")}</p>
                 </div>
                 <div className="v-divider"></div>
                 <div className="contact-us__contact-section">

@@ -6,6 +6,7 @@ import CatCard from "../../components/cat-card/CatCard";
 import { categories } from "../../data";
 import Testimonials from "../../components/testimonials/Testimonials";
 import AcordionTasker from "../../components/acordion/AcordionTasker";
+import ContactUs from "../../components/contact-us/ContactUs";
 import "./HomeTasker.scss";
 
 function HomeTasker() {
@@ -20,6 +21,7 @@ function HomeTasker() {
             </Slide>
             <Testimonials />
             <AcordionTasker />
+            <ContactUs />
         </div>
     );
 }

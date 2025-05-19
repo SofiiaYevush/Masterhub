@@ -6,6 +6,7 @@ import CatCard from "../../components/cat-card/CatCard";
 import { categories } from "../../data";
 import Testimonials from "../../components/testimonials/Testimonials";
 import AcordionClient from "../../components/acordion/AcordionClient";
+import ContactUs from "../../components/contact-us/ContactUs";
 import "./HomeClient.scss";
 
 function HomeClient() {
@@ -20,6 +21,7 @@ function HomeClient() {
             </Slide>
             <Testimonials />
             <AcordionClient />
+            <ContactUs />
         </div>
     );
 }
