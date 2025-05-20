@@ -19,3 +19,17 @@ This project is a full stack website developed using React JS for the front-end 
 - react-query (useQuery, useMutation): To manage server state
 
 
+
+### Features
+*User Authentication:* Sign up (as tasker or client), log in (as tasker, client or admin), and manage user sessions.  
+*Services:* Create service for specific category.  
+*Order Management:* Handle cooperation process both from tasker and client side in different ways.  
+*Admin Panel:* View all orders and delete them. View all users and block them. 
+
+
+> ## Setup Instructions
+> 1. Clone the repository.
+> 2. Navigate to the project directory.
+> 3. Install dependencies using `npm install`.
+> 4. Start the front-end server using `npm start`.
+> 5. Start the back-end server using `npm run dev`.
