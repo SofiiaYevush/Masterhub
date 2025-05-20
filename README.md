@@ -24,6 +24,7 @@ This project is a full stack website developed using React JS for the front-end 
 *User Authentication:* Sign up (as tasker or client), log in (as tasker, client or admin), and manage user sessions.  
 *Services:* Create service for specific category.  
 *Order Management:* Handle cooperation process both from tasker and client side in different ways.  
+*Review*: Like or dislike reviews. Add if you are client.
 *Admin Panel:* View all orders and delete them. View all users and block them. 
 
 
