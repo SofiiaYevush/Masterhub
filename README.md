@@ -32,5 +32,5 @@ This project is a full stack website developed using React JS for the front-end 
 > 1. Clone the repository.
 > 2. Navigate to the project directory.
 > 3. Install dependencies using `npm install`.
-> 4. Start the front-end server using `npm start`.
-> 5. Start the back-end server using `npm run dev`.
+> 4. Start the front-end server using `npm run dev`.
+> 5. Start the back-end server using `npm start`.
