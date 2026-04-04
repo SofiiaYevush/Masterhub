@@ -82,6 +82,16 @@ function Navbar() {
                         </Link>
                       </>
                     )}
+                    {!currentUser.isSeller && (
+                      <>
+                      <Link className="dropdown-link" to="/my-jobs">
+                        {t('navbar.myJobs')}
+                      </Link>
+                      <Link className="dropdown-link" to="/create-jobs">
+                        {t('navbar.createJob')}
+                      </Link>
+                      </>
+                    )}
                     <Link className="dropdown-link" to="/orders">
                       {t('navbar.orders')}
                     </Link>

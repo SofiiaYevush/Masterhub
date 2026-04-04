@@ -11,7 +11,9 @@
         "messages": "Messages",
         "logout": "Logout",
         "register": "Sign up",
-        "signIn": "Sign in"
+        "signIn": "Sign in",
+        "myJobs": "My Jobs",
+        "createJob": "Create Job"
     }
 }
   

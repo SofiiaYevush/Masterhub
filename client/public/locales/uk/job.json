@@ -1,0 +1,21 @@
+{
+    "job": {
+        "createJob": {
+            "title": "Створити вакансію",
+            "titleField": "Назва вашої вакансії",
+            "description": "Опишіть вашу вакансію детально",
+            "categoryLabel": "Категорія",
+            "budgetLabel": "Бюджет (необов'язково)",
+            "budgetNegotiable": "Договорна",
+            "location": "Місце розташування",
+            "deadline": "Термін виконання",
+            "skills": "Навички",
+            "skillsPlaceholder": "Введіть навичку",
+            "addSkill": "Додати навичку",
+            "language": "Мова",
+            "ukrainian": "Українська",
+            "english": "Англійська",
+            "createBtn": "Створити вакансію"
+        }
+    }
+}
