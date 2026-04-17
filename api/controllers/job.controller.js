@@ -1,19 +1,20 @@
 import Job from "../models/job.model.js";
+import Application from "../models/application.model.js";
 import createError from "../utils/createError.js";
 
 export const getJob = async (req, res, next) => {
-  try {
-    const job = await Job.findById(req.params.id)
-      .populate("clientId", "username img country");
+    try {
+        const job = await Job.findById(req.params.id)
+            .populate("clientId", "username img country");
 
-    if (!job) {
-      return next(createError(404, "Job not found"));
+        if (!job) {
+            return next(createError(404, "Job not found"));
+        }
+
+        res.status(200).json(job);
+    } catch (err) {
+        next(err);
     }
-
-    res.status(200).json(job);
-  } catch (err) {
-    next(err);
-  }
 };
 
 export const createJob = async (req, res, next) => {
@@ -65,3 +66,80 @@ export const getMyJobs = async (req, res, next) => {
     }
 };
 
+export const getJobs = async (req, res, next) => {
+    const q = req.query;
+
+    const filters = {
+        status: "active", // тільки активні jobs для таскерів
+        ...(q.cat && { category: q.cat }),
+        ...(q.search && { title: { $regex: q.search, $options: "i" } }),
+    };
+
+    try {
+        const jobs = await Job.find(filters).sort({ createdAt: -1 });
+
+        res.status(200).json(jobs);
+    } catch (err) {
+        next(err);
+    }
+};
+
+export const getJobForTasker = async (req, res, next) => {
+    try {
+        const jobId = req.params.id;
+        const userId = req.userId;
+
+        const job = await Job.findById(jobId);
+        if (!job) return next(createError(404, "Job not found"));
+
+        const application = await Application.findOne({
+            jobId,
+            taskerId: userId,
+        });
+
+        res.status(200).json({
+            ...job._doc,
+            alreadyApplied: !!application,
+            applicationId: application?._id || null, // якщо потрібно для редагування
+        });
+    } catch (err) {
+        next(err);
+    }
+};
+
+export const applyToJob = async (req, res, next) => {
+    try {
+        const jobId = req.params.id;
+        const userId = req.userId;
+
+        const job = await Job.findById(jobId);
+        if (!job) return next(createError(404, "Job not found"));
+
+        if (job.status !== "active") {
+            return next(createError(400, "Job is not active"));
+        }
+
+        const existing = await Application.findOne({
+            jobId,
+            taskerId: userId,
+        });
+        if (existing) return next(createError(400, "Already applied"));
+
+        // 3. Створюємо нову заявку
+        const newApplication = new Application({
+            jobId,
+            taskerId: userId,
+            coverLetter: req.body.coverLetter || "",
+            proposedPrice: req.body.proposedPrice || job.budget,
+        });
+
+        const saved = await newApplication.save();
+
+        res.status(201).json({
+            message: "Application submitted successfully",
+            application: saved,
+        });
+    } catch (err) {
+        next(err);
+    }
+};

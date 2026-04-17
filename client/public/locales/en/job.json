@@ -1,0 +1,21 @@
+{
+    "job": {
+        "createJob": {
+            "title": "Create Job",
+            "titleField": "Title of your job",
+            "description": "Describe your job in detail",
+            "categoryLabel": "Category",
+            "budgetLabel": "Budget (optional)",
+            "budgetNegotiable": "Negotiable",
+            "location": "Location",
+            "deadline": "Deadline",
+            "skills": "Skills",
+            "skillsPlaceholder": "Enter a skill",
+            "addSkill": "Add Skill",
+            "language": "Language",
+            "ukrainian": "Ukrainian",
+            "english": "English",
+            "createBtn": "Create Job"
+        }
+    }
+}
