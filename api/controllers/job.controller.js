@@ -35,7 +35,7 @@ export const createJob = async (req, res, next) => {
     }
 };
 
-export const getJobWithApplications = async (req, res, next) => {
+export const getJobWithApplicationForTasker = async (req, res, next) => {
     try {
         const job = await Job.findById(req.params.id);
 
@@ -57,16 +57,39 @@ export const getJobWithApplications = async (req, res, next) => {
     }
 };
 
-export const getMyJobs = async (req, res, next) => {
+export const getJobWithApplicationsForClient = async (req, res, next) => {
     try {
-        const jobs = await Job.find({ clientId: req.userId }).sort({ createdAt: -1 });
-        res.status(200).json(jobs);
+        const job = await Job.findById(req.params.id)
+            .populate("clientId", "username img country");
+
+        if (!job) return next(createError(404, "Job not found"));
+
+        // if (job.clientId.toString() !== req.userId) {
+        //     return next(createError(403, "Not allowed"));
+        // }
+
+        const applications = await Application.find({ jobId: job._id })
+            .populate("taskerId", "username img desc");
+
+        res.status(200).json({
+            ...job._doc,
+            applications,
+        });
     } catch (err) {
         next(err);
     }
 };
 
-export const getJobs = async (req, res, next) => {
+export const getMyJobsForClient = async (req, res, next) => {
+    try {
+        const jobs = await Job.find({ clientId: req.userId }).sort({ createdAt: -1 });
+        res.status(200).json(jobs);
+    } catch (err) {
+        next(err.message);
+    }
+};
+
+export const getJobsForTasker = async (req, res, next) => {
     const q = req.query;
 
     const filters = {
@@ -84,6 +107,7 @@ export const getJobs = async (req, res, next) => {
     }
 };
 
+// НЕ використовується
 export const getJobForTasker = async (req, res, next) => {
     try {
         const jobId = req.params.id;
