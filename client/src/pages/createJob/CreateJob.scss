@@ -1,0 +1,166 @@
+.create-job {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #111827;
+  }
+
+  .job-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .job-main-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #374151;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      input[type="date"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        font-size: 14px;
+        background: #f9fafb;
+        transition: all 0.2s ease;
+
+        &:focus {
+          outline: none;
+          border-color: #800000;
+          background: #fff;
+          box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      select {
+        cursor: pointer;
+      }
+
+      input[type="checkbox"],
+      input[type="radio"] {
+        accent-color: #800000;
+        margin-right: 6px;
+      }
+
+      form {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        input {
+          flex: 1;
+        }
+
+        button {
+          padding: 10px 14px;
+          border: none;
+          border-radius: 10px;
+          background: #800000;
+          color: white;
+          font-weight: 600;
+          cursor: pointer;
+          transition: 0.2s;
+
+          &:hover {
+            background: #800000;
+          }
+        }
+      }
+
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+
+        .skill-item {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 6px 10px;
+          border-radius: 999px;
+          background: #eef2ff;
+          color: #800000;
+          font-size: 13px;
+
+          button {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-weight: bold;
+            color: #800000;
+          }
+        }
+      }
+    }
+
+    > button {
+      margin-top: 10px;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: #800000;
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 10px 20px rgba(128, 0, 0, 0.25);
+
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 14px 26px rgba(128, 0, 0, 0.3);
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .create-job {
+    padding: 20px;
+    margin: 20px;
+
+    h1 {
+      font-size: 22px;
+    }
+
+    .job-form form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+}

@@ -3,19 +3,24 @@
         "createJob": {
             "title": "Create Job",
             "titleField": "Title of your job",
-            "description": "Describe your job in detail",
+            "description": "Description of your job",
             "categoryLabel": "Category",
             "budgetLabel": "Budget (optional)",
             "budgetNegotiable": "Negotiable",
             "location": "Location",
             "deadline": "Deadline",
             "skills": "Skills",
-            "skillsPlaceholder": "Enter a skill",
             "addSkill": "Add Skill",
             "language": "Language",
             "ukrainian": "Ukrainian",
             "english": "English",
-            "createBtn": "Create Job"
+            "createBtn": "Create Job",
+            "titlePlaceholder": "Repair...",
+            "descPlaceholder": "Describe the job in more detail",
+            "skillsPlaceholder": "Enter a skill",
+            "selectCategory": "Select a category",
+            "budgetPlaceholder": "e.g. 1000",
+            "locationPlaceholder": "e.g. Lviv"
         }
     }
 }

@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from "react";
-// import "./CreateJob.scss";
+import "./CreateJob.scss";
 import { categories } from "../../data";
 import { jobReducer, INITIAL_STATE } from "../../reducers/jobReducer";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -68,7 +68,7 @@ const CreateJob = () => {
 
                     <div className="field">
                         <label>{t('job.createJob.budgetLabel')}</label>
-                        <input type="number" name="budget" onChange={handleChange} disabled={isBudgetNegotiable} />
+                        <input type="number" name="budget" onChange={handleChange} disabled={isBudgetNegotiable} placeholder={t('job.createJob.budgetPlaceholder')} />
                         <label>
                             <input type="checkbox" checked={isBudgetNegotiable} onChange={e => {
                                 setIsBudgetNegotiable(e.target.checked);
@@ -81,7 +81,7 @@ const CreateJob = () => {
 
                     <div className="field">
                         <label>{t('job.createJob.location')}</label>
-                        <input type="text" name="location" onChange={handleChange} />
+                        <input type="text" name="location" onChange={handleChange} placeholder={t('job.createJob.locationPlaceholder')} />
                     </div>
 
                     <div className="field">

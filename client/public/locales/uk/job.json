@@ -2,20 +2,25 @@
     "job": {
         "createJob": {
             "title": "Створити вакансію",
-            "titleField": "Назва вашої вакансії",
-            "description": "Опишіть вашу вакансію детально",
+            "titleField": "Назва вакансії",
+            "description": "Опис вакансії",
             "categoryLabel": "Категорія",
             "budgetLabel": "Бюджет (необов'язково)",
-            "budgetNegotiable": "Договорна",
+            "budgetNegotiable": "Договірна",
             "location": "Місце розташування",
             "deadline": "Термін виконання",
             "skills": "Навички",
-            "skillsPlaceholder": "Введіть навичку",
             "addSkill": "Додати навичку",
             "language": "Мова",
             "ukrainian": "Українська",
             "english": "Англійська",
-            "createBtn": "Створити вакансію"
+            "createBtn": "Створити вакансію",
+            "titlePlaceholder": "Ремонт...",
+            "descPlaceholder": "Розкажіть про вакансію детальніше",
+            "skillsPlaceholder": "Введіть навичку",
+            "selectCategory": "Виберіть категорію",
+            "budgetPlaceholder": "Напр. 1000",
+            "locationPlaceholder": "Напр. Львів"
         }
     }
 }
