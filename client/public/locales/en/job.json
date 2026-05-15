@@ -21,6 +21,47 @@
             "selectCategory": "Select a category",
             "budgetPlaceholder": "e.g. 1000",
             "locationPlaceholder": "e.g. Lviv"
+        },
+        "myJobs": {
+            "pageTitle": "My Jobs",
+            "description": "Description",
+            "category": "Category",
+            "budget": "Budget",
+            "location": "Location",
+            "deadline": "Deadline",
+            "statusLabel": "Status",
+            "applications": "Applications",
+            "status": {
+                "open": "Open",
+                "closed": "Closed"
+            }
+        },
+        "jobDetails": {
+            "category": "Category",
+            "budget": "Budget",
+            "budgetNegotiable": "Negotiable",
+            "location": "Location",
+            "deadline": "Deadline",
+            "statusLabel": "Status",
+            "statuses": {
+                "active": "Active",
+                "closed": "Closed",
+                "hired": "Hired"
+            },
+            "tabs": {
+                "all": "All",
+                "pending": "Pending",
+                "accepted": "Accepted",
+                "rejected": "Rejected",
+                "withdrawn": "Withdrawn"
+            },
+            "skills": "Skills",
+            "applicationsTitle": "Applications",
+            "emptyState": "No applications yet",
+            "proposedPrice": "Proposed price:",
+            "noCoverLetter": "No cover letter",
+            "accept": "Accept",
+            "decline": "Decline"
         }
     }
 }

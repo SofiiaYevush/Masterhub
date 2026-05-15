@@ -21,6 +21,47 @@
             "selectCategory": "Виберіть категорію",
             "budgetPlaceholder": "Напр. 1000",
             "locationPlaceholder": "Напр. Львів"
+        },
+        "myJobs": {
+            "pageTitle": "Мої вакансії",
+            "description": "Опис",
+            "category": "Категорія",
+            "budget": "Бюджет",
+            "location": "Місце розташування",
+            "deadline": "Термін виконання",
+            "statusLabel": "Статус",
+            "applications": "Заявки",
+            "status": {
+                "open": "Відкрита",
+                "closed": "Закрита"
+            }
+        },
+        "jobDetails": {
+            "category": "Категорія",
+            "budget": "Бюджет",
+            "budgetNegotiable": "Договірна",
+            "location": "Локація",
+            "deadline": "Дедлайн",
+            "statusLabel": "Статус",
+            "statuses": {
+                "active": "Активна",
+                "closed": "Закрита",
+                "hired": "Найнято"
+            },
+            "tabs": {
+                "all": "Усі",
+                "pending": "Очікують",
+                "accepted": "Прийняті",
+                "rejected": "Відхилені",
+                "withdrawn": "Відкликані"
+            },
+            "skills": "Навички",
+            "applicationsTitle": "Відгуки",
+            "emptyState": "Поки немає відгуків",
+            "proposedPrice": "Запропонована ціна:",
+            "noCoverLetter": "Без супровідного листа",
+            "accept": "Прийняти",
+            "decline": "Відхилити"
         }
     }
 }
