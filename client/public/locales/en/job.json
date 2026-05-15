@@ -23,10 +23,13 @@
             "locationPlaceholder": "e.g. Lviv"
         },
         "myJobs": {
+            "loadingJobs": "Loading jobs...",
+            "errorLoadingJobs": "Error loading jobs",
             "pageTitle": "My Jobs",
             "description": "Description",
             "category": "Category",
             "budget": "Budget",
+            "budgetNegotiable": "Negotiable",
             "location": "Location",
             "deadline": "Deadline",
             "statusLabel": "Status",

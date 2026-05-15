@@ -23,10 +23,13 @@
             "locationPlaceholder": "Напр. Львів"
         },
         "myJobs": {
+            "loadingJobs": "Завантаження вакансій...",
+            "errorLoadingJobs": "Помилка при завантаженні вакансій",
             "pageTitle": "Мої вакансії",
             "description": "Опис",
             "category": "Категорія",
             "budget": "Бюджет",
+            "budgetNegotiable": "Договірна",
             "location": "Місце розташування",
             "deadline": "Термін виконання",
             "statusLabel": "Статус",

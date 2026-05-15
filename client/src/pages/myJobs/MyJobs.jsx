@@ -14,12 +14,12 @@ const MyJobs = () => {
         queryFn: () => newRequest.get("/jobs/my-jobs").then(res => res.data),
     });
 
-    if (isLoading) return <p>Loading...</p>;
-    if (error) return <p>Error loading jobs</p>;
+    if (isLoading) return <p className="my-jobs__loading">{t('job.myJobs.loadingJobs')}</p>;
+    if (error) return <p className="my-jobs__error">{t('job.myJobs.errorLoadingJobs')}</p>;
 
     return (
         <div className="my-jobs">
-            <h1>{t('job.myJobs.pageTitle')}</h1>
+            <h1 className="my-jobs__page-title">{t('job.myJobs.pageTitle')}</h1>
             <div className="jobs-list">
                 {jobs?.map(job => (
                     <div key={job._id} className="job-card" onClick={() => navigate(`/jobs/${job._id}/applications`)}>

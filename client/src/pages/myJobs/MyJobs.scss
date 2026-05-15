@@ -4,13 +4,18 @@
     padding: 32px;
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
-    h1 {
-        font-size: 30px;
-        font-weight: 800;
-        margin-bottom: 26px;
-        color: #111827;
-        letter-spacing: -0.5px;
-    }
+&__page-title {
+    font-size: 45px;
+    font-weight: 900;
+    margin-bottom: 38px;
+    color: #0f172a;
+    letter-spacing: -0.8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    text-shadow: 0 8px 30px rgba(79, 70, 229, 0.15);
+}
 
     .jobs-list {
         display: grid;
@@ -134,6 +139,75 @@
                 color: #dc2626;
             }
         }
+    }
+
+    &__loading,
+    &__error {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 30px;
+        margin-top: 40px;
+
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+
+        border-radius: 16px;
+
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* LOADING STATE */
+    &__loading {
+        color: #6b7280;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 50%;
+            height: 100%;
+
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(99, 102, 241, 0.15),
+                    transparent);
+
+            animation: shimmer 1.2s infinite;
+        }
+    }
+
+    /* ERROR STATE */
+    &__error {
+        color: #b91c1c;
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+
+        &::before {
+            content: "⚠️";
+            font-size: 20px;
+            margin-right: 10px;
+        }
+    }
+}
+
+/* animation */
+@keyframes shimmer {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(300%);
     }
 }
 
