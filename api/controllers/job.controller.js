@@ -82,8 +82,23 @@ export const getJobWithApplicationsForClient = async (req, res, next) => {
 
 export const getMyJobsForClient = async (req, res, next) => {
     try {
-        const jobs = await Job.find({ clientId: req.userId }).sort({ createdAt: -1 });
-        res.status(200).json(jobs);
+        const jobs = await Job.find({ clientId: req.userId })
+            .sort({ createdAt: -1 });
+
+        const jobsWithCounts = await Promise.all(
+            jobs.map(async (job) => {
+                const applicationsCount = await Application.countDocuments({
+                    jobId: job._id
+                });
+
+                return {
+                    ...job._doc,
+                    applicationsCount
+                };
+            })
+        );
+
+        res.status(200).json(jobsWithCounts);
     } catch (err) {
         next(err.message);
     }
