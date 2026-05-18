@@ -4,6 +4,7 @@
         "home": "Home",
         "about": "About",
         "categories": "Categories",
+        "myApplications": "My Applications",
         "profile": "Profile",
         "myServices": "My Services",
         "orders": "Orders",
@@ -16,4 +17,3 @@
         "createJob": "Create Job"
     }
 }
-  

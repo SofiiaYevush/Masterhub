@@ -2,17 +2,20 @@ import React, { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
+import { useTranslation } from 'react-i18next';
+import "./JobDetailsTasker.scss";
 
 const JobDetailsTasker = () => {
     const { id } = useParams();
     const queryClient = useQueryClient();
     const [coverLetter, setCoverLetter] = useState("");
     const [proposedPrice, setProposedPrice] = useState("");
+    const { t } = useTranslation("job");
 
     // деталі job
     const { data: job, isLoading, error } = useQuery({
         queryKey: ["job", id],
-        queryFn: () => newRequest.get(`/jobs/${id}`).then((res) => res.data),
+        queryFn: () => newRequest.get(`/jobs/${id}/tasker`).then((res) => res.data),
     });
 
     // Мутація для аплаю
@@ -33,31 +36,89 @@ const JobDetailsTasker = () => {
 
     return (
         <div className="job-details-tasker">
-            <h1>{job.title}</h1>
-            <p>{job.desc}</p>
-            <p>Category: {job.category}</p>
-            <p>Budget: {job.budget} {job.isBudgetNegotiable && "(Negotiable)"}</p>
-            <p>Location: {job.location || "Remote"}</p>
-            <p>Status: {job.status}</p>
+            <div className="container">
+                {/* LEFT */}
+                <div className="job-card">
+                    <div className="title-row">
+                        <h1>{job.title}</h1>
+                        <span className={`status ${job.status}`}>
+                            {job.status}
+                        </span>
+                    </div>
+                    <div className="desc">
+                        {job.desc}
+                    </div>
+                    <div className="info-grid">
+                        <div className="info">
+                            <span className="label">{t("job.jobDetailsTasker.category")}</span>
+                            <span className="value">{job.category}</span>
+                        </div>
 
-            {job.alreadyApplied ? (
-                <button disabled>Already Applied</button>
-            ) : (
-                <div className="apply-section">
-                    <textarea
-                        placeholder="Cover Letter"
-                        value={coverLetter}
-                        onChange={(e) => setCoverLetter(e.target.value)}
-                    />
-                    <input
-                        type="number"
-                        placeholder="Proposed Price"
-                        value={proposedPrice}
-                        onChange={(e) => setProposedPrice(e.target.value)}
-                    />
-                    <button onClick={handleApply}>Apply</button>
+                        <div className="info">
+                            <span className="label">{t("job.jobDetailsTasker.budget")}</span>
+                            <span className="value">
+                                {job.budget}{" "}
+                                {job.isBudgetNegotiable && (
+                                    <span style={{ color: "#9ca3af", fontWeight: 600 }}>
+                                        {t("job.jobDetailsTasker.budgetNegotiable")}
+                                    </span>
+                                )}
+                            </span>
+                        </div>
+
+                        <div className="info">
+                            <span className="label">{t("job.jobDetailsTasker.location")}</span>
+                            <span className="value">{job.location || "-"}</span>
+                        </div>
+
+                        <div className="info">
+                            <span className="label">{t("job.jobDetailsTasker.status")}</span>
+                            <span className="value">{t(`job.jobDetailsTasker.statuses.${job.status}`)}</span>
+                        </div>
+
+                    </div>
+
                 </div>
-            )}
+
+                {/* RIGHT */}
+                <div className="apply-card">
+
+                    <div className="apply-title">
+                        {t("job.jobDetailsTasker.applyTitle")}
+                    </div>
+
+                    <div className="apply-sub">
+                        {t("job.jobDetailsTasker.applySub")}
+                    </div>
+
+                    {job.alreadyApplied ? (
+                        <div className="disabled">
+                            {t("job.jobDetailsTasker.alreadyApplied")}
+                        </div>
+                    ) : (
+                        <div className="form">
+                            <textarea
+                                placeholder={t("job.jobDetailsTasker.coverLetterPlaceholder")}
+                                value={coverLetter}
+                                onChange={(e) => setCoverLetter(e.target.value)}
+                            />
+                            <input
+                                type="number"
+                                placeholder={t("job.jobDetailsTasker.proposedPricePlaceholder")}
+                                value={proposedPrice}
+                                onChange={(e) => setProposedPrice(e.target.value)}
+                            />
+                            <button
+                                className="btn"
+                                onClick={handleApply}
+                            >
+                                {t("job.jobDetailsTasker.applyButton")}
+                            </button>
+
+                        </div>
+                    )}
+                </div>
+            </div>
         </div>
     );
 };

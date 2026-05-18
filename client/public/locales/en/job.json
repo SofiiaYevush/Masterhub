@@ -65,6 +65,43 @@
             "noCoverLetter": "No cover letter",
             "accept": "Accept",
             "decline": "Decline"
+        },
+        "jobs": {
+            "loadingJobs": "Loading jobs...",
+            "errorLoadingJobs": "Error loading jobs",
+            "availableJobs": "Available Jobs",
+            "noJobsFound": "No jobs found",
+            "noDescription": "No description available",
+            "category": "Category",
+            "budget": "Budget",
+            "budgetNegotiable": "Negotiable",
+            "location": "Location",
+            "deadline": "Deadline",
+            "statuses": {
+                "active": "Active",
+                "closed": "Closed",
+                "hired": "Hired"
+            },
+            "viewBtn": "View"
+        },
+        "jobDetailsTasker": {
+            "applyTitle": "Apply for this job",
+            "applySub": "Send your proposal and price. Client will review your application.",
+            "alreadyApplied": "Already Applied ✔",
+            "coverLetterPlaceholder": "Write your cover letter...",
+            "proposedPricePlaceholder": "Your proposed price",
+            "applyButton": "Apply now",
+            "category": "Category",
+            "budget": "Budget",
+            "budgetNegotiable": "Negotiable",
+            "location": "Location",
+            "deadline": "Deadline",
+            "status": "Status",
+                "statuses": {
+                    "active": "Active",
+                    "closed": "Closed",
+                    "hired": "Hired"
+                }
         }
     }
 }

@@ -1,0 +1,31 @@
+{
+    "application": {
+        "myApplications": {
+            "loadingApplications": "Loading applications...",
+            "errorLoadingApplications": "Error loading applications",
+            "pageTitle": "My Applications",
+            "tab": {
+                "all": "All",
+                "pending": "Pending",
+                "accepted": "Accepted",
+                "rejected": "Rejected",
+                "withdrawn": "Withdrawn"
+            },
+            "jobTitle": "Job Title",
+            "category": "Category",
+            "location": "Location",
+            "locationRemote": "Remote",
+            "deadline": "Deadline",
+            "statusLabel": "Status",
+            "statuses": {
+                "pending": "Pending",
+                "accepted": "Accepted",
+                "rejected": "Rejected",
+                "withdrawn": "Withdrawn"
+            },
+            "proposedPrice": "Budget",
+            "noApplications": "No applications yet",
+            "withdrawBtn": "Withdraw Application"
+        }
+    }
+}

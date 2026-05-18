@@ -65,6 +65,46 @@
             "noCoverLetter": "Без супровідного листа",
             "accept": "Прийняти",
             "decline": "Відхилити"
+        },
+        "jobs": {
+            "loadingJobs": "Завантаження вакансій...",
+            "errorLoadingJobs": "Помилка при завантаженні вакансій",
+            "availableJobs": "Доступні вакансії",
+            "noJobs": "Поки немає вакансій",
+            "noDescription": "Опис відсутній",
+            "category": "Категорія",
+            "budget": "Бюджет",
+            "budgetNegotiable": "Договірна",
+            "location": "Локація",
+            "deadline": "Дедлайн",
+            "statusLabel": "Статус",
+            "statuses": {
+                "active": "Активна",
+                "closed": "Закрита",
+                "hired": "Найнято"
+            },
+            "viewBtn": "Переглянути"
+        },
+        "jobDetailsTasker": {
+            "applyTitle": "Подати заявку на цю вакансію",
+            "applySub": "Надішліть свій відгук і ціну. Клієнт розгляне вашу заявку.",
+            "alreadyApplied": "Ви вже подали заявку ✔",
+            "coverLetterPlaceholder": "Напишіть супровідний лист...",
+            "proposedPricePlaceholder": "Ваша запропонована ціна",
+            "applyButton": "Подати заявку",
+            "category": "Категорія",
+            "budget": "Бюджет",
+            "budgetNegotiable": "Договірна",
+            "location": "Локація",
+            "deadline": "Дедлайн",
+            "status": "Статус", 
+            "statuses": {
+                "active": "Активна",
+                "pending": "Очікує",
+                "accepted": "Прийнята",
+                "rejected": "Відхилена",
+                "withdrawn": "Откликнута"
+            }
         }
     }
 }
