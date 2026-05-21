@@ -1,9 +1,9 @@
 {
     "application": {
         "myApplications": {
-            "loadingApplications": "Завантаження відгуків...",
-            "errorLoadingApplications": "Помилка завантаження відгуків",
-            "pageTitle": "Мої відгуки",
+            "loadingApplications": "Завантаження заявок...",
+            "errorLoadingApplications": "Помилка завантаження заявок",
+            "pageTitle": "Мої подані заявки на роботи",
             "tab": {
                 "all": "Усі",
                 "pending": "Очікують",
@@ -11,7 +11,7 @@
                 "rejected": "Відхилені",
                 "withdrawn": "Відкликані"
             },
-            "jobTitle": "Назва вакансії",
+            "jobTitle": "Назва",
             "category": "Категорія",
             "location": "Розташування",
             "locationRemote": "Віддалено",
@@ -24,8 +24,8 @@
                 "withdrawn": "Відкликано"
             },
             "proposedPrice": "Бюджет",
-            "noApplications": "У вас поки немає відгуків",
-            "withdrawBtn": "Відкликати відгук"
+            "noApplications": "У вас поки немає поданих заявок",
+            "withdrawBtn": "Відкликати заявку"
         }
     }
 }

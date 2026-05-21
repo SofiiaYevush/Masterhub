@@ -1,5 +1,5 @@
-import React from "react";
-import { useQuery } from "@tanstack/react-query";
+import React, { useState } from "react";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
@@ -8,11 +8,38 @@ import "./MyJobs.scss";
 const MyJobs = () => {
     const navigate = useNavigate();
     const { t } = useTranslation("job");
+    const [deleteId, setDeleteId] = useState(null);
 
     const { data: jobs, isLoading, error } = useQuery({
         queryKey: ["myJobs"],
         queryFn: () => newRequest.get("/jobs/my-jobs").then(res => res.data),
     });
+
+    const queryClient = useQueryClient();
+
+    const deleteMutation = useMutation({
+        mutationFn: (id) => newRequest.delete(`/jobs/${id}`),
+        onSuccess: () => {
+            queryClient.invalidateQueries(["myJobs"]);
+        },
+    });
+
+    const handleDelete = (id) => {
+        deleteMutation.mutate(id);
+    };
+
+    const handleDeleteClick = (id) => {
+        setDeleteId(id);
+    };
+
+    const confirmDelete = () => {
+        deleteMutation.mutate(deleteId);
+        setDeleteId(null);
+    };
+
+    const cancelDelete = () => {
+        setDeleteId(null);
+    };
 
     if (isLoading) return <p className="my-jobs__loading">{t('job.myJobs.loadingJobs')}</p>;
     if (error) return <p className="my-jobs__error">{t('job.myJobs.errorLoadingJobs')}</p>;
@@ -24,6 +51,15 @@ const MyJobs = () => {
                 {jobs?.map(job => (
                     <div key={job._id} className="job-card" onClick={() => navigate(`/jobs/${job._id}/applications`)}>
                         <h2 className="job-title">{job.title}</h2>
+                        <div
+                            className="delete-btn"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                handleDeleteClick(job._id);
+                            }}
+                        >
+                           <img src="../../icons/delete.png" alt="Delete" />
+                        </div>
 
                         <div className="job-field">
                             <span className="field-label">{t('job.myJobs.description')}</span>
@@ -70,6 +106,22 @@ const MyJobs = () => {
                     </div>
                 ))}
             </div>
+            {deleteId && (
+                <div className="modal-overlay">
+                    <div className="modal">
+                        <h3>{t('job.myJobs.deleteJob')}</h3>
+                        <p>{t('job.myJobs.deleteJobConfirmation')}</p>
+                        <div className="modal-actions">
+                            <button className="cancel" onClick={cancelDelete}>
+                                {t('job.myJobs.deleteJobCancel')}
+                            </button>
+                            <button className="delete" onClick={confirmDelete}>
+                                {t('job.myJobs.deleteJobConfirm')}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

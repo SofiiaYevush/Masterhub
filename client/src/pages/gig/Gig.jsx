@@ -1,10 +1,13 @@
 import React from "react";
 import "./Gig.scss";
-import { Slider } from "infinite-react-carousel/lib";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import Reviews from "../../components/reviews/Reviews";
+import Slide from "../../components/slide/Slide";
 import getCurrentUser from "../../utils/getCurrentUser";
 import { useTranslation } from 'react-i18next';
 
@@ -47,7 +50,6 @@ function Gig() {
       console.log(err);
     }
   };
-  
 
   if (isLoading) return <p>Loading...</p>;
 
@@ -82,20 +84,14 @@ function Gig() {
                   alt=""
                 />
                 <span>{dataUser.username}</span>
-              </div>              
+              </div>
             )}
             {Array.isArray(data.images) && data.images.length > 0 && (
-              <Slider
-                slidesToShow={1}
-                arrowsScroll={1}
-                className="slider"
-                prevArrow={<CustomArrow type="prev" />}
-                nextArrow={<CustomArrow type="next" />}
-              >
+              <Slide slidesToShow={1} slidesToScroll={1}>
                 {data.images.map((img) => (
                   <img key={img} src={img} alt="" />
                 ))}
-              </Slider>
+              </Slide>
             )}
             <h2>{t('gig.aboutService')}</h2>
             <p>{data.desc}</p>
@@ -122,7 +118,7 @@ function Gig() {
                               .fill()
                               .map((item, i) => (
                                 <img src="../../img/star.png" alt="" key={i} />
-                            ))}
+                              ))}
                             <span>{Math.round(data.totalStars / data.starNumber)}</span>
                           </div>
                         )}
@@ -142,7 +138,7 @@ function Gig() {
                         <span className="box-bottom-text">{dataUser.phone}</span>
                       </div>
                     </div>
-                  </div>                  
+                  </div>
                 </div>
               </div>
             )}
@@ -153,23 +149,23 @@ function Gig() {
               <h3>{data.shortTitle}</h3>
               <p>
                 {
-                data.isPriceNegotiable
-                ?
-                <div className="negotiable-price">
-                  <img src="../../icons/negotiating.png" alt="" />
-                  <div className="negotiable-price-text">
-                    <span>{t('gig.negotiablePriceTop')}</span>
-                    <span>{t('gig.negotiablePriceBottom')}</span>
-                  </div>
-                </div>
-                :
-                <p className="price">
-                  ₴ {data.price}
-                </p>
+                  data.isPriceNegotiable
+                    ?
+                    <div className="negotiable-price">
+                      <img src="../../icons/negotiating.png" alt="" />
+                      <div className="negotiable-price-text">
+                        <span>{t('gig.negotiablePriceTop')}</span>
+                        <span>{t('gig.negotiablePriceBottom')}</span>
+                      </div>
+                    </div>
+                    :
+                    <p className="price">
+                      ₴ {data.price}
+                    </p>
                 }
               </p>
             </div>
-            <p  className="description">{data.shortDesc}</p>
+            <p className="description">{data.shortDesc}</p>
             <div className="details">
               <div className="item">
                 <img src="../../img/clock.png" alt="" />
@@ -190,11 +186,11 @@ function Gig() {
             </div>
             {!currentUser.isSeller && (
               <button
-              className="hire-red-button"
-              onClick={() => handleHire(data._id)}
-            >
-              {t('gig.hireButton')}
-            </button>
+                className="hire-red-button"
+                onClick={() => handleHire(data._id)}
+              >
+                {t('gig.hireButton')}
+              </button>
             )}
           </div>
         </div>

@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import getCurrentUser from "../../utils/getCurrentUser";
 import AlertMessage from "../alert-message/AlertMessage";
+import VerifiedBadge from "../verified-badge/VerifiedBadge";
 import { useTranslation } from 'react-i18next';
 
 const GigCard = ({ item }) => {
@@ -28,7 +29,7 @@ const GigCard = ({ item }) => {
       navigate(`/gig/${item._id}`);
     }
   };
-  
+
   return (
     <>
       <div className="card" onClick={handleClick} style={{ cursor: "pointer" }}>
@@ -42,7 +43,15 @@ const GigCard = ({ item }) => {
             ) : (
               <div className="user">
                 <img src={data.img || "/img/noavatar.jpg"} alt="" />
-                <span>{data.username}</span>
+                <div className="user-info">
+                  <span className="username">
+                    {data.username}
+                  </span>
+                  {data.isVerified && (
+                    <span className="verified-badge">✔</span>
+                  )}
+                  <VerifiedBadge isVerified={data.isVerified} />
+                </div>
               </div>
             )}
             <p className="card-text">{item.title}</p>
@@ -53,8 +62,8 @@ const GigCard = ({ item }) => {
               <h2 className="price">
                 {
                   item.isPriceNegotiable
-                  ? t("gig-card.priceNegotiable")
-                  : `₴ ${item.price}`
+                    ? t("gig-card.priceNegotiable")
+                    : `₴ ${item.price}`
                 }
               </h2>
             </div>

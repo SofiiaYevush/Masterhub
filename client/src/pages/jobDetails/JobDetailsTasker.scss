@@ -106,6 +106,7 @@
             flex-direction: column;
             gap: 6px;
             transition: 0.25s;
+
             &:hover {
                 transform: translateY(-2px);
                 border-color: #e5e7eb;
@@ -125,13 +126,60 @@
                 color: #111827;
             }
         }
+
+        .skills-field {
+            grid-column: 1 / -1;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .skill-item {
+            position: relative;
+
+            padding: 8px 14px;
+            border-radius: 999px;
+
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+
+            color: #1f2937;
+
+            background: linear-gradient(135deg,
+                    rgba(128, 0, 0, 0.08),
+                    rgba(99, 102, 241, 0.08));
+
+            border: 1px solid rgba(128, 0, 0, 0.12);
+
+            cursor: default;
+
+            transition: all 0.25s ease;
+
+            backdrop-filter: blur(8px);
+            transform: translateY(calc(var(--i) * 0.5px));
+
+            &:hover {
+                transform: translateY(-3px) scale(1.05);
+
+                background: linear-gradient(135deg,
+                        rgba(128, 0, 0, 0.18),
+                        rgba(99, 102, 241, 0.18));
+
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+                border-color: rgba(128, 0, 0, 0.25);
+            }
+        }
     }
 
     /* RIGHT - APPLY */
     .apply-card {
         position: sticky;
         top: 24px;
-
         background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(14px);
 
@@ -153,11 +201,20 @@
 
         .apply-sub {
             font-size: 14px;
-            color: #4b5563;
-
-            margin-bottom: 20px;
+            color: #000000;
+            padding-top: 15px;
             line-height: 1.5;
+            padding-bottom: 8px;
         }
+
+        .apply-sub2 {
+            font-size: 14px;
+            color: #000000;
+            font-weight: 800;
+            line-height: 1.5;
+            padding-bottom: 35px;
+        }
+
 
         .form {
             display: flex;
@@ -206,6 +263,7 @@
             cursor: pointer;
             transition: 0.25s;
             box-shadow: 0 15px 30px rgba(128, 0, 0, 0.2);
+
             &:hover {
                 transform: translateY(-2px);
                 box-shadow: 0 25px 50px rgba(128, 0, 0, 0.25);

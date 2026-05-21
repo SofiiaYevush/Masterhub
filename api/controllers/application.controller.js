@@ -74,7 +74,7 @@ export const getMyApplications = async (req, res, next) => {
         };
 
         const applications = await Application.find(filter)
-            .populate("jobId", "title category budget location status")
+            .populate("jobId", "title category budget location status deadline")
             .sort({ createdAt: -1 });
 
         res.status(200).json(applications);

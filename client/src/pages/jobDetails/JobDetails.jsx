@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import { useTranslation } from 'react-i18next';
+import { categories } from "../../data";
 import "./JobDetails.scss";
 
 const JobDetails = () => {
@@ -10,6 +11,7 @@ const JobDetails = () => {
     const queryClient = useQueryClient();
     const [activeTab, setActiveTab] = useState("all");
     const { t } = useTranslation("job");
+    const categoriesList = categories();
 
     // отримати job + applications
     const { data, isLoading, error } = useQuery({
@@ -63,7 +65,12 @@ const JobDetails = () => {
 
                         <div className="job-field">
                             <span className="job-label">{t('job.jobDetails.category')}</span>
-                            <span className="job-value">{job.category}</span>
+                            <span className="job-value">
+                                {
+                                    categoriesList.find(cat => cat.key === job.category)?.title
+                                    || job.category
+                                }
+                            </span>
                         </div>
 
                         <div className="job-field">

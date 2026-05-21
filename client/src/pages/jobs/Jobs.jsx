@@ -3,12 +3,14 @@ import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import { categories } from "../../data";
 import "./Jobs.scss";
 
 const Jobs = () => {
   const { search } = useLocation();
   const navigate = useNavigate();
-    const { t } = useTranslation("job");
+  const { t } = useTranslation(["job", "data"]);
+  const categoriesList = categories();
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["jobs", search],
@@ -43,13 +45,18 @@ const Jobs = () => {
 
               <div className="meta-row">
                 <span className="meta-label">{t("job.jobs.category")}:</span>
-                <span className="meta-value">{job.category}</span>
+                <span className="meta-value">
+                  {
+                    categoriesList.find(cat => cat.key === job.category)?.title
+                    || job.category
+                  }
+                </span>
               </div>
 
               <div className="meta-row">
                 <span className="meta-label">{t("job.jobs.budget")}:</span>
                 <span className="meta-value">
-                  {job.budget || "-"}
+                  {job.budget}
                   {job.isBudgetNegotiable && t("job.jobs.budgetNegotiable")}
                 </span>
               </div>
@@ -81,7 +88,7 @@ const Jobs = () => {
           </div>
         ))}
       </div>
-    </div>
+    </div >
   );
 };
 

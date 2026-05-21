@@ -5,22 +5,36 @@
             "titleField": "Title of your job",
             "description": "Description of your job",
             "categoryLabel": "Category",
-            "budgetLabel": "Budget (optional)",
+            "budgetLabel": "Budget (constraints)",
             "budgetNegotiable": "Negotiable",
             "location": "Location",
             "deadline": "Deadline",
             "skills": "Skills",
             "addSkill": "Add Skill",
             "language": "Language",
-            "ukrainian": "Ukrainian",
-            "english": "English",
+            "ukrainian": "Display only for Ukrainian-speaking users",
+            "english": "Display only for English-speaking users",
             "createBtn": "Create Job",
             "titlePlaceholder": "Repair...",
             "descPlaceholder": "Describe the job in more detail",
             "skillsPlaceholder": "Enter a skill",
             "selectCategory": "Select a category",
             "budgetPlaceholder": "e.g. 1000",
-            "locationPlaceholder": "e.g. Lviv"
+            "locationPlaceholder": "e.g. Lviv",
+            "alertMessage": "Add all required fields",
+            "skillsDropdown": {
+                "cleaning": "Cleaning",
+                "painting": "Painting",
+                "plumbing": "Plumbing",
+                "electrician": "Electrician",
+                "moving": "Moving",
+                "gardening": "Gardening",
+                "repair": "Repair",
+                "installation": "Installation",
+                "delivery": "Delivery",
+                "furnitureAssembly": "Furniture Assembly"
+            },
+            "selectSkill": "Select a skill"
         },
         "myJobs": {
             "loadingJobs": "Loading jobs...",
@@ -37,7 +51,11 @@
             "status": {
                 "open": "Open",
                 "closed": "Closed"
-            }
+            },
+            "deleteJob": "Delete Job",
+            "deleteJobConfirmation": "This action cannot be undone.",
+            "deleteJobCancel": "Cancel",
+            "deleteJobConfirm": "Confirm"
         },
         "jobDetails": {
             "category": "Category",
@@ -87,6 +105,9 @@
         "jobDetailsTasker": {
             "applyTitle": "Apply for this job",
             "applySub": "Send your proposal and price. Client will review your application.",
+            "applySub2": "Important: Make sure to provide a way for the client to contact you!!!",
+            "applySub3": "After submitting your application, you can track its status in the 'My Applications' section.",
+            "applySub4": "If you already have an active application for this job, you can withdraw it and submit a new one.",
             "alreadyApplied": "Already Applied ✔",
             "coverLetterPlaceholder": "Write your cover letter...",
             "proposedPricePlaceholder": "Your proposed price",
@@ -97,11 +118,11 @@
             "location": "Location",
             "deadline": "Deadline",
             "status": "Status",
-                "statuses": {
-                    "active": "Active",
-                    "closed": "Closed",
-                    "hired": "Hired"
-                }
+            "statuses": {
+                "active": "Active",
+                "closed": "Closed",
+                "hired": "Hired"
+            }
         }
     }
 }

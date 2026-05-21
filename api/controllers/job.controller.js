@@ -39,6 +39,10 @@ export const getJobWithApplicationForTasker = async (req, res, next) => {
     try {
         const job = await Job.findById(req.params.id);
 
+        if (!job || job.isDeleted) {
+            return next(createError(404, "Job not found"));
+        }
+
         if (!job) return next(createError(404, "Job not found"));
 
         if (job.clientId.toString() !== req.userId) {
@@ -82,8 +86,10 @@ export const getJobWithApplicationsForClient = async (req, res, next) => {
 
 export const getMyJobsForClient = async (req, res, next) => {
     try {
-        const jobs = await Job.find({ clientId: req.userId })
-            .sort({ createdAt: -1 });
+        const jobs = await Job.find({
+            clientId: req.userId,
+            isDeleted: false,
+        }).sort({ createdAt: -1 });
 
         const jobsWithCounts = await Promise.all(
             jobs.map(async (job) => {
@@ -108,7 +114,8 @@ export const getJobsForTasker = async (req, res, next) => {
     const q = req.query;
 
     const filters = {
-        status: "active", // тільки активні jobs для таскерів
+        status: "active",
+        isDeleted: false,
         ...(q.cat && { category: q.cat }),
         ...(q.search && { title: { $regex: q.search, $options: "i" } }),
     };
@@ -177,6 +184,35 @@ export const applyToJob = async (req, res, next) => {
         res.status(201).json({
             message: "Application submitted successfully",
             application: saved,
+        });
+    } catch (err) {
+        next(err);
+    }
+};
+
+export const deleteJob = async (req, res, next) => {
+    try {
+        const job = await Job.findById(req.params.id);
+
+        if (!job) {
+            return next(createError(404, "Job not found"));
+        }
+
+        if (job.clientId.toString() !== req.userId) {
+            return next(createError(403, "Not allowed"));
+        }
+
+        if (job.isDeleted) {
+            return next(createError(400, "Job already deleted"));
+        }
+
+        // soft delete
+        job.isDeleted = true;
+        job.status = "closed";
+        await job.save();
+
+        res.status(200).json({
+            message: "Job deleted successfully",
         });
     } catch (err) {
         next(err);

@@ -7,12 +7,15 @@ import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
 import AlertMessage from "../../components/alert-message/AlertMessage";
 import { useTranslation } from 'react-i18next';
+import { defaultSkills } from "../../utils/skillsData";
 
 const CreateJob = () => {
     const { t } = useTranslation("job");
     const [showAlert, setShowAlert] = useState(false);
     const [state, dispatch] = useReducer(jobReducer, INITIAL_STATE);
     const [isBudgetNegotiable, setIsBudgetNegotiable] = useState(false);
+    const [skillInput, setSkillInput] = useState("");
+    const [showSkills, setShowSkills] = useState(false);
 
     const handleChange = (e) => {
         dispatch({ type: "CHANGE_INPUT", payload: { name: e.target.name, value: e.target.value } });
@@ -22,6 +25,12 @@ const CreateJob = () => {
         e.preventDefault();
         dispatch({ type: "ADD_SKILL", payload: e.target[0].value });
         e.target[0].value = "";
+    };
+
+    const addSkill = (skill) => {
+        if (!state.skills.includes(skill)) {
+            dispatch({ type: "ADD_SKILL", payload: skill });
+        }
     };
 
     const queryClient = useQueryClient();
@@ -91,13 +100,85 @@ const CreateJob = () => {
 
                     <div className="field">
                         <label>{t('job.createJob.skills')}</label>
-                        <form onSubmit={handleSkills}>
-                            <input type="text" placeholder={t('job.createJob.skillsPlaceholder')} />
-                            <button type="submit">{t('job.createJob.addSkill')}</button>
-                        </form>
+                        <div className="skills-input-wrapper">
+
+                            <input
+                                type="text"
+                                value={skillInput}
+                                placeholder={t('job.createJob.skillsPlaceholder')}
+                                onChange={(e) => setSkillInput(e.target.value)}
+                                onFocus={() => setShowSkills(true)}
+                                onBlur={() => {
+                                    setTimeout(() => {
+                                        setShowSkills(false);
+                                    }, 150);
+                                }}
+                                onKeyDown={(e) => {
+                                    if (e.key === "Enter" && skillInput.trim()) {
+                                        e.preventDefault();
+
+                                        addSkill(skillInput.trim());
+                                        setSkillInput("");
+                                    }
+                                }}
+                            />
+                            <button
+                                className="add-skill-btn"
+                                type="button"
+                                onClick={() => {
+                                    if (!skillInput.trim()) return;
+
+                                    addSkill(skillInput.trim());
+                                    setSkillInput("");
+                                }}
+                            >
+                                {t('job.createJob.addSkill')}
+                            </button>
+
+                            {showSkills && (
+                                <div className="skills-dropdown">
+
+                                    {defaultSkills.map(skill => {
+
+                                        const translatedSkill =
+                                            t(`job.createJob.skillsDropdown.${skill.key}`);
+
+                                        return (
+                                            <div
+                                                key={skill.key}
+                                                className="dropdown-item"
+                                                onMouseDown={() => {
+                                                    addSkill(translatedSkill);
+                                                    setSkillInput("");
+                                                    setShowSkills(false);
+                                                }}
+                                            >
+                                                {translatedSkill}
+                                            </div>
+                                        );
+                                    })}
+
+                                </div>
+                            )}
+                        </div>
+
                         <div className="skills-list">
                             {state.skills?.map(skill => (
-                                <span key={skill} className="skill-item">{skill} <button onClick={() => dispatch({ type: "REMOVE_SKILL", payload: skill })}>X</button></span>
+                                <span key={skill} className="skill-item">
+                                    {skill}
+
+                                    <button
+                                        type="button"
+                                        onClick={() =>
+                                            dispatch({
+                                                type: "REMOVE_SKILL",
+                                                payload: skill
+                                            })
+                                        }
+                                    >
+                                        ×
+                                    </button>
+                                </span>
                             ))}
                         </div>
                     </div>

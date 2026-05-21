@@ -44,6 +44,10 @@ const JobSchema = new Schema(
             en: { type: Boolean, default: false },
             uk: { type: Boolean, default: true },
         },
+        isDeleted: {
+            type: Boolean,
+            default: false,
+        },
     },
     { timestamps: true }
 );

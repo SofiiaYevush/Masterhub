@@ -1,0 +1,19 @@
+{
+    "banner": {
+        "guest": {
+            "title": "New on the platform 🚀",
+            "text": "Now clients can post jobs and taskers can apply directly. Join to start working or hiring instantly.",
+            "cta": "Get started"
+        },
+        "tasker": {
+            "title": "New for Taskers 💼",
+            "text": "You can now browse client jobs in Categories and track all your applications in 'My Applications'.",
+            "cta": "Explore jobs"
+        },
+        "client": {
+            "title": "New for Clients 🧑‍💼",
+            "text": "Post jobs, review applications, and manage taskers in one place. Hire faster and easier.",
+            "cta": "Create job"
+        }
+    }
+}

@@ -23,7 +23,7 @@ i18n
     backend: {
       loadPath: "/locales/{{lng}}/{{ns}}.json",
     },
-    ns: ["navbar", "footer", "introUnregistred", "search", "data", "helpful-tips", "testimonials", "analysis", "ready-to-start", "acordion-unregistered", "categories", "login", "pre-register", "register", "gig", "reviews", "gigs", "sort-dropdown", "about-us", "introTasker", "introClient", "acordion-tasker", "acordion-client", "add", "admin", "job", "application"],
+    ns: ["navbar", "footer", "introUnregistred", "search", "data", "helpful-tips", "testimonials", "analysis", "ready-to-start", "acordion-unregistered", "categories", "login", "pre-register", "register", "gig", "reviews", "gigs", "sort-dropdown", "about-us", "introTasker", "introClient", "acordion-tasker", "acordion-client", "add", "admin", "job", "application", "slides", "banner"],
     defaultNS: "navbar",
   });
 

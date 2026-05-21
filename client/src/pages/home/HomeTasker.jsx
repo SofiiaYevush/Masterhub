@@ -7,17 +7,22 @@ import { categories } from "../../data";
 import Testimonials from "../../components/testimonials/Testimonials";
 import AcordionTasker from "../../components/acordion/AcordionTasker";
 import ContactUs from "../../components/contact-us/ContactUs";
+import NewFeatureBanner from "../../components/new-feature-banner/NewFeatureBanner";
+import getCurrentUser from "../../utils/getCurrentUser";
 import "./HomeTasker.scss";
 
 function HomeTasker() {
+    const currentUser = getCurrentUser();
+
     return (
         <div>
             <IntroTasker />
             <Devider />
-            <Slide slidesToShow={5} arrowsScroll={5}>
+            <NewFeatureBanner user={currentUser} />
+            <Slide slidesToShow={5} slidesToScroll={5}>
                 {categories().map((card) => (
-                <CatCard key={card.id} card={card} />
-            ))}
+                    <CatCard key={card.id} card={card} />
+                ))}
             </Slide>
             <Testimonials />
             <AcordionTasker />

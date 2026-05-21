@@ -9,6 +9,7 @@ import Analysis from "../../components/analysis/Analysis";
 import ContactUs from "../../components/contact-us/ContactUs";
 import ReadyToStart from "../../components/ready-to-start/ReadyToStart";
 import AcordionUnregistered from "../../components/acordion/AcordionUnregistered";
+import NewFeatureBanner from "../../components/new-feature-banner/NewFeatureBanner";
 import { categories } from "../../data";
 
 function HomeUnregistered() {
@@ -16,6 +17,7 @@ function HomeUnregistered() {
         <div className="home">
             <IntroUnregistred />
             <Devider />
+            <NewFeatureBanner user={null} />
             <Slide slidesToShow={5} arrowsScroll={5}>
                 {categories().map((card) => (
                 <CatCard key={card.id} card={card} />

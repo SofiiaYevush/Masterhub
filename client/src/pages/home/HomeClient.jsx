@@ -7,17 +7,22 @@ import { categories } from "../../data";
 import Testimonials from "../../components/testimonials/Testimonials";
 import AcordionClient from "../../components/acordion/AcordionClient";
 import ContactUs from "../../components/contact-us/ContactUs";
+import NewFeatureBanner from "../../components/new-feature-banner/NewFeatureBanner";
+import getCurrentUser from "../../utils/getCurrentUser";
 import "./HomeClient.scss";
 
 function HomeClient() {
+    const currentUser = getCurrentUser();
+
     return (
         <div>
             <IntroClient />
             <Devider />
-            <Slide slidesToShow={5} arrowsScroll={5}>
+            <NewFeatureBanner user={currentUser} />
+            <Slide slidesToShow={5} slidesToScroll={5}>
                 {categories().map((card) => (
-                <CatCard key={card.id} card={card} />
-            ))}
+                    <CatCard key={card.id} card={card} />
+                ))}
             </Slide>
             <Testimonials />
             <AcordionClient />

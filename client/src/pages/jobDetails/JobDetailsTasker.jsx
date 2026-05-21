@@ -76,8 +76,31 @@ const JobDetailsTasker = () => {
                             <span className="value">{t(`job.jobDetailsTasker.statuses.${job.status}`)}</span>
                         </div>
 
-                    </div>
+                        <div className="info">
+                            <span className="label">{t('job.jobDetails.deadline')}</span>
+                            <span className="value">
+                                {job.deadline ? new Date(job.deadline).toLocaleDateString() : "-"}
+                            </span>
+                        </div>
 
+                        <div className="info">
+                            <span className="job-label">
+                                {t("job.jobDetails.skills")}
+                            </span>
+
+                            <div className="skills-list">
+                                {job.skills?.map((skill, index) => (
+                                    <span
+                                        key={skill}
+                                        className="skill-item"
+                                        style={{ "--i": index }}
+                                    >
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* RIGHT */}
@@ -89,6 +112,9 @@ const JobDetailsTasker = () => {
 
                     <div className="apply-sub">
                         {t("job.jobDetailsTasker.applySub")}
+                    </div>
+                    <div className="apply-sub2">
+                        {t("job.jobDetailsTasker.applySub2")}
                     </div>
 
                     {job.alreadyApplied ? (

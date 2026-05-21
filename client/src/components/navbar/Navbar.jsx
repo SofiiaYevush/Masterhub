@@ -74,11 +74,14 @@ function Navbar() {
                     <hr />
                     {currentUser.isSeller && (
                       <>
-                        <Link className="dropdown-link" to="/mygigs">
-                          {t('navbar.myServices')}
-                        </Link>
-                        <Link className="dropdown-link" to="/add">
-                          {t('navbar.addNew')}
+                      <Link className="dropdown-link" to="/my-applications">
+                        {t('navbar.myApplications')}
+                      </Link>
+                      <Link className="dropdown-link" to="/mygigs">
+                        {t('navbar.myServices')}
+                      </Link>
+                      <Link className="dropdown-link" to="/add">
+                        {t('navbar.addNew')}
                         </Link>
                       </>
                     )}

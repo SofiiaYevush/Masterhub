@@ -26,8 +26,9 @@
     
     .about-us__heading-text-container p{
         font-family: "Comfortaa", sans-serif;
-        font-size: 20px;
+        font-size: 24px;
         color: var(--text-color-black);
+        line-height: 1.5;
     }
     
     .about-us__main-containers {
@@ -62,10 +63,11 @@
     }
     
     .about-us__main-one-container-title-text p {
-        font-size: 16px;
-        font-family: "Comfortaa", sans-serif;
+        font-size: 24px;
+        font-family: 'DM Sans', sans-serif;
         color: var(--text-color-black);
         text-align: center;
         padding: 0 80px;
+        line-height: 1.5;
     }
 }

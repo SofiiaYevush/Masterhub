@@ -5,6 +5,7 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import { useTranslation } from 'react-i18next';
 import "./MyApplications.scss";
+import { categories } from "../../data";
 
 const tabs = [
     { label: "All", value: "" },
@@ -17,6 +18,7 @@ const tabs = [
 const MyApplications = () => {
     const [activeTab, setActiveTab] = useState("");
     const { t } = useTranslation("application");
+  const categoriesList = categories();
 
     const { data, isLoading, error } = useQuery({
         queryKey: ["myApplications", activeTab],
@@ -25,7 +27,6 @@ const MyApplications = () => {
                 .get(`/applications/my-applications${activeTab ? `?status=${activeTab}` : ""}`)
                 .then((res) => res.data),
     });
-
     const queryClient = useQueryClient();
 
     const withdrawMutation = useMutation({
@@ -60,13 +61,16 @@ const MyApplications = () => {
                 {data?.map((app) => (
                     <div key={app._id} className="application-card">
                         <h2>{app.jobId?.title}</h2>
-
+                        <div className="application-divider"></div>
                         <p className="meta">
                             <span className="meta__label">
                                 {t("application.myApplications.category")}:
                             </span>
                             <span className="meta__value">
-                                {app.jobId?.category}
+                                {
+                                    categoriesList.find(cat => cat.key === app.jobId?.category)?.title
+                                    || app.jobId?.category
+                                }
                             </span>
                         </p>
 
@@ -93,7 +97,7 @@ const MyApplications = () => {
                                 {t("application.myApplications.deadline")}:
                             </span>
                             <span className="meta__value">
-                                {app.jobId?.deadline}
+                                 {new Date(app.jobId?.deadline).toLocaleDateString("uk-UA")}
                             </span>
                         </p>
                         <p className={`status ${app.status}`}>

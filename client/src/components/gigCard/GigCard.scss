@@ -26,12 +26,10 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-  
       .user {
         display: flex;
         align-items: center;
         gap: 10px;
-  
         img {
           width: 26px;
           height: 26px;
@@ -39,11 +37,15 @@
           object-fit: cover;
         }
 
-        span {
+        .user-info {
+          display: flex;
+          align-items: center;
+        }
+
+        .username {
           font-size: 13px;
         }
       }
-  
       .card-text {
         color: #111;
         display: -webkit-box;
@@ -52,20 +54,20 @@
         overflow: hidden;
       }
     }
-  
+
     .card-info-bottom {
       padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-direction: row;
-  
+
       .card-price {
         display: flex;
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
-  
+
         .price {
           color: #555;
           font-size: 18px;
@@ -87,7 +89,7 @@
           text-align: end;
         }
       }
-  
+
       .card-label {
         color: #747474;
         font-size: 13px;
