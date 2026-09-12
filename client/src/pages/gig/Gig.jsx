@@ -7,7 +7,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import Reviews from "../../components/reviews/Reviews";
-import Slide from "../../components/slide/Slide";
+import SlideForGig from "../../components/slide/SlideForGig";
 import getCurrentUser from "../../utils/getCurrentUser";
 import { useTranslation } from 'react-i18next';
 
@@ -53,15 +53,6 @@ function Gig() {
 
   if (isLoading) return <p>Loading...</p>;
 
-  const CustomArrow = ({ type, onClick }) => (
-    <button
-      className={`carousel-arrow ${type === "prev" ? "left" : "right"}`}
-      onClick={onClick}
-    >
-      {type === "prev" ? "‹" : "›"}
-    </button>
-  );
-
   return (
     <div className="gig">
       {isLoading ? (
@@ -86,13 +77,15 @@ function Gig() {
                 <span>{dataUser.username}</span>
               </div>
             )}
-            {Array.isArray(data.images) && data.images.length > 0 && (
-              <Slide slidesToShow={1} slidesToScroll={1}>
-                {data.images.map((img) => (
-                  <img key={img} src={img} alt="" />
-                ))}
-              </Slide>
-            )}
+            <div className="carousel">
+              {Array.isArray(data.images) && data.images.length > 0 && (
+                <SlideForGig slidesToShow={1} slidesToScroll={1}>
+                  {data.images.map((img) => (
+                    <img key={img} src={img} alt="" />
+                  ))}
+                </SlideForGig>
+              )}
+            </div>
             <h2>{t('gig.aboutService')}</h2>
             <p>{data.desc}</p>
             {isLoadingUser ? (

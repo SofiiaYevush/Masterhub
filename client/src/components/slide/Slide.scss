@@ -1,30 +1,85 @@
 .slide {
-  display: flex;
-  justify-content: center;
-  padding: 100px 0px;
-  
+  padding: 50px 0;
+
+  .slides-title {
+    font-size: 40px;
+    padding: 40px 0;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
   .container {
-    width: 1400px;
+    max-width: 1400px;
+    margin: 0 auto;
     position: relative;
+    gap: 10px;
   }
 
-  .carousel-initialized {
-    position: static;
+  .slick-slide > div {
+    display: flex;
+    justify-content: center; // вирівнювання слайдів
   }
 
-  .carousel-prev,
-  .carousel-next {
-    width: 50px;
-    height: 50px;
-    background-color: rgb(243, 243, 243);
-    border-radius: 50%;
+  .custom-arrow {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+
+    width: 46px;
+    height: 46px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.92);
+    color: #222;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow:
+      0 6px 18px rgba(0, 0, 0, 0.12),
+      0 2px 8px rgba(0, 0, 0, 0.06);
+
+    transition:
+      transform 0.25s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease;
+
+    &:hover {
+      background: #fff;
+      transform: translateY(-50%) scale(1.08);
+
+      box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.16),
+        0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    &:active {
+      transform: translateY(-50%) scale(0.96);
+    }
+
+    &.prev {
+      left: -10px;
+    }
+
+    &.next {
+      right: -10px;
+    }
   }
 
-  .carousel-prev {
-    left: -25px;
-  }
+  // .custom-arrow.prev {
+  //   left: -0px;
+  //   margin-right: 50px;
+  // }
+
+  // .custom-arrow.next {
+  //   right: -20px;
+  // }
 }

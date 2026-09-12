@@ -18,6 +18,28 @@
         padding-top: 45px;
         padding-bottom: 20px;
       }
+      
+      .carousel {
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 800px;
+        height: auto;
+
+        img {
+          width: 90%;
+          height: 90%;
+          object-fit: cover;
+          align-self: center;
+          align-items: center;
+          display: flex;
+          border-radius: 20px;
+          transition: transform 0.3s ease-in-out;
+        }
+        img:hover {
+          transform: scale(1.02);
+        }
+      }
 
       .user {
         display: flex;
