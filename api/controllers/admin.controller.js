@@ -3,6 +3,7 @@ import Gig from "../models/gig.model.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import createError from "../utils/createError.js";
+import { authCookieOptions } from "../utils/cookieOptions.js";
 
 export const loginAdmin = async (req, res, next) => {
     try {
@@ -35,9 +36,7 @@ export const loginAdmin = async (req, res, next) => {
       );
   
       res
-        .cookie("accessToken", token, {
-          httpOnly: true,
-        })
+        .cookie("accessToken", token, authCookieOptions)
         .status(200)
         .send(info);
     } catch (err) {

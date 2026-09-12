@@ -1,5 +1,6 @@
 import User from "../models/user.model.js";
 import createError from "../utils/createError.js";
+import { authCookieOptions } from "../utils/cookieOptions.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
@@ -40,9 +41,7 @@ export const login = async (req, res, next) => {
 
     const { password, ...info } = user._doc;
     res
-      .cookie("accessToken", token, {
-        httpOnly: true,
-      })
+      .cookie("accessToken", token, authCookieOptions)
       .status(200)
       .send(info);
   } catch (err) {
@@ -52,10 +51,7 @@ export const login = async (req, res, next) => {
 
 export const logout = async (req, res) => {
   res
-    .clearCookie("accessToken", {
-      sameSite: "none",
-      secure: true,
-    })
+    .clearCookie("accessToken", authCookieOptions)
     .status(200)
     .send("User has been logged out.");
 };
