@@ -2,8 +2,6 @@ import "./config/i18n";
 import "./app.scss";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import React from "react";
-import { Elements } from "@stripe/react-stripe-js";
-import { stripePromise } from "./utils/stripe";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
@@ -23,6 +21,9 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import MyJobs from "./pages/myJobs/MyJobs";
 import CreateJob from "./pages/createJob/CreateJob";
 import JobDetails from "./pages/jobDetails/JobDetails";
+import Jobs from "./pages/jobs/Jobs";
+import JobDetailsTasker from "./pages/jobDetails/JobDetailsTasker";
+import MyApplications from "./pages/my-applications/MyApplications";
 import {
   QueryClient,
   QueryClientProvider,
@@ -120,18 +121,26 @@ function App() {
           element: <CreateJob />,
         },
         {
-          path: "/jobs/:id",
+          path: "/jobs/:id/applications",
           element: <JobDetails />,
+        },
+        {
+          path: "/jobs",
+          element: <Jobs />,
+        },
+        {
+          path: "/jobs/:id/details",
+          element: <JobDetailsTasker />,
+        },
+        {
+          path: "/my-applications",
+          element: <MyApplications />,
         }
       ],
     },
   ]);
 
-  return (
-    <Elements stripe={stripePromise}>
-      <RouterProvider router={router} />
-    </Elements>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
