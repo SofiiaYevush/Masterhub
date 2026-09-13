@@ -1,5 +1,5 @@
 import React from "react";
-import IntroUnregistred from "../../components/intro/introUnregistred";
+import IntroUnregistred from "../../components/intro/IntroUnregistred";
 import Devider from "../../components/devider/Devider";
 import Slide from "../../components/slide/Slide";
 import CatCard from "../../components/cat-card/CatCard";
