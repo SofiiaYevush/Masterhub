@@ -5,6 +5,7 @@ import newRequest from "../../utils/newRequest";
 import getCurrentUser from "../../utils/getCurrentUser";
 import "./Profile.scss";
 import { useTranslation } from 'react-i18next';
+import IdentityVerification from "../../components/identity-verification/IdentityVerification";
 
 const Profile = () => {
   const { t } = useTranslation("profile");
@@ -17,13 +18,13 @@ const Profile = () => {
   const [showOldPassword, setShowOldPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
+  const [showVerification, setShowVerification] = useState(false);
 
   const { data: user, isLoading } = useQuery({
     queryKey: ["user", userId],
     enabled: !!userId,
     queryFn: () => newRequest.get(`/users/${userId}`).then(res => res.data),
-    onSuccess: (data) => setForm(data)
+    onSuccess: (data) => setForm(data),
   });
 
   const updateProfileMutation = useMutation({
@@ -33,7 +34,7 @@ const Profile = () => {
       queryClient.invalidateQueries(["user", userId]);
       localStorage.setItem("currentUser", JSON.stringify(data.data));
       alert(t("profile.profileUpdated"));
-    },    
+    },
     onError: () => alert(t("profile.errorUpdatingProfile")),
   });
 
@@ -52,14 +53,13 @@ const Profile = () => {
   const handleFileUpload = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
-  
     try {
       const uploadedUrl = await upload(file);
       setForm(prev => ({ ...prev, img: uploadedUrl }));
     } catch (err) {
       alert(t("profile.errorUploadingImage") || "Error uploading image");
     }
-  };  
+  };
 
   const handleChange = (e) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -89,132 +89,175 @@ const Profile = () => {
   return (
     <div className="profile">
       <form onSubmit={handleSubmit} className="profile-form">
-      <div className="profile__form">
-        <div className="profile__left">
-          <div className="profile-photo-section">
-            {form.img ? (
-              <img src={form.img} alt="Profile" />
-            ) : (
-              <img src="/img/noavatar.jpg" alt="Profile" />
-            )}
-            <label htmlFor="file-upload" className="profile__white-button">
-              {t("profile.selectPhotoBtn") || "Вибрати"}
-            </label>
-            <input
-              id="file-upload"
-              type="file"
-              accept="image/*"
-              onChange={handleFileUpload}
-              style={{ display: "none" }}
-            />
+        <div className="profile__form">
+          <div className="profile__left">
+            <div className="profile-photo-section">
+              {form.img ? (
+                <img src={form.img} alt="Profile" />
+              ) : (
+                <img src="/img/noavatar.jpg" alt="Profile" />
+              )}
+              <label htmlFor="file-upload" className="profile__white-button">
+                {t("profile.selectPhotoBtn") || "Вибрати"}
+              </label>
+              <input
+                id="file-upload"
+                type="file"
+                accept="image/*"
+                onChange={handleFileUpload}
+                style={{ display: "none" }}
+              />
+            </div>
           </div>
-        </div>
-        <div className="profile__right">
-          <h1>{t("profile.profileTitle")}</h1>
-          <div className="profile__right-labels-text">
-            <label className="form-title" >{t("profile.username")}</label>
-            <input
-              className="form-field"
-              type="text"
-              name="username"
-              value={form.username || ""}
-              placeholder={t("profile.profileUsernamePlaceholder")}
-              onChange={handleChange}
-            />
+          <div className="profile__right">
+            <h1>{t("profile.profileTitle")}</h1>
+            {/* Verification */}
+            <div className="profile-verification">
+              <div className="profile-verification__info">
+                <span className="profile-verification__title">
+                  Identity verification
+                </span>
 
-            <label className="form-title" >{t("profile.email")}</label>
-            <input
-              className="form-field"
-              type="email"
-              name="email"
-              value={form.email || ""}
-              onChange={handleChange}
-              placeholder={t("profile.profileEmailPlaceholder")}
-            />
+                {user?.cardVerified ? (
+                  <span className="profile-verification__verified">
+                    ✓ Identity verified
+                  </span>
+                ) : (
+                  <span className="profile-verification__not-verified">
+                    Identity not verified
+                  </span>
+                )}
+              </div>
 
-            <label className="form-title" >{t("profile.oldPassword")}</label>
-            <div className="password-field">
-              <input
-                className="form-field password-input"
-                type={showOldPassword ? "text" : "password"}
-                name="oldPassword"
-                value={passwords.oldPassword}
-                onChange={handlePasswordChange}
-                placeholder={t("profile.enterOldPassword")}
-              />
-              <button
-                type="button"
-                className="eye-button"
-                onClick={() => setShowOldPassword(prev => !prev)}
-                aria-label="Toggle password visibility"
-              >
-                {showOldPassword ? <img src="../../icons/hide-pass.png" alt="Hide" /> : <img src="../../icons/show-pass.png" alt="Show" />}
-            </button>
+              {!user?.cardVerified && (
+                <button
+                  type="button"
+                  className="profile__white-button"
+                  onClick={() => setShowVerification(true)}
+                >
+                  Verify identity
+                </button>
+              )}
             </div>
-          
-            <label className="form-title" >{t("profile.newPassword")}</label>
-            <div className="password-field">
+            <div className="profile__right-labels-text">
+              <label className="form-title" >{t("profile.username")}</label>
               <input
-                className="form-field password-input"
-                type={showNewPassword ? "text" : "password"}
-                name="newPassword"
-                value={passwords.newPassword}
-                onChange={handlePasswordChange}
-                placeholder={t("profile.enterNewPassword")}
+                className="form-field"
+                type="text"
+                name="username"
+                value={form.username || ""}
+                placeholder={t("profile.profileUsernamePlaceholder")}
+                onChange={handleChange}
               />
-              <button
-                type="button"
-                className="eye-button"
-                onClick={() => setShowNewPassword(prev => !prev)}
-                aria-label="Toggle new password visibility"
-              >
-                {showNewPassword ? <img src="../../icons/hide-pass.png" alt="Hide" /> : <img src="../../icons/show-pass.png" alt="Show" />}
-              </button>
-            </div>
 
-            <label className="form-title" >{t("profile.confirmPassword")}</label>
-            <div className="password-field">
+              <label className="form-title" >{t("profile.email")}</label>
               <input
-                type={showConfirmPassword ? "text" : "password"}
-                className="form-field password-input"
-                name="confirmPassword"
-                value={passwords.confirmPassword}
-                onChange={handlePasswordChange}
-                placeholder={t("profile.confirmNewPassword")}
+                className="form-field"
+                type="email"
+                name="email"
+                value={form.email || ""}
+                onChange={handleChange}
+                placeholder={t("profile.profileEmailPlaceholder")}
               />
-              <button
-                type="button"
-                className="eye-button"
-                onClick={() => setShowConfirmPassword(prev => !prev)}
-                aria-label="Toggle new password visibility"
-              >
-                {showConfirmPassword ? <img src="../../icons/hide-pass.png" alt="Hide" /> : <img src="../../icons/show-pass.png" alt="Show" />}
-              </button>
-            </div>
-            <label className="form-title" >{t("profile.country")}</label>
-            <input className="form-field" type="text" name="country" value={form.country || ""} onChange={handleChange} />
 
-            {currentUser.isSeller && (
-              <>
-                <label className="form-title" >{t("profile.phone")}</label>
-                <input className="form-field" type="tel" name="phone" value={form.phone || ""} onChange={handleChange} />
-
-                <label className="form-title" >{t("profile.desc")}</label>
-                <textarea
-                  className="form-field-description"
-                  name="desc"
-                  value={form.desc || ""}
-                  onChange={handleChange}
-                  cols="30"
-                  rows="10"
+              <label className="form-title" >{t("profile.oldPassword")}</label>
+              <div className="password-field">
+                <input
+                  className="form-field password-input"
+                  type={showOldPassword ? "text" : "password"}
+                  name="oldPassword"
+                  value={passwords.oldPassword}
+                  onChange={handlePasswordChange}
+                  placeholder={t("profile.enterOldPassword")}
                 />
-              </>
-            )}
+                <button
+                  type="button"
+                  className="eye-button"
+                  onClick={() => setShowOldPassword(prev => !prev)}
+                  aria-label="Toggle password visibility"
+                >
+                  {showOldPassword ? <img src="../../icons/hide-pass.png" alt="Hide" /> : <img src="../../icons/show-pass.png" alt="Show" />}
+                </button>
+              </div>
+
+              <label className="form-title" >{t("profile.newPassword")}</label>
+              <div className="password-field">
+                <input
+                  className="form-field password-input"
+                  type={showNewPassword ? "text" : "password"}
+                  name="newPassword"
+                  value={passwords.newPassword}
+                  onChange={handlePasswordChange}
+                  placeholder={t("profile.enterNewPassword")}
+                />
+                <button
+                  type="button"
+                  className="eye-button"
+                  onClick={() => setShowNewPassword(prev => !prev)}
+                  aria-label="Toggle new password visibility"
+                >
+                  {showNewPassword ? <img src="../../icons/hide-pass.png" alt="Hide" /> : <img src="../../icons/show-pass.png" alt="Show" />}
+                </button>
+              </div>
+
+              <label className="form-title" >{t("profile.confirmPassword")}</label>
+              <div className="password-field">
+                <input
+                  type={showConfirmPassword ? "text" : "password"}
+                  className="form-field password-input"
+                  name="confirmPassword"
+                  value={passwords.confirmPassword}
+                  onChange={handlePasswordChange}
+                  placeholder={t("profile.confirmNewPassword")}
+                />
+                <button
+                  type="button"
+                  className="eye-button"
+                  onClick={() => setShowConfirmPassword(prev => !prev)}
+                  aria-label="Toggle new password visibility"
+                >
+                  {showConfirmPassword ? <img src="../../icons/hide-pass.png" alt="Hide" /> : <img src="../../icons/show-pass.png" alt="Show" />}
+                </button>
+              </div>
+              <label className="form-title" >{t("profile.country")}</label>
+              <input className="form-field" type="text" name="country" value={form.country || ""} onChange={handleChange} />
+
+              {currentUser.isSeller && (
+                <>
+                  <label className="form-title" >{t("profile.phone")}</label>
+                  <input className="form-field" type="tel" name="phone" value={form.phone || ""} onChange={handleChange} />
+
+                  <label className="form-title" >{t("profile.desc")}</label>
+                  <textarea
+                    className="form-field-description"
+                    name="desc"
+                    value={form.desc || ""}
+                    onChange={handleChange}
+                    cols="30"
+                    rows="10"
+                  />
+                </>
+              )}
+            </div>
+            <button className="profile__submit-red-button" type="submit">{t("profile.save")}</button>
           </div>
-          <button className="profile__submit-red-button" type="submit">{t("profile.save")}</button>
-        </div>
         </div>
       </form>
+      {/* Verification Modal */}
+      {showVerification && (
+        <div className="identity-modal-overlay">
+          <IdentityVerification
+            onClose={() => setShowVerification(false)}
+            onVerified={() => {
+              setShowVerification(false);
+
+              setTimeout(() => {
+                queryClient.invalidateQueries(["user", userId]);
+              }, 1000);
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 };

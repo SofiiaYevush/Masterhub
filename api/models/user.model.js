@@ -34,7 +34,7 @@ const userSchema = new Schema({
   },
   isSeller: {
     type: Boolean,
-    default:false
+    default: false
   },
   isBlocked: {
     type: Boolean,
@@ -44,8 +44,16 @@ const userSchema = new Schema({
     type: Boolean,
     default: false
   },
-},{
-  timestamps:true
+  stripeCustomerId: {
+    type: String,
+    default: null,
+  },
+  cardVerified: {
+    type: Boolean,
+    default: false,
+  },
+}, {
+  timestamps: true
 });
 
 export default mongoose.model("User", userSchema)

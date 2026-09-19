@@ -20,7 +20,7 @@
 }
 
 .sign-up__text p {
-    font-size: 14px;
+    font-size: 20px;
     padding-right: 6px;
     color: #000000;
 }
@@ -50,7 +50,7 @@
 }
 
 .white-button-pre-register {
-    width: 210px;
+    width: 220px;
 }
 
 .red-button-pre-register {
@@ -61,7 +61,7 @@
     box-sizing: border-box;
     cursor: pointer;
     display: inline-flex;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: normal;
     justify-content: center;
     max-width: 460px;
@@ -97,7 +97,7 @@
     cursor: pointer;
     display: inline-flex;
     font-family: inherit;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: normal;
     justify-content: center;
     max-width: 460px;
@@ -105,8 +105,8 @@
     min-width: 0px;
     overflow: hidden;
     padding: 0px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 22px;
+    padding-right: 22px;
     text-align: center;
     touch-action: manipulation;
     transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;

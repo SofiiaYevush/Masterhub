@@ -1,5 +1,4 @@
-import dotenv from "dotenv";
-dotenv.config();
+import "dotenv/config";
 
 import express from "express";
 import mongoose from "mongoose";
@@ -14,6 +13,7 @@ import jobRoute from "./routes/job.route.js";
 import applicationRoute from "./routes/application.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import stripeRoute from "./routes/stripe.route.js";
 
 const app = express();
 
@@ -45,9 +45,17 @@ app.use(
     credentials: true,
   })
 );
+
+app.post(
+  "/api/stripe/webhook",
+  express.raw({ type: "application/json" }),
+  stripeRoute.handleWebhook
+);
+
 app.use(cookieParser());
 app.use(express.json());
 
+app.use("/api/stripe", stripeRoute.router);
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/gigs", gigRoute);
