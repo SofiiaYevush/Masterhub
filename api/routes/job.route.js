@@ -10,7 +10,8 @@ import {
   getJobWithApplicationsForClient,
   getJobsForTasker,
   getJobForTasker,
-  applyToJob
+  applyToJob,
+  deleteJob
 } from "../controllers/job.controller.js";
 
 const router = express.Router();
@@ -28,5 +29,6 @@ router.get("/:id", verifyClient, getJob);
 
 router.post("/:id/apply", verifyToken, applyToJob);
 router.post("/", verifyToken, verifyClient, createJob);
+router.delete("/:id", verifyToken, verifyClient, deleteJob);
 
 export default router;

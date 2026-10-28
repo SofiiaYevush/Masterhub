@@ -3,6 +3,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import upload from "../../utils/upload";
 import newRequest from "../../utils/newRequest";
 import getCurrentUser from "../../utils/getCurrentUser";
+import IdentityVerificationCard from "../../components/identity-verification-card/IdentityVerificationCard";
 import "./Profile.scss";
 import { useTranslation } from 'react-i18next';
 import IdentityVerification from "../../components/identity-verification/IdentityVerification";
@@ -112,33 +113,10 @@ const Profile = () => {
           <div className="profile__right">
             <h1>{t("profile.profileTitle")}</h1>
             {/* Verification */}
-            <div className="profile-verification">
-              <div className="profile-verification__info">
-                <span className="profile-verification__title">
-                  Identity verification
-                </span>
-
-                {user?.cardVerified ? (
-                  <span className="profile-verification__verified">
-                    ✓ Identity verified
-                  </span>
-                ) : (
-                  <span className="profile-verification__not-verified">
-                    Identity not verified
-                  </span>
-                )}
-              </div>
-
-              {!user?.cardVerified && (
-                <button
-                  type="button"
-                  className="profile__white-button"
-                  onClick={() => setShowVerification(true)}
-                >
-                  Verify identity
-                </button>
-              )}
-            </div>
+            <IdentityVerificationCard
+              isVerified={user?.cardVerified ?? false}
+              onVerify={() => setShowVerification(true)}
+            />
             <div className="profile__right-labels-text">
               <label className="form-title" >{t("profile.username")}</label>
               <input

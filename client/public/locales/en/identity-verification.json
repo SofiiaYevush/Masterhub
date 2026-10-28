@@ -1,0 +1,33 @@
+{
+  "identityVerification": {
+    "title": "Identity verification",
+    "verified": "Identity verified",
+    "notVerified": "Verify your identity to increase trust in your profile.",
+    "badge": "Verified",
+    "verifyButton": "Verify identity"
+  },
+  "identityVerificationWelcome": {
+    "title": "Identity verification",
+    "description": "Verify your identity to increase trust in your MasterHub profile.",
+    "identity": "Identity",
+    "protected": "Protected",
+    "stripeSecured": "Secured by Stripe",
+    "badge": "Secure account verification",
+    "benefitFirstTitle": "Build trust with your account",
+    "benefitFirstDescription": "Verify your identity to show others you're a trustworthy member of MasterHub.",
+    "benefitSecondTitle": "Securely handled by Stripe",
+    "benefitSecondDescription": "Your payment details are securely processed by Stripe.",
+    "preparing": "Preparing...",
+    "continueButton": "Continue",
+    "skipButton": "Not today",
+    "privacy": "You can complete verification later from your profile."
+  },
+  "stripeVerification": {
+    "title": "Identity verification",
+    "backButton": "Back",
+    "secureVerification": "Secure verification",
+    "description": "Add a payment card to confirm that your account belongs to you.",
+    "verifyButton": "Verify identity",
+    "secureNote": "Your payment details are securely handled by Stripe and are not stored by MasterHub."
+  }
+}

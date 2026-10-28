@@ -1,0 +1,243 @@
+.identity-verification-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 680px;
+    min-height: 84px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    overflow: hidden;
+
+    border: 1px solid rgba(128, 0, 0, 0.14);
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.04),
+        0 1px 3px rgba(0, 0, 0, 0.02);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+
+    &::before,
+    &::after {
+        position: absolute;
+        z-index: 0;
+        border-radius: 50%;
+        content: '';
+        pointer-events: none;
+    }
+
+    // Large soft wave
+    &::before {
+        top: -90px;
+        right: -70px;
+        width: 340px;
+        height: 180px;
+
+        background: rgba(128, 0, 0, 0.045);
+
+        transform: rotate(-8deg);
+    }
+
+    // Small overlapping wave
+    &::after {
+        right: 90px;
+        bottom: -115px;
+        width: 300px;
+        height: 170px;
+
+        background: rgba(128, 0, 0, 0.035);
+
+        transform: rotate(8deg);
+    }
+
+    &:hover {
+        border-color: rgba(128, 0, 0, 0.24);
+
+        box-shadow:
+            0 7px 20px rgba(128, 0, 0, 0.07),
+            0 2px 5px rgba(0, 0, 0, 0.03);
+
+        transform: translateY(-1px);
+    }
+
+    &--verified {
+        border-color: rgba(54, 191, 124, 0.22);
+
+        box-shadow:
+            0 3px 12px rgba(54, 191, 124, 0.05),
+            0 1px 3px rgba(0, 0, 0, 0.02);
+
+        &::before {
+            top: -100px;
+            right: -80px;
+            width: 380px;
+            height: 190px;
+
+            background: rgba(54, 191, 124, 0.09);
+
+            transform: rotate(-10deg);
+        }
+
+        &::after {
+            right: 70px;
+            bottom: -120px;
+            width: 320px;
+            height: 180px;
+
+            background: rgba(54, 191, 124, 0.06);
+
+            transform: rotate(7deg);
+        }
+
+        &:hover {
+            border-color: rgba(54, 191, 124, 0.34);
+
+            box-shadow:
+                0 7px 20px rgba(54, 191, 124, 0.08),
+                0 2px 5px rgba(0, 0, 0, 0.03);
+        }
+
+        .identity-verification-card__icon {
+            border-color: #d5eddf;
+            background: #f0faf4;
+            color: #23965d;
+        }
+
+        .identity-verification-card__title {
+            color: #252525;
+        }
+    }
+
+    &__icon,
+    &__info,
+    &__badge,
+    &__button {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        width: 46px;
+        height: 46px;
+
+        border: 1px solid rgba(128, 0, 0, 0.1);
+        border-radius: 13px;
+
+        background: #fff7f7;
+        color: #800000;
+
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 4px;
+        min-width: 0;
+    }
+
+    &__title {
+        color: #292424;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1.3;
+    }
+
+    &__not-verified {
+        color: #817878;
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 1.4;
+    }
+
+    &__verified {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        color: #23965d;
+        font-size: 14px;
+        font-weight: 600;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &__badge {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        color: #23965d;
+        font-size: 13px;
+        font-weight: 600;
+
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        gap: 6px;
+
+        min-height: 40px;
+        padding: 0 15px;
+
+        border: 0;
+        border-radius: 9px;
+
+        background: #800000;
+        color: #ffffff;
+
+        font-family: inherit;
+        font-size: 15px;
+        font-weight: 600;
+
+        cursor: pointer;
+
+        transition:
+            background 0.2s ease,
+            box-shadow 0.2s ease;
+
+        svg {
+            width: 17px;
+            height: 17px;
+            transition: transform 0.2s ease;
+        }
+
+        &:hover {
+            background: #660000;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.18);
+
+            svg {
+                transform: translateX(2px);
+            }
+        }
+
+        &:active {
+            transform: translateY(1px);
+        }
+    }
+}

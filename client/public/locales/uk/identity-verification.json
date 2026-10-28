@@ -1,0 +1,33 @@
+{
+  "identityVerification": {
+    "title": "Підтвердження особи",
+    "verified": "Особу підтверджено",
+    "notVerified": "Підтвердьте особу, щоб підвищити довіру до профілю.",
+    "badge": "Підтверджено",
+    "verifyButton": "Підтвердити особу"
+  },
+    "identityVerificationWelcome": {
+    "title": "Підтвердіть свою особу",
+    "description": "Підтвердьте свою особу, щоб підвищити довіру до свого профілю.",
+    "identity": "Особу",
+    "protected": "Захищено",
+    "stripeSecured": "Захищено Stripe",
+    "badge": "Підтвердження особи для зміцнення довіри",
+    "benefitFirstTitle": "Покажіть іншим, що вам можна довіряти",
+    "benefitFirstDescription": "Підтвердьте свою особу, щоб показати іншим, що ви надійний учасник MasterHub.",
+    "benefitSecondTitle": "Безпечна обробка через Stripe",
+    "benefitSecondDescription": "Ваші платіжні дані надійно обробляються Stripe.",
+    "preparing": "Підготовка...",
+    "continueButton": "Продовжити",
+    "skipButton": "Не сьогодні",
+    "privacy": "Ви можете завершити підтвердження пізніше у своєму профілі."
+  },
+  "stripeVerification": {
+    "title": "Підтвердження особи",
+    "backButton": "Назад",
+    "secureVerification": "Захищене підтвердження особи",
+    "description": "Додайте платіжну картку, щоб підтвердити, що обліковий запис належить вам.",
+    "verifyButton": "Підтвердити особу",
+    "secureNote": "Ваші платіжні дані надійно обробляються Stripe і не зберігаються MasterHub."
+  }
+}
