@@ -36,7 +36,7 @@ export const createSetupIntent = async (req, res, next) => {
     const setupIntent = await stripe.setupIntents.create({
       customer: stripeCustomerId,
       payment_method_types: ["card"],
-      usage: "off_session",
+      usage: "on_session", // don't require future payments, just verify the card
       metadata: {
         userId: user._id.toString(),
       },

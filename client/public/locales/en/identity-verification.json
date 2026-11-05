@@ -28,6 +28,25 @@
     "secureVerification": "Secure verification",
     "description": "Add a payment card to confirm that your account belongs to you.",
     "verifyButton": "Verify identity",
-    "secureNote": "Your payment details are securely handled by Stripe and are not stored by MasterHub."
+    "secureNote": "Your payment details are securely handled by Stripe and are not stored by MasterHub.",
+    "cardNumber": "Card number",
+    "expiryDate": "Expiration date",
+    "cvc": "Security code (CVV)",
+    "closeButton": "Close",
+    "verifying": "Verifying...",
+    "errors": {
+      "incompleteCard": "Your card number is incomplete.",
+      "invalidCard": "Your card number is invalid.",
+      "incompleteExpiry": "Please enter the complete card expiration date.",
+      "invalidExpiryMonth": "Please check the card expiration month.",
+      "invalidExpiryYear": "Please check the card expiration year.",
+      "incompleteCvc": "Please enter the complete card security code.",
+      "incorrectCvc": "Your card security code is incorrect.",
+      "cardDeclined": "Your card was declined. Please try another card.",
+      "insufficientFunds": "Your card has insufficient funds.",
+      "expiredCard": "Your card has expired.",
+      "processingError": "An error occurred while processing your card.",
+      "genericError": "Something went wrong. Please try again."
+    }
   }
 }

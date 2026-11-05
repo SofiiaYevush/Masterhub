@@ -1,280 +1,300 @@
 .stripe-verification {
-  position: relative;
-
   width: 100%;
-  max-width: 520px;
-
-  box-sizing: border-box;
-
-  overflow: hidden;
-
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 46px;
+  border: 1px solid #f0e8e9;
   border-radius: 28px;
-
-  background: #ffffff;
-
+  background: #fff;
   box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.22),
-    0 8px 30px rgba(0, 0, 0, 0.1);
+    0 28px 80px rgba(44, 17, 24, 0.10),
+    0 5px 18px rgba(44, 17, 24, 0.04);
+  color: #292124;
+  font-family: Inter, system-ui, sans-serif;
 
-  animation: stripe-verification-in 0.3s ease;
+  * {
+    box-sizing: border-box;
+  }
 
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 18px 20px 0;
+    margin-bottom: 42px;
   }
 
   &__back {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 7px;
-
-    padding: 7px 0;
-
-    border: none;
+    gap: 10px;
+    padding: 10px 0;
+    border: 0;
     background: transparent;
-
-    color: #666666;
-
-    font-size: 13px;
-    font-weight: 600;
-
+    color: #766a6e;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
-
     transition: color 0.2s ease;
 
     span {
-      font-size: 18px;
+      font-size: 23px;
+      line-height: 1;
+      transition: transform 0.2s ease;
     }
 
     &:hover {
-      color: #222222;
+      color: #800000;
+
+      span {
+        transform: translateX(-3px);
+      }
     }
   }
 
   &__close {
-    width: 38px;
-    height: 38px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid #eeeeee;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid #eee7e8;
     border-radius: 50%;
-
-    background: #f8f8f8;
-
-    color: #555555;
-
-    font-size: 25px;
-    font-weight: 300;
+    background: #fff;
+    color: #83777b;
+    font-size: 26px;
+    font-weight: 400;
     line-height: 1;
-
     cursor: pointer;
-
     transition:
       background 0.2s ease,
-      transform 0.2s ease;
+      border-color 0.2s ease,
+      color 0.2s ease;
 
     &:hover {
-      background: #eeeeee;
-      transform: scale(1.05);
+      border-color: #ead5d8;
+      background: #fbf3f4;
+      color: #800000;
     }
   }
 
   &__intro {
-    padding: 24px 30px 22px;
+    margin-bottom: 40px;
+    text-align: center;
 
     h2 {
-      margin: 14px 0 7px;
-
-      color: #171717;
-
-      font-size: 26px;
-      line-height: 1.15;
-      letter-spacing: -0.035em;
+      margin: 23px 0 15px;
+      color: #292124;
+      font-size: 34px;
+      font-weight: 650;
+      letter-spacing: -1px;
+      line-height: 1.25;
     }
 
     p {
-      margin: 0;
-
-      color: #777777;
-
-      font-size: 14px;
-      line-height: 1.5;
+      max-width: 480px;
+      margin: 0 auto;
+      color: #887d81;
+      font-size: 17px;
+      line-height: 1.75;
     }
   }
 
   &__badge {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-
-    padding: 6px 10px;
-
-    border-radius: 100px;
-
-    background: #f2f7ff;
-
-    color: #2563eb;
-
-    font-size: 11px;
-    font-weight: 700;
+    gap: 10px;
+    padding: 11px 17px;
+    border: 1px solid #d7efdc;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #f0faf2 0%, #f8fcf8 100%);
+    color: #218348;
+    font-size: 12px;
+    font-weight: 650;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 
     span {
-      width: 16px;
-      height: 16px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
+      display: grid;
+      place-items: center;
+      width: 21px;
+      height: 21px;
       border-radius: 50%;
-
-      background: #2563eb;
-
-      color: #ffffff;
-
-      font-size: 9px;
+      background: #218348;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 2px 5px rgba(33, 131, 72, 0.18);
     }
   }
 
   &__payment {
-    margin: 0 30px 20px;
+    margin-bottom: 28px;
+    padding: 30px;
+    border: 1px solid #eee6e8;
+    border-radius: 19px;
+    background: #fdfbfb;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+
+    &:focus-within {
+      border-color: #b98790;
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(128, 0, 0, 0.07);
+    }
+  }
+
+  &__card-label {
+    display: block;
+    margin-bottom: 16px;
+    color: #514449;
+    font-size: 16px;
+    font-weight: 650;
+  }
+
+  &__card-input {
+    display: flex;
+    align-items: center;
+    min-height: 78px;
+    padding: 0 22px;
+    border: 1px solid #e9e0e2;
+    border-radius: 14px;
+    background: #fff;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+
+    &:hover {
+      border-color: #cdb9bd;
+    }
+
+    &:focus-within {
+      border-color: #a66b75;
+      box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.06);
+    }
+
+    .StripeElement {
+      width: 100%;
+    }
+  }
+
+  &__field-error {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 12px 0 0;
+    color: #b42318;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   &__error {
-    margin: 0 30px 16px;
-
-    padding: 12px 14px;
-
-    border: 1px solid #fecaca;
-    border-radius: 10px;
-
-    background: #fff5f5;
-
-    color: #b42318;
-
-    font-size: 13px;
-    line-height: 1.45;
+    margin: 0 0 22px;
+    padding: 16px 18px;
+    border: 1px solid #f1d2d2;
+    border-radius: 13px;
+    background: #fff6f6;
+    color: #a52626;
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   &__button {
-    width: calc(100% - 60px);
-    min-height: 50px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-
-    margin: 0 30px;
-
-    border: none;
-    border-radius: 13px;
-
-    background: linear-gradient(
-      135deg,
-      #c92323 0%,
-      #ef4444 100%
-    );
-
-    color: #ffffff;
-
-    font-size: 14px;
-    font-weight: 700;
-
+    gap: 12px;
+    width: 100%;
+    min-height: 66px;
+    padding: 18px 24px;
+    border: 1px solid #800000;
+    border-radius: 14px;
+    background: #800000;
+    box-shadow: 0 6px 16px rgba(128, 0, 0, 0.17);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 650;
+    letter-spacing: 0.1px;
     cursor: pointer;
-
-    box-shadow:
-      0 8px 20px rgba(220, 38, 38, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
-
     transition:
-      transform 0.2s ease,
+      background 0.2s ease,
       box-shadow 0.2s ease,
+      transform 0.2s ease,
       opacity 0.2s ease;
 
-    &:hover:not(:disabled) {
-      transform: translateY(-2px);
+    span:not(.stripe-verification__spinner) {
+      display: grid;
+      place-items: center;
+      width: 23px;
+      height: 23px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 50%;
+      font-size: 13px;
+    }
 
-      box-shadow:
-        0 12px 25px rgba(220, 38, 38, 0.27),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    &:hover:not(:disabled) {
+      background: #690000;
+      box-shadow: 0 8px 20px rgba(128, 0, 0, 0.23);
+      transform: translateY(-1px);
     }
 
     &:active:not(:disabled) {
       transform: translateY(0);
+      box-shadow: 0 3px 8px rgba(128, 0, 0, 0.16);
+    }
+
+    &:focus-visible {
+      outline: 3px solid rgba(128, 0, 0, 0.25);
+      outline-offset: 3px;
     }
 
     &:disabled {
-      opacity: 0.7;
+      opacity: 0.55;
       cursor: not-allowed;
-    }
-
-    span:last-child {
-      font-size: 16px;
-    }
-  }
-
-  &__secure-note {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-
-    margin: 14px 30px 25px;
-
-    padding: 11px 13px;
-
-    border-radius: 10px;
-
-    background: #f8f9fa;
-
-    span {
-      flex-shrink: 0;
-
-      font-size: 13px;
-    }
-
-    p {
-      margin: 0;
-
-      color: #8a8a8a;
-
-      font-size: 11px;
-      line-height: 1.5;
+      box-shadow: none;
     }
   }
 
   &__spinner {
-    width: 16px;
-    height: 16px;
-
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    border-top-color: #ffffff;
-
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-top-color: #fff;
     border-radius: 50%;
+    animation: stripe-spin 0.7s linear infinite;
+  }
 
-    animation: stripe-verification-spin 0.7s linear infinite;
+  &__secure-note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 26px;
+    padding: 19px;
+    border: 1px solid #f1eded;
+    border-radius: 13px;
+    background: #faf8f8;
+
+    span {
+      flex-shrink: 0;
+      font-size: 19px;
+    }
+
+    p {
+      margin: 0;
+      color: #766c70;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+  }
+
+  &__back:focus-visible,
+  &__close:focus-visible {
+    outline: 3px solid rgba(128, 0, 0, 0.2);
+    outline-offset: 3px;
   }
 }
 
-@keyframes stripe-verification-in {
-  from {
-    opacity: 0;
-    transform: translateY(14px) scale(0.98);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes stripe-verification-spin {
+@keyframes stripe-spin {
   to {
     transform: rotate(360deg);
   }
@@ -282,28 +302,54 @@
 
 @media (max-width: 600px) {
   .stripe-verification {
-    border-radius: 22px;
+    max-width: 100%;
+    padding: 27px 21px;
+    border-radius: 20px;
+
+    &__header {
+      margin-bottom: 30px;
+    }
 
     &__intro {
-      padding: 20px;
+      margin-bottom: 30px;
+
+      h2 {
+        font-size: 27px;
+      }
+
+      p {
+        font-size: 15px;
+      }
     }
 
     &__payment {
-      margin: 0 20px 18px;
+      padding: 20px;
     }
 
-    &__error {
-      margin: 0 20px 15px;
+    &__card-input {
+      min-height: 66px;
+      padding: 0 14px;
     }
 
     &__button {
-      width: calc(100% - 40px);
-
-      margin: 0 20px;
+      min-height: 58px;
+      font-size: 16px;
     }
 
     &__secure-note {
-      margin: 13px 20px 20px;
+      padding: 15px;
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stripe-verification,
+  .stripe-verification *,
+  .stripe-verification *::before,
+  .stripe-verification *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
