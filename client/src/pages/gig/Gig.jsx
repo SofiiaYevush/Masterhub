@@ -3,7 +3,7 @@ import "./Gig.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import Reviews from "../../components/reviews/Reviews";
@@ -75,11 +75,13 @@ function Gig() {
                   src={dataUser.img || "/img/noavatar.jpg"}
                   alt=""
                 /> */}
-                <UserAvatar
-                  img={dataUser.img}
-                  cardVerified={dataUser.cardVerified}
-                />
-                <span>{dataUser.username}</span>
+                <Link to={`/user/${dataUser._id}`} className="user user-profile-link">
+                  <UserAvatar
+                    img={dataUser.img}
+                    cardVerified={dataUser.cardVerified}
+                  />
+                  <span>{dataUser.username}</span>
+                </Link>
               </div>
             )}
             <div className="carousel">
@@ -102,17 +104,23 @@ function Gig() {
                 <h2>{t('gig.aboutSeller')}</h2>
                 <div className="gig__user-box">
                   <div className="box-left-container">
-                    {/* <img src={dataUser.img || "../../img/noavatar.jpg"} alt="" /> */}
-                    <UserAvatar
-                      img={dataUser.img}
-                      cardVerified={dataUser.cardVerified}
-                      size={130}
-                    />
+                    <Link
+                      to={`/user/${dataUser._id}`}
+                      className="box-left-container user-profile-link"
+                    >
+                      <UserAvatar
+                        img={dataUser.img}
+                        cardVerified={dataUser.cardVerified}
+                        size={130}
+                      />
+                    </Link>
                   </div>
                   <div className="box-right-container">
                     <div className="box-right-top">
                       <div className="box-right-top-username">
-                        <span>{dataUser.username}</span>
+                        <Link to={`/user/${dataUser._id}`} className="user-profile-name">
+                          <span>{dataUser.username}</span>
+                        </Link>
                       </div>
                       <div className="box-right-top-stars">
                         {!isNaN(data.totalStars / data.starNumber) && (
@@ -197,8 +205,9 @@ function Gig() {
             )}
           </div>
         </div>
-      )}
-    </div>
+      )
+      }
+    </div >
   );
 }
 

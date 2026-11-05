@@ -24,6 +24,7 @@ import JobDetails from "./pages/jobDetails/JobDetails";
 import Jobs from "./pages/jobs/Jobs";
 import JobDetailsTasker from "./pages/jobDetails/JobDetailsTasker";
 import MyApplications from "./pages/my-applications/MyApplications";
+import UserProfile from "./pages/user-profile/UserProfile";
 import {
   QueryClient,
   QueryClientProvider,
@@ -135,7 +136,11 @@ function App() {
         {
           path: "/my-applications",
           element: <MyApplications />,
-        }
+        },
+        {
+          path: "/user/:id",
+          element: <UserProfile />,
+        },
       ],
     },
   ]);

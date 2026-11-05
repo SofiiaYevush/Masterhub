@@ -18,7 +18,27 @@
         padding-top: 45px;
         padding-bottom: 20px;
       }
-      
+
+      .user-profile-link {
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.85;
+        }
+      }
+
+      .user-profile-name {
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+          color: #800000;
+        }
+      }
+
       .carousel {
         overflow: hidden;
         border-radius: 20px;
@@ -36,6 +56,7 @@
           border-radius: 20px;
           transition: transform 0.3s ease-in-out;
         }
+
         img:hover {
           transform: scale(1.02);
         }
@@ -75,6 +96,7 @@
           border-radius: 20px;
           transition: transform 0.3s ease-in-out;
         }
+
         img:hover {
           transform: scale(1.02);
         }
@@ -96,24 +118,24 @@
           transition: background-color 0.3s, transform 0.3s;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-        
+
         .carousel-arrow:hover {
           background-color: rgba(255, 255, 255, 1);
           transform: translateY(-50%) scale(1.1);
         }
-        
+
         .carousel-arrow.left {
           left: 10px;
           display: flex;
           justify-content: center;
         }
-        
+
         .carousel-arrow.right {
           right: 10px;
           display: flex;
           justify-content: center;
         }
-        
+
       }
 
       h2 {
@@ -126,13 +148,13 @@
         line-height: 25px;
         color: #000000;
       }
-        
+
       .seller {
         margin-top: 50px;
         display: flex;
         flex-direction: column;
         gap: 20px;
-        
+
         .gig__user-box {
           display: flex;
           flex-direction: row;
@@ -142,7 +164,7 @@
           padding: 20px;
           margin-top: 20px;
         }
-        
+
         .box-left-container {
           display: flex;
           justify-content: center;
@@ -173,12 +195,12 @@
                 display: flex;
                 align-items: center;
                 gap: 5px;
-      
+
                 img {
                   height: 14px;
                   width: 14px;
                 }
-      
+
                 span {
                   font-size: 14px;
                   font-weight: bold;
@@ -193,6 +215,7 @@
               margin-bottom: 20px;
               color: #000000;
             }
+
             hr {
               margin-bottom: 20px;
             }
@@ -259,7 +282,7 @@
         align-items: center;
         justify-content: space-between;
 
-        h3{
+        h3 {
           font-weight: 500;
           width: 150px;
         }
@@ -268,10 +291,12 @@
           display: flex;
           align-items: flex-end;
           flex-direction: row;
+
           img {
             width: 40px;
             height: 40px;
           }
+
           .negotiable-price-text {
             display: flex;
             align-items: flex-end;
@@ -279,6 +304,7 @@
             padding-left: 10px;
           }
         }
+
         h4 .price {
           align-items: flex-end;
           width: 30px;
@@ -312,8 +338,8 @@
         }
       }
 
-      .features{
-        .item{
+      .features {
+        .item {
           display: flex;
           align-items: center;
           gap: 10px;
@@ -321,7 +347,7 @@
           color: #747474;
           margin-bottom: 5px;
 
-          img{
+          img {
             width: 14px;
           }
 
@@ -361,11 +387,12 @@
         vertical-align: middle;
         text-decoration: none;
       }
+
       .hire-red-button:hover,
-      .hire-red-button:focus { 
-          background-color: #ffffff;
-          transition: background-color 0.5s;
-          color: #000000;
+      .hire-red-button:focus {
+        background-color: #ffffff;
+        transition: background-color 0.5s;
+        color: #000000;
       }
     }
   }

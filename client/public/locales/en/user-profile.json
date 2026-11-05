@@ -1,0 +1,35 @@
+{
+    "userProfile": {
+        "loading": "Loading profile...",
+        "notFound": "User profile not found.",
+        "verified": "Verified",
+        "paymentVerified": "Payment method verified",
+        "tasker": "Tasker",
+        "client": "Client",
+        "memberSince": "Member since {{date}}",
+        "stats": {
+            "services": "Services",
+            "reviews": "Reviews",
+            "rating": "Average rating",
+            "jobs": "Posted jobs",
+            "reviewsLeft": "Reviews left"
+        },
+        "servicesTitle": "Services",
+        "jobsTitle": "Job postings",
+        "noServices": "This user hasn't published any services yet.",
+        "noJobs": "This user hasn't published any jobs yet.",
+        "negotiable": "Negotiable",
+        "budgetNotSpecified": "Not specified",
+        "receivedReviews": "Reviews from clients",
+        "writtenReviews": "Reviews written",
+        "noReceivedReviews": "No reviews received yet.",
+        "noWrittenReviews": "This user hasn't left any reviews yet.",
+        "reviewedService": "Service",
+        "unknownUser": "Unknown user",
+        "jobStatuses": {
+            "active": "Active",
+            "hired": "Hired",
+            "closed": "Closed"
+        }
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "userProfile": {
+        "loading": "Завантаження профілю...",
+        "notFound": "Профіль користувача не знайдено.",
+        "verified": "Підтверджено",
+        "paymentVerified": "Платіжну картку підтверджено",
+        "tasker": "Виконавець",
+        "client": "Замовник",
+        "memberSince": "На платформі з {{date}}",
+        "stats": {
+            "services": "Послуги",
+            "reviews": "Відгуки",
+            "rating": "Середній рейтинг",
+            "jobs": "Оголошення",
+            "reviewsLeft": "Залишено відгуків"
+        },
+        "servicesTitle": "Послуги",
+        "jobsTitle": "Оголошення",
+        "noServices": "Цей користувач ще не опублікував жодної послуги.",
+        "noJobs": "Цей користувач ще не опублікував жодного оголошення.",
+        "negotiable": "Договірна",
+        "budgetNotSpecified": "Не вказано",
+        "receivedReviews": "Відгуки від замовників",
+        "writtenReviews": "Залишені відгуки",
+        "noReceivedReviews": "Поки що немає відгуків.",
+        "noWrittenReviews": "Цей користувач ще не залишав відгуків.",
+        "reviewedService": "Послуга",
+        "unknownUser": "Невідомий користувач",
+        "jobStatuses": {
+            "active": "Активне",
+            "hired": "Виконавця знайдено",
+            "closed": "Закрите"
+        },
+        "loading": "Завантаження профілю...",
+        "notFound": "Профіль користувача не знайдено.",
+        "verified": "Підтверджено",
+        "paymentVerified": "Платіжну картку підтверджено",
+        "tasker": "Виконавець",
+        "client": "Замовник",
+        "memberSince": "На платформі з {{date}}",
+        "stats": {
+            "services": "Послуги",
+            "reviews": "Відгуки",
+            "rating": "Середній рейтинг",
+            "jobs": "Оголошення",
+            "reviewsLeft": "Залишено відгуків"
+        },
+        "servicesTitle": "Послуги",
+        "jobsTitle": "Оголошення",
+        "noServices": "Цей користувач ще не опублікував жодної послуги.",
+        "noJobs": "Цей користувач ще не опублікував жодного оголошення.",
+        "negotiable": "Договірна",
+        "budgetNotSpecified": "Не вказано",
+        "receivedReviews": "Відгуки від замовників",
+        "writtenReviews": "Залишені відгуки",
+        "noReceivedReviews": "Поки що немає відгуків.",
+        "noWrittenReviews": "Цей користувач ще не залишав відгуків.",
+        "reviewedService": "Послуга",
+        "unknownUser": "Невідомий користувач",
+        "jobStatuses": {
+            "active": "Активне",
+            "hired": "Виконавця знайдено",
+            "closed": "Закрите"
+        }
+    }
+}
