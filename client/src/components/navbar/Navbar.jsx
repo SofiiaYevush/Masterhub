@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import "./Navbar.scss";
 import { useTranslation } from 'react-i18next';
+import UserAvatar from "../user-avatar/UserAvatar";
 
 function Navbar() {
   const { t, i18n } = useTranslation("navbar");
@@ -23,7 +24,7 @@ function Navbar() {
   }, [])
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
+  
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -64,7 +65,11 @@ function Navbar() {
 
             {currentUser ? (
               <div className="user" onClick={() => setOpen(!open)}>
-                <img src={currentUser.img || "/img/noavatar.jpg"} alt="" />
+                <UserAvatar
+                  img={currentUser.img}
+                  cardVerified={currentUser.cardVerified}
+                  size={30}
+                />
                 <span>{currentUser?.username}</span>
                 {open && (
                   <div className="options">

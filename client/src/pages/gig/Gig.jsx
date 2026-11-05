@@ -9,6 +9,7 @@ import newRequest from "../../utils/newRequest";
 import Reviews from "../../components/reviews/Reviews";
 import SlideForGig from "../../components/slide/SlideForGig";
 import getCurrentUser from "../../utils/getCurrentUser";
+import UserAvatar from "../../components/user-avatar/UserAvatar";
 import { useTranslation } from 'react-i18next';
 
 function Gig() {
@@ -69,10 +70,14 @@ function Gig() {
               "Something went wrong!"
             ) : (
               <div className="user">
-                <img
+                {/* <img
                   className="user-image"
                   src={dataUser.img || "/img/noavatar.jpg"}
                   alt=""
+                /> */}
+                <UserAvatar
+                  img={dataUser.img}
+                  cardVerified={dataUser.cardVerified}
                 />
                 <span>{dataUser.username}</span>
               </div>
@@ -97,7 +102,12 @@ function Gig() {
                 <h2>{t('gig.aboutSeller')}</h2>
                 <div className="gig__user-box">
                   <div className="box-left-container">
-                    <img src={dataUser.img || "../../img/noavatar.jpg"} alt="" />
+                    {/* <img src={dataUser.img || "../../img/noavatar.jpg"} alt="" /> */}
+                    <UserAvatar
+                      img={dataUser.img}
+                      cardVerified={dataUser.cardVerified}
+                      size={130}
+                    />
                   </div>
                   <div className="box-right-container">
                     <div className="box-right-top">

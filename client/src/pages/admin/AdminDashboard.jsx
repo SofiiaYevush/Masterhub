@@ -6,6 +6,7 @@ import AllGigs from '../../components/all-gigs/AllGigs';
 import AdminLeftSidebar from '../../components/left-sidebar/AdminLeftSidebar';
 import { useTranslation } from 'react-i18next';
 import "./AdminDashboard.scss";
+import UserAvatar from "../../components/user-avatar/UserAvatar";
 
 const AdminDashboard = () => {
     const navigate = useNavigate();
@@ -115,7 +116,11 @@ const AdminDashboard = () => {
                     </div>
                     <div className="admin-dashboard__avatar-translation">
                         <div className="user">
-                            <img src={currentUser.img || "/img/noavatar.jpg"} alt="" />
+                            <UserAvatar
+                                img={currentUser?.img}
+                                cardVerified={currentUser?.cardVerified}
+                                size={40}
+                            />
                             <span>{currentUser?.username}</span>
                         </div>
                         <div className="admin-dashboard__buttons">

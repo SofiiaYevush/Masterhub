@@ -6,6 +6,7 @@ import newRequest from "../../utils/newRequest";
 import getCurrentUser from "../../utils/getCurrentUser";
 import AlertMessage from "../alert-message/AlertMessage";
 import VerifiedBadge from "../verified-badge/VerifiedBadge";
+import UserAvatar from "../user-avatar/UserAvatar";
 import { useTranslation } from 'react-i18next';
 
 const GigCard = ({ item }) => {
@@ -42,7 +43,11 @@ const GigCard = ({ item }) => {
               "Something went wrong!"
             ) : (
               <div className="user">
-                <img src={data.img || "/img/noavatar.jpg"} alt="" />
+                {/* <img src={data.img || "/img/noavatar.jpg"} alt="" /> */}
+                <UserAvatar
+                  img={data.img}
+                  cardVerified={data.cardVerified}
+                />
                 <div className="user-info">
                   <span className="username">
                     {data.username}

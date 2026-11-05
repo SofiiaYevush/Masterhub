@@ -5,6 +5,7 @@ import newRequest from "../../utils/newRequest";
 import { useTranslation } from 'react-i18next';
 import { categories } from "../../data";
 import "./JobDetails.scss";
+import UserAvatar from "../../components/user-avatar/UserAvatar";
 
 const JobDetails = () => {
     const { id } = useParams();
@@ -146,7 +147,11 @@ const JobDetails = () => {
                         <div key={app._id} className="application-card">
 
                             <div className="application-user">
-                                <img src={app.taskerId?.img} alt="" />
+                                <UserAvatar
+                                    img={app.taskerId?.img}
+                                    cardVerified={app.taskerId?.cardVerified}
+                                    size={40}
+                                />
                                 <div>
                                     <span className="username">{app.taskerId?.username}</span>
                                     <span className={`status-pill ${app.status}`}>

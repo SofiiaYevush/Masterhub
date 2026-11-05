@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import "./Review.scss";
+import UserAvatar from "../user-avatar/UserAvatar";
 
 const Review = ({ review }) => {
   const queryClient = useQueryClient();
@@ -59,10 +60,10 @@ const Review = ({ review }) => {
       ) : (
         <div className="review-container">
           <div className="review__left-container">
-            <img
-              className="review__user-photo"
-              src={data.img || "/img/noavatar.jpg"}
-              alt=""
+            <UserAvatar
+              img={data.img}
+              cardVerified={data.cardVerified}
+              size={110}
             />
           </div>
           <div className="review__right-container">

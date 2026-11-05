@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import getCurrentUser from "../../utils/getCurrentUser";
+import UserAvatar from "../../components/user-avatar/UserAvatar";
 import "./Orders.scss";
 import { useTranslation } from 'react-i18next';
 
@@ -105,7 +106,12 @@ const Orders = () => {
                 <>
                   <p><strong>{t('orders.client')}:</strong></p>
                   <div className="order-avatar-username">
-                    <img src={order.clientId?.img || "/img/noavatar.jpg"} alt="" />
+                    {/* <img src={order.clientId?.img || "/img/noavatar.jpg"} alt="" /> */}
+                    <UserAvatar
+                      img={order.clientId?.img}
+                      cardVerified={order.clientId?.cardVerified}
+                      size={40}
+                    />
                     <p className="order-username">{order.clientId?.username}</p>
                   </div>
                 </>

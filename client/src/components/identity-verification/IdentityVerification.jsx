@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import newRequest from "../../utils/newRequest";
 import VerificationWelcome from "./components/VerificationWelcome";
 import StripeVerification from "./components/StripeVerification";
+import refreshCurrentUser from "../../utils/refreshCurrentUser";
 
 import "./IdentityVerification.scss";
 
@@ -24,11 +25,16 @@ const IdentityVerification = ({ onClose, onVerified }) => {
     } catch (err) {
       setError(
         err?.response?.data ||
-          "Unable to start identity verification."
+        "Unable to start identity verification."
       );
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleSuccess = async () => {
+    await refreshCurrentUser();
+    onVerified();
   };
 
   const handleBack = () => {
@@ -51,7 +57,7 @@ const IdentityVerification = ({ onClose, onVerified }) => {
         <StripeVerification
           clientSecret={clientSecret}
           onClose={handleBack}
-          onSuccess={onVerified}
+          onSuccess={handleSuccess}
         />
       )}
     </div>
