@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import "./Review.scss";
 import UserAvatar from "../user-avatar/UserAvatar";
@@ -60,15 +61,19 @@ const Review = ({ review }) => {
       ) : (
         <div className="review-container">
           <div className="review__left-container">
-            <UserAvatar
-              img={data.img}
-              cardVerified={data.cardVerified}
-              size={110}
-            />
+            <Link to={`/user/${data._id}`} className="user-profile-link">
+              <UserAvatar
+                img={data.img}
+                cardVerified={data.cardVerified}
+                size={110}
+              />
+            </Link>
           </div>
           <div className="review__right-container">
             <div className="review__right-top-container">
-              <span className="review__username">{data.username}</span>
+              <Link to={`/user/${data._id}`} className="user-profile-name">
+                <span className="review__username">{data.username}</span>
+              </Link>
               <div className="likes">
                 <div
                   className={`review__like ${liked ? "active" : ""}`}

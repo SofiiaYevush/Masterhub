@@ -189,6 +189,26 @@
             justify-content: center;
         }
 
+        .user-profile-link {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.85;
+            }
+        }
+
+        .user-profile-name {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+
+            &:hover {
+                color: #800000;
+            }
+        }
+
         /* TABS */
         .tabs {
             display: flex;
@@ -327,11 +347,5 @@
                 }
             }
         }
-    }
-}
-
-@media (max-width: 900px) {
-    .job-details__container {
-        grid-template-columns: 1fr;
     }
 }

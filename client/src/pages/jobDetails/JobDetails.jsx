@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import { useTranslation } from 'react-i18next';
@@ -147,13 +147,17 @@ const JobDetails = () => {
                         <div key={app._id} className="application-card">
 
                             <div className="application-user">
-                                <UserAvatar
-                                    img={app.taskerId?.img}
-                                    cardVerified={app.taskerId?.cardVerified}
-                                    size={40}
-                                />
+                                <Link to={`/user/${app.taskerId?._id}`} className="user-profile-link">
+                                    <UserAvatar
+                                        img={app.taskerId?.img}
+                                        cardVerified={app.taskerId?.cardVerified}
+                                        size={40}
+                                    />
+                                </Link>
                                 <div>
-                                    <span className="username">{app.taskerId?.username}</span>
+                                    <Link to={`/user/${app.taskerId?._id}`} className="user-profile-name">
+                                        <span className="username">{app.taskerId?.username}</span>
+                                    </Link>
                                     <span className={`status-pill ${app.status}`}>
                                         {t(`job.jobDetails.tabs.${app.status}`)}
                                     </span>

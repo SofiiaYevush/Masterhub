@@ -251,19 +251,20 @@ const UserProfile = () => {
                   <article className="profile-review" key={review._id}>
                     <div className="profile-review__top">
                       <div className="profile-review__author">
-                        <UserAvatar
-                          img={reviewUser?.img}
-                          size={42}
-                        />
-
-                        <div>
-                          <strong>
-                            {reviewUser?.username || t("userProfile.unknownUser")}
-                          </strong>
-                          <span>
-                            {formatDate(review.createdAt, i18n.language)}
-                          </span>
-                        </div>
+                        <Link to={`/user/${reviewUser?._id}`} className="user user-profile-link profile-review__author-link">
+                          <UserAvatar
+                            img={reviewUser?.img}
+                            size={42}
+                          />
+                          <div>
+                            <strong>
+                              {reviewUser?.username || t("userProfile.unknownUser")}
+                            </strong>
+                            <span>
+                              {formatDate(review.createdAt, i18n.language)}
+                            </span>
+                          </div>
+                        </Link>
                       </div>
 
                       <span className="profile-review__rating">

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./GigCard.scss";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import getCurrentUser from "../../utils/getCurrentUser";
@@ -44,19 +44,21 @@ const GigCard = ({ item }) => {
             ) : (
               <div className="user">
                 {/* <img src={data.img || "/img/noavatar.jpg"} alt="" /> */}
-                <UserAvatar
-                  img={data.img}
-                  cardVerified={data.cardVerified}
-                />
-                <div className="user-info">
-                  <span className="username">
-                    {data.username}
-                  </span>
-                  {data.isVerified && (
-                    <span className="verified-badge">✔</span>
-                  )}
-                  <VerifiedBadge isVerified={data.isVerified} />
-                </div>
+                <Link to={`/user/${data._id}`} className="user-profile-link user-profile-name">
+                  <UserAvatar
+                    img={data.img}
+                    cardVerified={data.cardVerified}
+                  />
+                  <div className="user-info">
+                    <span className="username">
+                      {data.username}
+                    </span>
+                    {data.isVerified && (
+                      <span className="verified-badge">✔</span>
+                    )}
+                    <VerifiedBadge isVerified={data.isVerified} />
+                  </div>
+                </Link>
               </div>
             )}
             <p className="card-text">{item.title}</p>

@@ -5,6 +5,7 @@ import getCurrentUser from "../../utils/getCurrentUser";
 import UserAvatar from "../../components/user-avatar/UserAvatar";
 import "./Orders.scss";
 import { useTranslation } from 'react-i18next';
+import { Link } from "react-router-dom";
 
 const Orders = () => {
   const { t } = useTranslation("orders");
@@ -66,8 +67,8 @@ const Orders = () => {
               <p className="order-details-text">
                 {
                   order.isPriceNegotiable
-                  ? t("orders.priceNegotiable")
-                  : `₴ ${order.price}`
+                    ? t("orders.priceNegotiable")
+                    : `₴ ${order.price}`
                 }
               </p>
             </div>
@@ -77,9 +78,9 @@ const Orders = () => {
             </div>
             <div className="order-button">
               {!currentUser.isSeller && !order.isCompleted && (
-              <button className="order-red-button" onClick={() => handleCancel(order._id)}>
-                ❌ {t('orders.cancelOrder')}
-              </button>
+                <button className="order-red-button" onClick={() => handleCancel(order._id)}>
+                  ❌ {t('orders.cancelOrder')}
+                </button>
               )}
 
               {currentUser.isSeller && !order.isCompleted && (
@@ -107,21 +108,28 @@ const Orders = () => {
                   <p><strong>{t('orders.client')}:</strong></p>
                   <div className="order-avatar-username">
                     {/* <img src={order.clientId?.img || "/img/noavatar.jpg"} alt="" /> */}
-                    <UserAvatar
-                      img={order.clientId?.img}
-                      cardVerified={order.clientId?.cardVerified}
-                      size={40}
-                    />
-                    <p className="order-username">{order.clientId?.username}</p>
+                    <Link to={`/user/${order.clientId?._id}`} className="user-profile-link user-profile-name">
+                      <UserAvatar
+                        img={order.clientId?.img}
+                        cardVerified={order.clientId?.cardVerified}
+                      />
+                      <p className="order-username">{order.clientId?.username}</p>
+                    </Link>
                   </div>
                 </>
               )}
               {!currentUser.isSeller && (
                 <>
-                <p><strong>{t('orders.tasker')}:</strong></p>
+                  <p><strong>{t('orders.tasker')}:</strong></p>
                   <div className="order-avatar-username">
-                    <img src={order.taskerId?.img || "/img/noavatar.jpg"} alt="" />
-                    <p className="order-username">{order.taskerId?.username}</p>
+                    <Link to={`/user/${order.taskerId?._id}`} className="user-profile-link user-profile-name">
+                      <UserAvatar
+                        img={order.taskerId?.img}
+                        cardVerified={order.taskerId?.cardVerified}
+                      />
+                      {/* <img src={order.taskerId?.img || "/img/noavatar.jpg"} alt="" /> */}
+                      <p className="order-username">{order.taskerId?.username}</p>
+                    </Link>
                   </div>
                 </>
               )}

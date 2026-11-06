@@ -26,10 +26,13 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+
       .user {
         display: flex;
         align-items: center;
+        justify-content: flex-start;
         gap: 10px;
+
         img {
           width: 26px;
           height: 26px;
@@ -37,15 +40,40 @@
           object-fit: cover;
         }
 
+        .user-profile-link {
+          color: inherit;
+          text-decoration: none;
+          cursor: pointer;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+
+          &:hover {
+            opacity: 0.85;
+          }
+        }
+
+        .user-profile-name {
+          color: inherit;
+          text-decoration: none;
+          cursor: pointer;
+
+          &:hover {
+            color: #800000;
+          }
+        }
+
         .user-info {
           display: flex;
-          align-items: center;
+          align-items: center;          
         }
 
         .username {
           font-size: 13px;
         }
       }
+
       .card-text {
         color: #111;
         display: -webkit-box;
