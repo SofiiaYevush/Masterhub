@@ -23,24 +23,29 @@
     justify-content: space-between;
     flex-direction: row;
     padding: 20px 0px;
+
     .logo {
       display: flex;
       flex-direction: row;
     }
+
     .logo .link {
       display: flex;
       align-items: center;
       width: 250px;
     }
+
     .logo .text {
       font-size: 34px;
       font-weight: bold;
     }
+
     .navbar__logo-img {
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
     .navbar__logo-img img {
       width: 40px;
       height: 40px;
@@ -54,148 +59,265 @@
     flex-direction: row;
   }
 
-    .links {
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-weight: 500;
+
+    span {
+      white-space: nowrap;
+    }
+
+    .white-button-signIn {
+      align-items: center;
+      background-color: #ffffff;
+      border-radius: 100px;
+      box-sizing: border-box;
+      border-width: 3px;
+      border-style: solid;
+      border-color: #ffffff;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: normal;
+      justify-content: center;
+      color: #000000;
+      /*line-height: 20px;*/
+      max-width: 460px;
+      min-height: 40px;
+      min-width: 0px;
+      overflow: hidden;
+      padding: 0px;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
+      touch-action: manipulation;
+      transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+      user-select: none;
+      -webkit-user-select: none;
+      vertical-align: middle;
+    }
+
+    .white-button-signIn a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    .white-button-signIn:hover,
+    .white-button-signIn:focus {
+      background-color: #dddddd;
+      transition: background-color 0.5s;
+    }
+
+    .white-red-button {
+      align-items: center;
+      background-color: #800000;
+      border-radius: 100px;
+      border: 3px solid #ffffff;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: normal;
+      justify-content: center;
+      color: #ffffff;
+      /*line-height: 20px;*/
+      max-width: 460px;
+      min-height: 40px;
+      min-width: 0px;
+      overflow: hidden;
+      padding: 0px;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
+      touch-action: manipulation;
+      transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow rgba(0, 0, 0, 0.24) 0px 3px 8px, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+      user-select: none;
+      -webkit-user-select: none;
+      vertical-align: middle;
+    }
+
+    .white-red-button a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .white-red-button:hover,
+    .white-red-button:focus {
+      background-color: #dddddd;
+      color: #000000;
+      transition: background-color 0.5s;
+    }
+
+    .user {
+      position: relative;
       display: flex;
       align-items: center;
-      gap: 24px;
-      font-weight: 500;
-      span {
-        white-space: nowrap;
-      }
 
-      .white-button-signIn {
-        align-items: center;
-        background-color: #ffffff;
-        border-radius: 100px;
-        box-sizing: border-box;
-        border-width: 3px;
-        border-style: solid;
-        border-color: #ffffff;
-        cursor: pointer;
-        display: inline-flex;
-        font-family: inherit;
-        font-size: 16px;
-        font-weight: normal;
-        justify-content: center;
-        color: #000000;
-        /*line-height: 20px;*/
-        max-width: 460px;
-        min-height: 40px;
-        min-width: 0px;
-        overflow: hidden;
-        padding: 0px;
-        padding-left: 20px;
-        padding-right: 20px;
-        text-align: center;
-        touch-action: manipulation;
-        transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-        user-select: none;
-        -webkit-user-select: none;
-        vertical-align: middle;
-      }
-      .white-button-signIn a{
-          color: #000000;
-          text-decoration: none;
-      }
-      .white-button-signIn:hover,
-      .white-button-signIn:focus { 
-          background-color: #dddddd;
-          transition: background-color 0.5s;
-      }
-
-      .white-red-button {
-        align-items: center;
-        background-color: #800000;
-        border-radius: 100px;
-        border: 3px solid #ffffff;
-        box-sizing: border-box;
-        cursor: pointer;
-        display: inline-flex;
-        font-family: inherit;
-        font-size: 16px;
-        font-weight: normal;
-        justify-content: center;
-        color: #ffffff;
-        /*line-height: 20px;*/
-        max-width: 460px;
-        min-height: 40px;
-        min-width: 0px;
-        overflow: hidden;
-        padding: 0px;
-        padding-left: 20px;
-        padding-right: 20px;
-        text-align: center;
-        touch-action: manipulation;
-        transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow rgba(0, 0, 0, 0.24) 0px 3px 8px, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-        user-select: none;
-        -webkit-user-select: none;
-        vertical-align: middle;
-      }
-      .white-red-button a{
-          color: #ffffff;
-          text-decoration: none;
-      }
-      .white-red-button:hover,
-      .white-red-button:focus { 
-          background-color: #dddddd;
-          color: #000000;
-          transition: background-color 0.5s;
-      }
-
-      .user {
+      .user-trigger {
         display: flex;
         align-items: center;
         gap: 10px;
+        padding: 6px 10px 6px 6px;
+        border: 1px solid transparent;
+        border-radius: 30px;
+        background: transparent;
+        color: white;
+        font-family: inherit;
+        font-size: 15px;
+        font-weight: 500;
         cursor: pointer;
-        position: relative;
+        transition: all 0.2s ease;
 
-        img {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          object-fit: cover;
+        &:hover,
+        &.open {
+          background: rgba(255, 255, 255, 0.12);
+          border-color: rgba(255, 255, 255, 0.2);
         }
 
-        .options {
-          position: absolute;
-          top: 50px;
-          right: 0;
-          padding: 20px;
-          background-color: white;
-          border-radius: 10px;
-          z-index: 999;
-          border: 1px solid lightgrey;
+        .username {
+          white-space: nowrap;
+        }
+
+        .dropdown-chevron {
+          transition: transform 0.25s ease;
+        }
+
+        &.open .dropdown-chevron {
+          transform: rotate(180deg);
+        }
+      }
+
+      .options {
+        position: absolute;
+        top: calc(100% + 14px);
+        right: 0;
+        width: 310px;
+        padding: 10px;
+        background: #ffffff;
+        border: 1px solid #eeeeee;
+        border-radius: 14px;
+        box-shadow:
+          0 12px 35px rgba(0, 0, 0, 0.12),
+          0 3px 10px rgba(0, 0, 0, 0.05);
+        z-index: 1000;
+
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+
+        animation: dropdownAppear 0.2s ease forwards;
+        transform-origin: top right;
+
+        .dropdown-header {
           display: flex;
           flex-direction: column;
-          gap: 14px;
-          width: 200px;
+          gap: 4px;
+          padding: 12px 12px 14px;
 
-          .dropdown-link {
-            text-decoration: none;
-            font-weight: 300;
-            color: #000000;
-            transition: color 0.3s ease;
+          .dropdown-user-name {
+            color: #222222;
+            font-size: 15px;
+            font-weight: 700;
           }
 
-          .dropdown-link:hover {
+          .dropdown-user-role {
+            color: #999999;
+            font-size: 13px;
+            font-weight: 500;
+          }
+        }
+
+        .dropdown-divider {
+          height: 1px;
+          background: #eeeeee;
+          margin: 5px 4px;
+        }
+
+        .dropdown-link {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          width: 100%;
+          padding: 11px 12px;
+          border: none;
+          border-radius: 8px;
+          background: transparent;
+          color: #444444;
+          font-family: inherit;
+          font-size: 15px;
+          font-weight: 500;
+          text-decoration: none;
+          text-align: left;
+          cursor: pointer;
+          transition:
+            background 0.2s ease,
+            color 0.2s ease,
+            transform 0.2s ease;
+
+          svg {
+            flex-shrink: 0;
+            color: #888888;
+            transition: color 0.2s ease;
+          }
+
+          &:hover {
+            background: #fff1f1;
             color: #800000;
-            font-weight: 600;
+            transform: translateX(2px);
+
+            svg {
+              color: #800000;
+            }
+          }
+        }
+
+        .logout-link {
+          color: #c0392b;
+
+          svg {
+            color: #c0392b;
+          }
+
+          &:hover {
+            background: #fff0ef;
+            color: #a93226;
+
+            svg {
+              color: #a93226;
+            }
           }
         }
       }
+    }
 
-      .language-toggle {
-        background-color: white !important;
-        color: #000000 !important;
-        border: 1px solid #000000 !important;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    @keyframes dropdownAppear {
+      from {
+        opacity: 0;
+        transform: translateY(-6px) scale(0.98);
       }
-      .language-toggle:hover,
-      .language-toggle:focus { 
-        background-color: #dddddd;
-        transition: background-color 0.5s;
-        color: #000000;
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
       }
     }
-  }
 
+    .language-toggle {
+      background-color: white !important;
+      color: #000000 !important;
+      border: 1px solid #000000 !important;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .language-toggle:hover,
+    .language-toggle:focus {
+      background-color: #dddddd;
+      transition: background-color 0.5s;
+      color: #000000;
+    }
+  }
+}

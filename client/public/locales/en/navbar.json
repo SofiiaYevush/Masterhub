@@ -14,6 +14,8 @@
         "register": "Sign up",
         "signIn": "Sign in",
         "myJobs": "My Jobs",
-        "createJob": "Create Job"
+        "createJob": "Create Job",
+        "sellerAccount": "Tasker account",
+        "clientAccount": "Client account"
     }
 }
